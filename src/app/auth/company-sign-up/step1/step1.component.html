@@ -1,0 +1,11 @@
+<form [formGroup]="companyInfoFormGroup">
+  <input formControlName="name">
+
+  <mat-form-field>
+    <mat-select formControlName="industry" placeholder="Select industry">
+      <mat-option *ngFor="let industry of industries" [value]="industry">
+        {{industry}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

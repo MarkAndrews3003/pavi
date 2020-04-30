@@ -8,6 +8,16 @@ input, button {
   margin: 0;
   padding: 0;
 }
+
+
+/*//////temporary styles///////////*/
+input{
+  border: 1px solid silver;
+  border-radius: 20px;
+  display: block;
+}
+/*/////////////////*/
+
 button:hover {
   outline: none;
   cursor: pointer;
