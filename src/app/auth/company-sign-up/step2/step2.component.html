@@ -1,0 +1,11 @@
+<form [formGroup]="accountInfoFormGroup">
+  <input formControlName="full_name">
+  <input formControlName="role">
+  <input formControlName="email">
+  <input formControlName="password">
+  <input type="radio" name="gender" checked [value]="'male'" id="male" formControlName="gender">
+  <label for="male">Male</label>
+  <input type="radio" name="gender" [value]="'female'" id="female" formControlName="gender">
+  <label for="female">Female</label>
+  <input formControlName="confirm_pass">
+</form>

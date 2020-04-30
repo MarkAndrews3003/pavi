@@ -1,0 +1,13 @@
+<form [formGroup]="companyDetailsFormGroup">
+  <input formControlName="phone">
+  <input formControlName="country">
+  <mat-form-field>
+    <mat-select>
+      <mat-option *ngFor="let country of countries" [value]="country">
+        {{country}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input formControlName="address">
+  <button mat-raised-button (click)="registerCompany()">Save</button>
+</form>
