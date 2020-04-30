@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "pavi"
+  "defaultProject": "pavi",
+  "cli": {
+    "analytics": "89f14c06-f035-46ef-aaac-d5b3e4425ffb"
+  }
 }
