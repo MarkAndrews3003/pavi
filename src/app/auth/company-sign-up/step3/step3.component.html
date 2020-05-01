@@ -1,13 +1,37 @@
 <form [formGroup]="companyDetailsFormGroup">
-  <input formControlName="phone">
-  <input formControlName="country">
-  <mat-form-field>
-    <mat-select>
-      <mat-option *ngFor="let country of countries" [value]="country">
-        {{country}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <input formControlName="address">
-  <button mat-raised-button (click)="registerCompany()">Save</button>
+  <p class="login-text-7">Company</p>
+  <div class="line-block">
+    <span class="line-1"></span>
+    <span>OR</span>
+    <span class="line-1"></span>
+  </div>
+  <div class="register-block-1">
+    <div>
+      <div class="login-item">
+        <label class="logos-item-label">Mobile Phone</label>
+        <input formControlName="phone" placeholder="Mobile Phone*" class="logos-item-input">
+      </div>
+      <div class="login-item">
+        <label class="logos-item-label">Email</label>
+        <input formControlName="email" placeholder="Email*" class="logos-item-input">
+      </div>
+    </div>
+    <div>
+      <div class="login-item">
+        <label class="logos-item-label">Address</label>
+        <input formControlName="address" placeholder="Address*" class="logos-item-input">
+      </div>
+    </div>
+  </div>
+  <div class="last-block-form">
+    <div class="register-buttons">
+      <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>
+    </div>
+    <div class="register-buttons">
+      <a class="login-btn">Sign Up</a>
+    </div>
+    <button mat-raised-button (click)="registerCompany()">Save</button>
+  </div>
 </form>
+
+

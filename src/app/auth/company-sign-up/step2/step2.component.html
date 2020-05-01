@@ -1,11 +1,50 @@
 <form [formGroup]="accountInfoFormGroup">
-  <input formControlName="full_name">
-  <input formControlName="role">
-  <input formControlName="email">
-  <input formControlName="password">
-  <input type="radio" name="gender" checked [value]="'male'" id="male" formControlName="gender">
-  <label for="male">Male</label>
-  <input type="radio" name="gender" [value]="'female'" id="female" formControlName="gender">
-  <label for="female">Female</label>
-  <input formControlName="confirm_pass">
+  <p class="login-text-7">Company</p>
+  <div class="line-block">
+    <span class="line-1"></span>
+    <span>OR</span>
+    <span class="line-1"></span>
+  </div>
+  <div class="register-block-1">
+    <div>
+      <div class="login-item">
+        <label class="logos-item-label">First Name</label>
+        <input formControlName="first_name" placeholder="First Name*" class="logos-item-input">
+      </div>
+      <div class="login-item">
+        <label class="logos-item-label">Password</label>
+        <input formControlName="password" placeholder="Password*" class="logos-item-input">
+      </div>
+    </div>
+    <div>
+      <div class="login-item">
+        <label class="logos-item-label">Last Name</label>
+        <input formControlName="last_name" placeholder="Last Name*" class="logos-item-input">
+      </div>
+      <div class="login-item">
+        <label class="logos-item-label">Gender</label>
+        <div class="gender">
+          <div>
+            <input type="radio" name="gender" checked [value]="'male'" id="male" formControlName="gender">
+            <label for="male">Male</label>
+          </div>
+          <div>
+            <input type="radio" name="gender" [value]="'female'" id="female" formControlName="gender">
+            <label for="female">Female</label><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="last-block-form">
+    <div class="register-buttons">
+      <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>
+    </div>
+    <div class="register-buttons">
+      <a class="login-btn">Next<i class="fas fa-chevron-right"></i></a>
+    </div>
+  </div>
 </form>
+
+
+
