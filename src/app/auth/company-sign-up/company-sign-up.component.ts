@@ -55,9 +55,9 @@ export class CompanySignUpComponent implements OnInit {
   }
 
   registerCompany() {
-    console.log(this.companyRegistrationForm.getRawValue());
-    this.companiesService.register(this.companyRegistrationForm.getRawValue()).subscribe((dt) => {
-
+    this.companiesService.register(this.companyRegistrationForm.getRawValue()).subscribe((dt: any) => {
+      this.router.navigate(['/']);
+      localStorage.setItem('token', dt.token);
     });
   }
 
