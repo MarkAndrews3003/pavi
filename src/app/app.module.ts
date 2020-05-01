@@ -13,6 +13,9 @@ import {LoginComponent} from './auth/login/login.component';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {JwtModule} from '@auth0/angular-jwt';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {RequestInterceptor} from './core/helpers/http.interceptor';
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -36,12 +39,22 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter,
-        whitelistedDomains: ['localhost:3000',],
+        whitelistedDomains: ['localhost:3000'],
         blacklistedRoutes: ['localhost:3000/auth/']
       }
     }),
+    ToastrModule.forRoot({
+      preventDuplicates: true
+    }),
   ],
-  providers: [JwtHelperService],
+  providers: [
+    JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

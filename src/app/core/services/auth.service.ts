@@ -33,4 +33,8 @@ export class AuthService {
     localStorage.removeItem('token');
     await this.router.navigate(['/']);
   }
+
+  register(params) {
+    return this.httpClient.post(`${API_URL}auth/register`, params);
+  }
 }
