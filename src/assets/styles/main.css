@@ -9,7 +9,6 @@ input, button {
   padding: 0;
 }
 
-
 /*//////temporary styles///////////*/
 input{
   border: 1px solid silver;
@@ -634,7 +633,7 @@ footer {
   border-radius: 0px 0px 60px 60px;
   height: 80px;
   display: flex;
-  margin: 0 80px;
+  margin: 0 80px !important;
   justify-content: center;
   align-items: center;
 }
@@ -664,11 +663,11 @@ footer {
   color: #707070;
   font-family: "Segoe UI Semibold";
   line-height: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
 }
 .login-block-1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 50px;
 }
@@ -704,6 +703,7 @@ footer {
   border-radius: 10px;
   background: #F2F2F2;
   transition: 0.3s ease-in-out;
+  margin-left: 14px;
 }
 .login-social i {
   color: #757575;
@@ -721,7 +721,7 @@ footer {
   font-size: 10px;
 }
 .line-1 {
-  width: 220px;
+  width: 47%;
   height: 1px;
   background: #707070;
 }
@@ -745,9 +745,13 @@ footer {
   height: 70px;
   border: 1px solid #F5F5F5;
   line-height: 15px;
-  margin-bottom: 12px;
   padding-left: 40px;
   font-family: "Segoe UI Semibold";
+  outline: none;
+  color: #CCCCCC;
+}
+.logos-item-input::placeholder {
+  color: #CCCCCC;
 }
 .forgot-password {
   color: #0265C9 !important;
@@ -819,7 +823,7 @@ footer {
   font-size: 30px;
   color: #0265C9;
   font-family: "Segoe Bold";
-  margin-left: 26px;
+  margin-left: 26px !important;
 }
 .login-text-6 {
   margin: 14px 0;
@@ -853,9 +857,114 @@ footer {
 .login-big-img {
   width: 700px;
 }
-
-
-
+.login-text-7 {
+  color: #757575;
+  font-family: "Segoe UI Semibold";
+  font-size: 25px;
+  text-align: right;
+  margin-bottom: 0 !important;
+}
+.register-block-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.register-block-1 > div {
+  width: 50%;
+}
+.register-content {
+  padding-left: 68px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+.register-left-side {
+  width: 40%;
+}
+.register-right-side {
+  width: 60%;
+}
+.register-form {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 50px #0000000F;
+  border-radius: 60px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 50px 49px;
+  width: 90%;
+  margin-left: 80px;
+}
+.register-text-1 {
+  font-family: "Segoe Regular";
+  font-size: 20px;
+  color: #2B2B2B;
+  text-align: center;
+  box-shadow: 0px 0px 50px #0000000F;
+  border-radius: 0px 0px 60px 60px;
+  height: 80px;
+  display: flex;
+  margin: 0 80px !important;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.logos-small-input {
+  width: 70px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 20px;
+  color: #000 !important;
+  font-family: "Segoe Regular";
+  border-radius: 0;
+  padding-left: 20px;
+  height: 50px;
+  border: 0;
+  width: 30%;
+  margin-left: 10px;
+}
+.date-age {
+  border: 1px solid #F5F5F5;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+.gender {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 35px;
+  height: 70px;
+  line-height: 15px;
+  margin-bottom: 12px;
+  font-family: "Segoe UI Semibold";
+  outline: none;
+  color: #CCCCCC;
+  align-items: center;
+}
+.gender > div {
+  display: flex;
+  margin-right: 50px;
+}
+.register-checkbox {
+  display: flex;
+}
+.register-checkbox input {
+  margin-top: 5px;
+  color: #707070;
+  font-size: 13px;
+  margin-right: 5px;
+}
+.register-checkbox a {
+  color: #00AAE0 !important;
+}
+.last-login-item {
+  height: 48px;
+}
+.register-buttons a {
+  width: 95%;
+}
 
 
 
@@ -871,7 +980,7 @@ footer {
     padding: 50px;
   }
   .login-text-1 {
-    margin: 0;
+    margin: 0 !important;
     width: 100%;
   }
   .login-content {
@@ -1197,7 +1306,7 @@ footer {
     margin-top: 30px;
   }
   .login-google {
-    width: 80%;
+    width: 300px;
     font-size: 14px;
   }
   .login-big-img {
