@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CompaniesService} from '../../core/services/companies.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-company-sign-up',
@@ -13,7 +14,8 @@ export class CompanySignUpComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private companiesService: CompaniesService
+    private companiesService: CompaniesService,
+    public router: Router
   ) {
   }
 

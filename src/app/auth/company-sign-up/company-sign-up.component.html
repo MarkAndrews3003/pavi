@@ -2,20 +2,20 @@
   <div class="register-left-side">
     <img class="register-big-img" src="assets/images/login-1.svg">
     <div class="left-block-4">
-      <div>
+      <div (click)="router.navigate(['auth/user-registration'])">
         <img src="assets/images/img-30.svg">
         <div class="left-block-5">
-          <p class="login-text-5">Private</p>
+          <p class="login-text-5" >Private</p>
           <p class="login-text-8">Personal</p>
         </div>
       </div>
       <img src="assets/images/img-31.svg">
     </div>
     <div class="left-block-4 active">
-      <div>
+      <div (click)="router.navigate(['auth/company-registration'])">
         <img src="assets/images/img-32.svg">
         <div class="left-block-5">
-          <p class="login-text-5">Company</p>
+          <p class="login-text-5" >Company</p>
           <p class="login-text-8">Business</p>
         </div>
       </div>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="register-right-side">
-    <p class="register-text-1">Don't have an account ? <a class="login-text-2" href="register.html">Sign In Here</a></p>
+    <p class="register-text-1">Don't have an account ? <a class="login-text-2" (click)="router.navigate(['auth/user-registration'])">Sign In Here</a></p>
     <form class="register-form" [formGroup]="companyRegistrationForm" >
       <p class="login-text-3">Sign Up</p>
       <p class="login-text-4">Chose versions of Sign In.</p>

@@ -7,6 +7,7 @@
     <i class="fab fa-facebook-f"></i>
     <i class="fab fa-pinterest"></i>
     <i class="fab fa-twitter"></i>
+    <a (click)="auth.logOut()" *ngIf="auth.loggedIn()">Logout</a>
   </div>
 </header>
 <nav class="home-header navbar navbar-expand-lg navbar-light">
@@ -32,7 +33,8 @@
       <img class="header-img" src="assets/images/user.png">
       <img class="header-img" src="assets/images/cart.png">
       <div class="dropdown language-dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
           En
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -47,8 +49,8 @@
   <div class="section-block-1-left">
     <p class="text-1">In This Together.</p>
     <p class="text-2">Keeping You Securely Connected wherever You are.</p>
-    <a class="login-btn">Sign In</a>
-    <a class="register-btn">Sign Up</a>
+    <a class="login-btn" (click)="router.navigate(['auth/login'])">Sign In</a>
+    <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
   </div>
   <div class="section-block-1-right">
     <img src="assets/images/big.svg">

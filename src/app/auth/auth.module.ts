@@ -5,9 +5,10 @@ import {AuthRoutingModule} from './auth-routing.module';
 import {UserSignUpComponent} from './user-sign-up/user-sign-up.component';
 import {CompanySignUpComponent} from './company-sign-up/company-sign-up.component';
 import {SharedModule} from '../shared/shared.module';
-import { Step1Component } from './company-sign-up/step1/step1.component';
-import { Step2Component } from './company-sign-up/step2/step2.component';
-import { Step3Component } from './company-sign-up/step3/step3.component';
+import {Step1Component} from './company-sign-up/step1/step1.component';
+import {Step2Component} from './company-sign-up/step2/step2.component';
+import {Step3Component} from './company-sign-up/step3/step3.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { Step3Component } from './company-sign-up/step3/step3.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule {

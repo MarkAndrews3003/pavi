@@ -15,8 +15,8 @@
     </div>
   </div>
   <div class="login-right-side">
-    <p class="login-text-1">Don't have an account ? <a class="login-text-2" href="register.html">Sign Up Here</a></p>
-    <form class="login-form">
+    <p class="login-text-1">Don't have an account ? <a class="login-text-2" (click)="router.navigate(['auth/user-registration'])">Sign Up Here</a></p>
+    <form class="login-form" [formGroup]="loginForm">
       <p class="login-text-3">Sign In</p>
       <p class="login-text-4">Chose versions of Sign In.</p>
       <div class="login-block-1">
@@ -31,11 +31,11 @@
       </div>
       <div class="login-item">
         <label class="logos-item-label">Email Address</label>
-        <input class="logos-item-input" placeholder="Email*">
+        <input class="logos-item-input" placeholder="Email*" formControlName="email">
       </div>
       <div class="login-item">
         <label class="logos-item-label">Password</label>
-        <input class="logos-item-input" placeholder="Password*" type="password">
+        <input class="logos-item-input" placeholder="Password*" type="password" formControlName="password">
         <a href="forgot" class="forgot-password">Forgot Password?</a>
       </div>
       <div class="login-item login-item-checkbox">
@@ -44,7 +44,7 @@
       </div>
       <div class="login-buttons">
         <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>
-        <a class="login-btn">Sign In</a>
+        <a class="login-btn" (click)="login()">Sign In</a>
       </div>
     </form>
   </div>
