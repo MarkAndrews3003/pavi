@@ -1014,6 +1014,11 @@ footer {
 .last-block-form > div {
   width: 50%;
 }
+.login-btn i {
+  font-size: 20px;
+  margin-left: 12px;
+  margin-top: 5px;
+}
 .register-big-img {
   width: 700px;
 }
@@ -1025,6 +1030,55 @@ footer {
 .register-content select::-ms-expand {
   display: none;
 }
+.mat-step-header .mat-step-icon {
+  background: white;
+  border: 1px solid #CCCCCC;
+  color: #CCCCCC;
+}
+.mat-step-header .mat-step-icon-selected {
+  background: white;
+  border: 1px solid #0265C9;
+  color: #0265C9;
+}
+.mat-step-label {
+  color: #CCCCCC !important;
+}
+.mat-step-label-selected {
+  color: #0265C9 !important;
+}
+.mat-step-header.cdk-keyboard-focused,
+.mat-step-header.cdk-program-focused,
+.mat-step-header:hover,
+.mat-step-header:focus {
+  background-color: transparent;
+}
+.mat-form-field {
+  width: 100%;
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
+  margin-right: 0;
+  margin-left: 0;
+  width: 32px;
+  height: 32px;
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before {
+  top: 40px !important;
+}
+.mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
+  top: 40px !important;
+}
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  margin-left: 20px;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+
+
 
 
 
@@ -1404,6 +1458,15 @@ footer {
   }
 }
 @media (max-width: 992px) {
+  .mat-form-field {
+    margin-left: 0;
+    width: 96%;
+  }
+  .login-btn i {
+    font-size: 14px;
+    margin-left: 12px;
+    margin-top: 3px;
+  }
   .register-content {
     padding-left: 0;
     flex-direction: column;

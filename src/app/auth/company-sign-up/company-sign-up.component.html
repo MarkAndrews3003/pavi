@@ -1,36 +1,128 @@
-<div class="register">
-  <h1 class="register-title">
-    Information required for incorporation of new Company
-  </h1>
-  <!--[linear]="true"-->
-  <form [formGroup]="companyRegistrationForm" class="register-form">
-    <mat-horizontal-stepper  labelPosition="bottom" #stepper [selectedIndex]="currentStep-1"
-                            (selectionChange)="stepChanged($event)">
+<section class="register-content">
+  <div class="register-left-side">
+    <img class="register-big-img" src="assets/images/login-1.svg">
+    <div class="left-block-4">
+      <div>
+        <img src="assets/images/img-30.svg">
+        <div class="left-block-5">
+          <p class="login-text-5">Private</p>
+          <p class="login-text-8">Personal</p>
+        </div>
+      </div>
+      <img src="assets/images/img-31.svg">
+    </div>
+    <div class="left-block-4 active">
+      <div>
+        <img src="assets/images/img-32.svg">
+        <div class="left-block-5">
+          <p class="login-text-5">Company</p>
+          <p class="login-text-8">Business</p>
+        </div>
+      </div>
+      <img src="assets/images/img-31.svg">
+    </div>
+  </div>
+  <div class="register-right-side">
+    <p class="register-text-1">Don't have an account ? <a class="login-text-2" href="register.html">Sign In Here</a></p>
+    <form class="register-form" [formGroup]="companyRegistrationForm" >
+      <p class="login-text-3">Sign Up</p>
+      <p class="login-text-4">Chose versions of Sign In.</p>
+      <div class="login-block-1 mb-4">
+        <a class="login-google"><i class="fab fa-google"></i> Sign Up With Google</a>
+        <a class="login-social"><i class="fab fa-twitter"></i></a>
+        <a class="login-social"><i class="fab fa-facebook-square"></i></a>
+      </div>
+      <div>
+        <mat-horizontal-stepper  labelPosition="bottom" #stepper [selectedIndex]="currentStep-1" (selectionChange)="stepChanged($event)">
+          <!-- 'Step passed' sign-->
+          <ng-template matStepperIcon="edit">
+            <mat-icon>done</mat-icon>
+          </ng-template>
+          <!--  Step 1 -->
+          <mat-step [stepControl]="companyRegistrationForm.get('companyInfo')">
+            <ng-template matStepLabel>Company info</ng-template>
+            <app-step1 [group]="companyInfoFormGroup"></app-step1>
+          </mat-step>
+          <!-- Step 2 -->
+          <mat-step [stepControl]="companyRegistrationForm.get('personalInfo')">
+            <ng-template matStepLabel>Account info</ng-template>
+            <app-step2 [group]="accountInfoFormGroup"></app-step2>
+          </mat-step>
+          <!--  Step 3 -->
+          <mat-step [stepControl]="companyRegistrationForm.get('companyDetails')">
+            <ng-template matStepLabel>Company details</ng-template>
+            <app-step3 [group]="companyDetailsFormGroup" (registerCompany)="registerCompany()"></app-step3>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+<!--      <div class="register-block-1">-->
+<!--        <div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">First Name</label>-->
+<!--            <input class="logos-item-input" placeholder="First Name*">-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Day Of Birth</label>-->
+<!--            <div class="date-age">-->
+<!--              <input class="logos-small-input" placeholder="Age*">-->
+<!--              <input class="logos-small-input" placeholder="Date*">-->
+<!--              <input class="logos-small-input" placeholder="Country*">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Email</label>-->
+<!--            <input class="logos-item-input" placeholder="Email*">-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Password</label>-->
+<!--            <input class="logos-item-input" placeholder="Password*" type="password">-->
+<!--          </div>-->
+<!--          <div class="login-item register-checkbox">-->
+<!--            <input type="checkbox">-->
+<!--            <label class="checkbox-text">Creating an account means you're okay with our <a>Terms of Service, Privacy Policy,</a> and our default <a>Notification Settings.</a></label>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Last Name</label>-->
+<!--            <input class="logos-item-input" placeholder="Last Name*">-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Country</label>-->
+<!--            <select class="logos-item-input">-->
+<!--              <option>Country*</option>-->
+<!--              <option>USA</option>-->
+<!--              <option>China</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Gender</label>-->
+<!--            <div class="gender">-->
+<!--              <div>-->
+<!--                <input type="radio" id="male" name="gender" value="male">-->
+<!--                <label for="male">Male</label>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <input type="radio" id="female" name="gender" value="female">-->
+<!--                <label for="female">Female</label><br>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="login-item">-->
+<!--            <label class="logos-item-label">Confirm Password</label>-->
+<!--            <input class="logos-item-input" placeholder="Confirm Password*" type="password">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="last-block-form">-->
+<!--        <div class="register-buttons">-->
+<!--          <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>-->
+<!--        </div>-->
+<!--        <div class="register-buttons">-->
+<!--          <a class="login-btn">Next<i class="fas fa-chevron-right"></i></a>-->
+<!--        </div>-->
+<!--      </div>-->
+    </form>
+  </div>
+</section>
 
-      <!-- 'Step passed' sign-->
-      <ng-template matStepperIcon="edit">
-        <mat-icon>done</mat-icon>
-      </ng-template>
-
-      <!--  Step 1 -->
-      <mat-step [stepControl]="companyRegistrationForm.get('companyInfo')">
-        <ng-template matStepLabel>Company info</ng-template>
-        <app-step1 [group]="companyInfoFormGroup"></app-step1>
-      </mat-step>
-
-      <!-- Step 2 -->
-      <mat-step [stepControl]="companyRegistrationForm.get('personalInfo')">
-        <ng-template matStepLabel>Account info</ng-template>
-        <app-step2 [group]="accountInfoFormGroup"></app-step2>
-      </mat-step>
-
-      <!--  Step 3 -->
-      <mat-step [stepControl]="companyRegistrationForm.get('companyDetails')">
-        <ng-template matStepLabel>Company details</ng-template>
-        <app-step3 [group]="companyDetailsFormGroup" (registerCompany)="registerCompany()"></app-step3>
-      </mat-step>
-
-
-    </mat-horizontal-stepper>
-  </form>
-</div>
