@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'http://pavi12.herokuapp.com/',
+  apiUrl: 'https://pavi12.herokuapp.com/',
   production: true
 };
