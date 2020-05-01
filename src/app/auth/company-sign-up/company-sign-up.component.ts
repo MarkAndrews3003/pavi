@@ -36,9 +36,9 @@ export class CompanySignUpComponent implements OnInit {
         }),
       accountInfo:
         this.fb.group({
-          full_name: ['', Validators.required],
+          first_name: ['', Validators.required],
+          last_name: ['', Validators.required],
           role: ['', Validators.required],
-          email: ['', Validators.required],
           password: ['', Validators.required],
           confirm_pass: ['', Validators.required],
           gender: ['', Validators.required],
@@ -47,6 +47,7 @@ export class CompanySignUpComponent implements OnInit {
       contactDetails:
         this.fb.group({
           phone: ['', Validators.required],
+          email: ['', Validators.required],
           address: ['', Validators.required],
           country: ['', Validators.required],
         }),
