@@ -15,7 +15,9 @@
     </div>
   </div>
   <div class="login-right-side">
-    <p class="login-text-1">Don't have an account ? <a class="login-text-2" (click)="router.navigate(['auth/user-registration'])">Sign Up Here</a></p>
+    <p class="login-text-1">Don't have an account ? <a class="login-text-2"
+                                                       (click)="router.navigate(['auth/user-registration'])">Sign Up
+      Here</a></p>
     <form class="login-form" [formGroup]="loginForm">
       <p class="login-text-3">Sign In</p>
       <p class="login-text-4">Chose versions of Sign In.</p>
@@ -32,16 +34,21 @@
       <div class="login-item">
         <label class="logos-item-label">Email Address</label>
         <input class="logos-item-input" placeholder="Email*" formControlName="email">
+        <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+        <mat-error *ngIf="isSubmitted && email.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
+        </mat-error>
       </div>
       <div class="login-item">
         <label class="logos-item-label">Password</label>
         <input class="logos-item-input" placeholder="Password*" type="password" formControlName="password">
+        <mat-error *ngIf="isSubmitted && pass.hasError('required')">Password is <strong>required</strong>
+        </mat-error>
         <a href="forgot" class="forgot-password">Forgot Password?</a>
       </div>
-      <div class="login-item login-item-checkbox">
-        <input type="checkbox">
-        <label class="checkbox-text">Stay Singed In</label>
-      </div>
+      <!--      <div class="login-item login-item-checkbox">-->
+      <!--        <input type="checkbox">-->
+      <!--        <label class="checkbox-text">Stay Singed In</label>-->
+      <!--      </div>-->
       <div class="login-buttons">
         <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>
         <a class="login-btn" (click)="login()">Sign In</a>

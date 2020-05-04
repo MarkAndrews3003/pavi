@@ -17,4 +17,9 @@ export class Step1Component implements OnInit {
   ngOnInit(): void {
   }
 
+  changeCountry(e) {
+    console.log(e.target.value)
+    this.companyInfoFormGroup.patchValue({country: e.target.value});
+  }
+
 }
