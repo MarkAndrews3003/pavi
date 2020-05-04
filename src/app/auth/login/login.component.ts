@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
+import {patternValidator} from '../../core/helpers/pattern-validator';
+import {EMAIL_PATTERN} from '../../core/constants/general';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  isSubmitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -20,16 +23,36 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
+      email: new FormControl(null, {
+        validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
+      }),
       password: ['', Validators.required]
     });
   }
 
   login() {
-    this.auth.login(this.loginForm.value).subscribe((dt:any) => {
-      this.router.navigate(['/']);
-      localStorage.setItem('token', dt.token);
-    });
+    this.isSubmitted = true;
+    if (this.loginForm.valid) {
+
+      this.auth.login(this.loginForm.value).subscribe(async (dt: any) => {
+        await this.router.navigate(['/']);
+        localStorage.setItem('token', dt.token);
+      });
+    }
+  }
+
+  /**
+   * E-mail field getter
+   */
+  get email(): AbstractControl {
+    return this.loginForm.get('email');
+  }
+
+  /**
+   * Password field getter
+   */
+  get pass(): AbstractControl {
+    return this.loginForm.get('password');
   }
 
 }
