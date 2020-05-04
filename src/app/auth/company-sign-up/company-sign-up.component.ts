@@ -33,6 +33,7 @@ export class CompanySignUpComponent implements OnInit {
         this.fb.group({
           name: ['', Validators.required],
           industry: ['', Validators.required],
+          country: ['', Validators.required],
         }),
       accountInfo:
         this.fb.group({
@@ -49,7 +50,6 @@ export class CompanySignUpComponent implements OnInit {
           phone: ['', Validators.required],
           email: ['', Validators.required],
           address: ['', Validators.required],
-          country: ['', Validators.required],
         }),
     });
   }
