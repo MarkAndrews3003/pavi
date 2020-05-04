@@ -914,15 +914,16 @@ footer {
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 70px;
+  height: 60px;
   border-radius: 35px;
   font-family: "Segoe Regular";
-  font-size: 30px;
+  font-size: 22px;
   line-height: 40px;
   border: 1px solid #0265C9;
   color: #0265C9 !important;
   transition: 0.3s ease-in-out;
   margin: 0 auto;
+  background: white;
 }
 
 .login-buttons {
@@ -1266,6 +1267,8 @@ footer {
   width: 90%;
   margin-bottom: 27px;
 }
+
+
 
 
 @media (max-width: 1700px) {
