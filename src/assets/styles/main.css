@@ -1075,7 +1075,6 @@ footer {
 }
 
 .logos-small-input {
-  width: 70px;
   background: #fff;
   font-size: 15px;
   line-height: 20px;
@@ -1085,7 +1084,7 @@ footer {
   padding-left: 20px;
   height: 50px;
   border: 0;
-  width: 30%;
+  width: 100%;
   margin-left: 10px;
 }
 
@@ -1314,6 +1313,23 @@ footer {
 .reset-text-7 {
   color: #0265C9 !important;
 }
+.reset-text-8 {
+  color: #45A357;
+  font-size: 40px;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  font-family: "Segoe UI Semibold";
+  text-align: center;
+}
+.reset-text-9 {
+  color: #000;
+  font-size: 25px;
+  font-family: "Segoe Regular";
+  line-height: 25px;
+  text-align: center;
+  max-width: 460px;
+  margin: 0 auto 90px !important;
+}
 .reset-text-2 {
   color: #707070;
   font-size: 20px;
@@ -1352,13 +1368,39 @@ footer {
 .reset-btn-1 img {
   margin-right: 13px;
 }
+.reset-text-10 {
+  font-size: 15px;
+  color: black;
+  font-family: "Segoe UI Semibold";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reset-item-code {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reset-item-code .reset-item-input {
+  width: 370px;
+}
+.reset-text-10 img {
+  margin-right: 5px;
+}
 .reset-btn-1:hover,
 .reset-btn-2:hover {
   cursor: pointer;
+  background: #bcc4cc;
 }
 .reset-block-2 {
   text-align: center;
   margin-bottom: 26px;
+}
+.reset-phone-hide {
+  display: none;
+}
+.reset-phone-open {
+  display: block;
 }
 .reset-text-3 {
   color: #000000;
@@ -1426,12 +1468,14 @@ footer {
 }
 .reset-buttons-1:hover,
 .reset-buttons-2:hover,
-.reset-buttons-3:hover {
+.reset-buttons-3:hover,
+.reset-buttons-4:hover {
   cursor: pointer;
   background: #0265C9;
   color: white !important;
 }
-.reset-buttons-2 {
+.reset-buttons-2,
+.reset-buttons-4 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1446,8 +1490,12 @@ footer {
   transition: 0.3s ease-in-out;
   margin: 0 auto;
 }
-
-
+.reset-buttons-4 {
+  width: 100%;
+}
+.receive-code-img {
+  margin: 40px 0;
+}
 
 
 
@@ -2094,6 +2142,18 @@ footer {
 }
 
 @media (max-width: 767px) {
+  .receive-code-img {
+    width: 100%;
+  }
+  .reset-item-code .reset-item-input {
+    width: 240px;
+  }
+  .password-reset-img {
+    width: 130px;
+  }
+  .reset-text-8 {
+    font-size: 30px;
+  }
   .reset-text-5 {
     font-size: 20px;
   }
@@ -2114,7 +2174,12 @@ footer {
   .reset-buttons-1,
   .reset-buttons-2 {
     width: 48%;
-    font-size: 20px
+    font-size: 20px;
+  }
+  .reset-buttons-3,
+  .reset-buttons-4 {
+    font-size: 20px;
+    height: 50px;
   }
   .reset-btn-1,
   .reset-btn-2,
@@ -2236,6 +2301,13 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .reset-item-code {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .reset-text-10 {
+    margin-top: 20px;
+  }
   .reset-block {
     padding: 40px 20px;
   }
@@ -2254,9 +2326,12 @@ footer {
   .reset-text-4 {
     font-size: 25px;
     line-height: 32px;
+    text-align: center;
   }
   .reset-buttons-1,
-  .reset-buttons-2 {
+  .reset-buttons-2,
+  .reset-buttons-3,
+  .reset-buttons-4 {
     width: 100%;
     margin-bottom: 20px;
     font-size: 16px;

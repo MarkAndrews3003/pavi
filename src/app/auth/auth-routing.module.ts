@@ -5,6 +5,9 @@ import {CompanySignUpComponent} from './company-sign-up/company-sign-up.componen
 import {LoginComponent} from './login/login.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
 import {SentEmailComponent} from './sent-email/sent-email.component';
+import {NewPasswordComponent} from './new-password/new-password.component';
+import {SubmittedPasswordComponent} from './submitted-password/submitted-password.component';
+import {ReciveCodeComponent} from './recive-code/recive-code.component';
 
 
 const routes: Routes = [
@@ -27,6 +30,18 @@ const routes: Routes = [
   {
     path: 'sent-email',
     component: SentEmailComponent
+  },
+  {
+    path: 'new-password',
+    component: NewPasswordComponent
+  },
+  {
+    path: 'submitted-password',
+    component: SubmittedPasswordComponent
+  },
+  {
+    path: 'recive-code',
+    component: ReciveCodeComponent
   }
 ];
 
