@@ -13,11 +13,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { SentEmailComponent } from './sent-email/sent-email.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { SubmittedPasswordComponent } from './submitted-password/submitted-password.component';
-import { ReciveCodeComponent } from './recive-code/recive-code.component';
+import { AuthComponent } from './auth.component';
+import { ReceiveCodeComponent } from './receive-code/receive-code.component';
 
 
 @NgModule({
-  declarations: [UserSignUpComponent, CompanySignUpComponent, Step1Component, Step2Component, Step3Component, ResetPasswordComponent, SentEmailComponent, NewPasswordComponent, SubmittedPasswordComponent, ReciveCodeComponent],
+  declarations: [UserSignUpComponent, CompanySignUpComponent, Step1Component, Step2Component, Step3Component, ResetPasswordComponent, SentEmailComponent, NewPasswordComponent, SubmittedPasswordComponent, AuthComponent, ReceiveCodeComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

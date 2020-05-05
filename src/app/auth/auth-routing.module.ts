@@ -7,8 +7,7 @@ import {ResetPasswordComponent} from './reset-password/reset-password.component'
 import {SentEmailComponent} from './sent-email/sent-email.component';
 import {NewPasswordComponent} from './new-password/new-password.component';
 import {SubmittedPasswordComponent} from './submitted-password/submitted-password.component';
-import {ReciveCodeComponent} from './recive-code/recive-code.component';
-
+import {ReceiveCodeComponent} from './receive-code/receive-code.component';
 
 const routes: Routes = [
   {
@@ -40,8 +39,8 @@ const routes: Routes = [
     component: SubmittedPasswordComponent
   },
   {
-    path: 'recive-code',
-    component: ReciveCodeComponent
+    path: 'receive-code',
+    component: ReceiveCodeComponent
   }
 ];
 
