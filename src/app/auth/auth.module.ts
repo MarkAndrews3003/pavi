@@ -11,10 +11,14 @@ import {Step3Component} from './company-sign-up/step3/step3.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SentEmailComponent } from './sent-email/sent-email.component';
+import { NewPasswordComponent } from './new-password/new-password.component';
+import { SubmittedPasswordComponent } from './submitted-password/submitted-password.component';
+import { AuthComponent } from './auth.component';
+import { ReceiveCodeComponent } from './receive-code/receive-code.component';
 
 
 @NgModule({
-  declarations: [UserSignUpComponent, CompanySignUpComponent, Step1Component, Step2Component, Step3Component, ResetPasswordComponent, SentEmailComponent],
+  declarations: [UserSignUpComponent, CompanySignUpComponent, Step1Component, Step2Component, Step3Component, ResetPasswordComponent, SentEmailComponent, NewPasswordComponent, SubmittedPasswordComponent, AuthComponent, ReceiveCodeComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
