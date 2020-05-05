@@ -33,6 +33,12 @@
         <a class="login-social"><i class="fab fa-facebook-square"></i></a>
       </div>
       <div>
+        <p class="login-text-7">Company</p>
+        <div class="line-block">
+          <span class="line-1"></span>
+          <span>OR</span>
+          <span class="line-1"></span>
+        </div>
         <mat-horizontal-stepper  labelPosition="bottom" #stepper [selectedIndex]="currentStep-1" (selectionChange)="stepChanged($event)">
           <!-- 'Step passed' sign-->
           <ng-template matStepperIcon="edit">

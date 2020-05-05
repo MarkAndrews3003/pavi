@@ -4,7 +4,10 @@ import {HttpClient} from '@angular/common/http';
 
 // JWT helper
 import {JwtHelperService} from '@auth0/angular-jwt';
+import jwtDecode from 'jwt-decode';
+
 import {Router} from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +30,22 @@ export class AuthService {
    */
   loggedIn() {
     return !this.jwtHelper.isTokenExpired();
+  }
+
+  /**
+   * Checks current user roles
+   * @param role passed role
+   */
+  checkRoles(role: string) {
+
+
+    if (this.loggedIn()) {
+      const userData = jwtDecode(localStorage.getItem('token'));
+      return userData.roles.map(r => {
+        return (r.toLowerCase().replace(' ', '_') === role);
+      }).some(Boolean);
+    }
+    return false;
   }
 
   async logOut() {

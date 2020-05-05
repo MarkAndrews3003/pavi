@@ -48,8 +48,8 @@
   <div class="section-block-1-left">
     <p class="text-1">In This Together.</p>
     <p class="text-2">Keeping You Securely Connected wherever You are.</p>
-    <a class="login-btn" (click)="router.navigate(['auth/login'])">Sign In</a>
-    <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
+    <a class="login-btn" *ngIf="!auth.loggedIn()" (click)="router.navigate(['auth/login'])">Sign In</a>
+    <a class="register-btn" *ngIf="!auth.loggedIn()" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
   </div>
   <div class="section-block-1-right">
     <img src="assets/images/big.svg">
