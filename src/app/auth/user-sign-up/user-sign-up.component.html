@@ -1,6 +1,6 @@
 <section class="register-content">
   <div class="register-left-side">
-    <img class="register-big-img" src="assets/images/login-1.svg">
+    <img class="register-big-img" src="assets/images/login-1.svg" (click)="router.navigate(['/'])">
     <div class="left-block-4" (click)="router.navigate(['auth/user-registration'])">
       <div>
         <img src="assets/images/img-30.svg">
@@ -63,7 +63,8 @@
           <div class="login-item">
             <label class="logos-item-label">Email</label>
             <input class="logos-item-input" placeholder="Email*" formControlName="email">
-            <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+            <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong>
+            </mat-error>
             <mat-error *ngIf="isSubmitted && email.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
             </mat-error>
           </div>

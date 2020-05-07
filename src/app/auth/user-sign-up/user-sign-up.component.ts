@@ -44,11 +44,10 @@ export class UserSignUpComponent implements OnInit {
   register() {
     this.isSubmitted = true;
     if (this.userRegisterForm.valid) {
-      console.log('valid')
-      // this.auth.register(this.userRegisterForm.value).subscribe((dt: any) => {
-      //   this.router.navigate(['/']);
-      //   localStorage.setItem('token', dt.token);
-      // });
+      this.auth.register(this.userRegisterForm.value).subscribe((dt: any) => {
+        this.router.navigate(['/']);
+        localStorage.setItem('token', dt.token);
+      });
     }
   }
 

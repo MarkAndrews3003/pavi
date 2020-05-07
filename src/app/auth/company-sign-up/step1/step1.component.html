@@ -5,32 +5,39 @@
       <div class="login-item">
         <label class="logos-item-label">Company Name</label>
         <input formControlName="name" class="logos-item-input" placeholder="Company Name*">
+        <mat-error *ngIf="isSubmitted && companyCtrl.hasError('required')">Company name is <strong>required</strong>
+        </mat-error>
       </div>
-      <mat-form-field>
-        <mat-select formControlName="industry" placeholder="Select industry" >
-          <mat-option *ngFor="let industry of industries" [value]="industry">
-            {{industry}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <label for="industry" class="logos-item-label">Industry</label>
+      <select id="industry" class="logos-item-input" (change)="changeIndustry($event)" formControlName="industry">
+        <option selected disabled [value]="''">Industry*</option>
+        <option *ngFor="let industry of industries" [value]="industry">
+          {{industry}}
+        </option>
+      </select>
+      <mat-error *ngIf="isSubmitted && industryCtrl.hasError('required')">Industry is <strong>required</strong>
+      </mat-error>
     </div>
     <div>
       <div class="login-item">
-        <label class="logos-item-label">Country</label>
-        <select class="logos-item-input" (change)="changeCountry($event)">
-          <option>Country*</option>
-          <option>USA</option>
-          <option>China</option>
+        <label for="country" class="logos-item-label">Country</label>
+        <select id="country" class="logos-item-input" (change)="changeCountry($event)" formControlName="country">
+          <option disabled selected [value]="''">Country*</option>
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
         </select>
       </div>
+      <mat-error *ngIf="isSubmitted && countryCtrl.hasError('required')">Country is <strong>required</strong>
+      </mat-error>
     </div>
+
   </div>
   <div class="last-block-form">
     <div class="register-buttons">
-<!--      <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>-->
+      <!--      <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>-->
     </div>
     <div class="register-buttons">
-      <button class="login-btn" matStepperNext>Next<i class="fas fa-chevron-right"></i></button>
+      <button class="login-btn" matStepperNext (click)="submit()">Next<i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </form>

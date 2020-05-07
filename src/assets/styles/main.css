@@ -11,25 +11,31 @@ input, button {
   margin: 0;
   padding: 0;
 }
+
 input {
   border: 1px solid silver;
   border-radius: 20px;
   display: block;
 }
+
 button:hover {
   outline: none;
   cursor: pointer;
 }
+
 a, a:hover {
   text-decoration: none;
 }
+
 button:active, button:focus {
   outline: none !important;
 }
+
 li {
   padding: 0;
   list-style-type: none;
 }
+
 .home-header {
   min-height: 100px;
   display: flex;
@@ -37,35 +43,43 @@ li {
   align-items: center;
   padding: 0 140px;
 }
+
 .header-left {
   display: flex;
   align-items: center;
   font-family: "Segoe Regular";
 }
+
 .header-right ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header-right ul li {
   margin-left: 38px;
 }
+
 .header-right ul li a {
   font-family: "Segoe Regular";
   font-size: 20px;
   color: #0265C9;
 }
+
 .header-right ul li a.active {
   font-family: "Segoe Bold";
 }
+
 .header-right ul li a:hover {
   font-family: "Segoe Bold";
 }
+
 .header-btns {
   margin-left: 60px;
   margin-right: 35px;
   position: relative;
 }
+
 .header-btns input {
   width: 600px;
   height: 38px;
@@ -135,6 +149,7 @@ header {
   font-family: "Arial Bold";
   font-size: 18px;
 }
+
 .footer-content {
   font-size: 15px;
   background: white;
@@ -143,6 +158,7 @@ header {
   text-align: center;
   padding: 10px 0;
 }
+
 .language-dropdown button {
   background: #0265C9;
   border-radius: 8px;
@@ -394,6 +410,7 @@ header {
   flex-direction: column;
   transition: 0.3s ease-in-out;
 }
+
 .text-11 {
   font-size: 13px;
   font-family: "Segoe Bold";
@@ -401,6 +418,7 @@ header {
   height: 86px;
   text-align: center;
 }
+
 .logos-item:hover {
   background: white;
   cursor: pointer;
@@ -436,6 +454,7 @@ header {
   border: 1px solid #0265C9;
   border-radius: 50px;
 }
+
 .text-6 i {
   font-size: 17px;
   margin-left: 9px;
@@ -880,9 +899,11 @@ footer {
   outline: none;
   color: #CCCCCC;
 }
+
 .logos-item-input:focus {
   border: 1px solid #CCCCCC;
 }
+
 .logos-item-input::placeholder {
   color: #CCCCCC;
 }
@@ -1268,6 +1289,7 @@ footer {
   width: 90%;
   margin-bottom: 27px;
 }
+
 .reset-content {
   display: flex;
   justify-content: center;
@@ -1276,6 +1298,7 @@ footer {
   width: 100%;
   background: #FAFAFA;
 }
+
 .reset-block {
   width: 700px;
   border-radius: 60px;
@@ -1284,12 +1307,14 @@ footer {
   padding: 80px 100px;
   margin: 40px 0;
 }
+
 .reset-text-1 {
   color: #0265C9;
   font-size: 40px;
   font-family: "Segoe UI Semibold";
   line-height: 70px;
 }
+
 .reset-text-4 {
   color: #0265C9;
   font-size: 40px;
@@ -1297,6 +1322,7 @@ footer {
   line-height: 70px;
   text-align: center;
 }
+
 .reset-text-5 {
   color: #000;
   font-size: 25px;
@@ -1306,13 +1332,16 @@ footer {
   max-width: 460px;
   margin: 0 auto 40px !important;
 }
+
 .reset-text-6 {
   color: #F15A24;
   font-family: "Segoe Bold";
 }
+
 .reset-text-7 {
   color: #0265C9 !important;
 }
+
 .reset-text-8 {
   color: #45A357;
   font-size: 40px;
@@ -1321,6 +1350,7 @@ footer {
   font-family: "Segoe UI Semibold";
   text-align: center;
 }
+
 .reset-text-9 {
   color: #000;
   font-size: 25px;
@@ -1330,16 +1360,19 @@ footer {
   max-width: 460px;
   margin: 0 auto 90px !important;
 }
+
 .reset-text-2 {
   color: #707070;
   font-size: 20px;
   font-family: "Segoe Regular";
   margin-bottom: 25px !important;
 }
+
 .reset-header {
   display: flex;
   margin-bottom: 35px;
 }
+
 .reset-btn-1 {
   display: flex;
   justify-content: flex-start;
@@ -1354,6 +1387,7 @@ footer {
   font-family: "Segoe Regular";
   transition: 0.3s ease-in-out;
 }
+
 .reset-btn-2 {
   margin-left: 14px;
   display: flex;
@@ -1365,9 +1399,11 @@ footer {
   background: #F2F2F2;
   transition: 0.3s ease-in-out;
 }
+
 .reset-btn-1 img {
   margin-right: 13px;
 }
+
 .reset-text-10 {
   font-size: 15px;
   color: black;
@@ -1376,32 +1412,40 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .reset-item-code {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .reset-item-code .reset-item-input {
   width: 370px;
 }
+
 .reset-text-10 img {
   margin-right: 5px;
 }
+
 .reset-btn-1:hover,
 .reset-btn-2:hover {
   cursor: pointer;
   background: #bcc4cc;
 }
+
 .reset-block-2 {
   text-align: center;
   margin-bottom: 26px;
 }
+
 .reset-phone-hide {
   display: none;
 }
+
 .reset-phone-open {
   display: block;
 }
+
 .reset-text-3 {
   color: #000000;
   font-size: 15px;
@@ -1465,13 +1509,16 @@ footer {
   margin: 0 auto;
   background: white;
 }
+
 .reset-buttons-1 i,
 .reset-buttons-3 i {
   margin-right: 10px;
 }
+
 .reset-buttons-3 {
   width: 100%;
 }
+
 .reset-buttons-1:hover,
 .reset-buttons-2:hover,
 .reset-buttons-3:hover,
@@ -1480,6 +1527,7 @@ footer {
   background: #0265C9;
   color: white !important;
 }
+
 .reset-buttons-2,
 .reset-buttons-4 {
   display: flex;
@@ -1496,21 +1544,14 @@ footer {
   transition: 0.3s ease-in-out;
   margin: 0 auto;
 }
+
 .reset-buttons-4 {
   width: 100%;
 }
+
 .receive-code-img {
   margin: 40px 0;
 }
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 1700px) {
@@ -1518,6 +1559,7 @@ footer {
     width: 85%;
     margin-bottom: 40px;
   }
+
   .register-big-img {
     width: 560px;
   }
@@ -1598,6 +1640,7 @@ footer {
   .section-block-4 {
     padding: 0 40px;
   }
+
   .section-block-3 {
     padding: 0 40px 70px;
   }
@@ -2153,18 +2196,23 @@ footer {
   .receive-code-img {
     width: 100%;
   }
+
   .reset-item-code .reset-item-input {
     width: 240px;
   }
+
   .password-reset-img {
     width: 130px;
   }
+
   .reset-text-8 {
     font-size: 30px;
   }
+
   .reset-text-5 {
     font-size: 20px;
   }
+
   .reset-block {
     width: 100%;
     height: 700px;
@@ -2172,23 +2220,28 @@ footer {
     margin: 60px 0;
     border-radius: 0;
   }
+
   .reset-text-1,
   .reset-text-4 {
     font-size: 30px;
   }
+
   .reset-content {
     align-items: flex-start;
   }
+
   .reset-buttons-1,
   .reset-buttons-2 {
     width: 48%;
     font-size: 20px;
   }
+
   .reset-buttons-3,
   .reset-buttons-4 {
     font-size: 20px;
     height: 50px;
   }
+
   .reset-btn-1,
   .reset-btn-2,
   .reset-item-input,
@@ -2196,16 +2249,20 @@ footer {
   .reset-buttons-2 {
     height: 50px;
   }
+
   .footer-content {
     font-size: 12px;
     line-height: 12px;
   }
+
   .logos-item {
     padding: 25px 40px;
   }
+
   .logos-item img {
     width: 110px;
   }
+
   .register-big-img {
     width: 400px;
   }
@@ -2313,29 +2370,36 @@ footer {
     justify-content: center;
     flex-direction: column;
   }
+
   .reset-text-10 {
     margin-top: 20px;
   }
+
   .reset-block {
     padding: 40px 20px;
   }
+
   .reset-text-2 {
     font-size: 16px;
   }
+
   .reset-item {
     margin-bottom: 40px;
   }
+
   .reset-buttons {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .reset-text-1,
   .reset-text-4 {
     font-size: 25px;
     line-height: 32px;
     text-align: center;
   }
+
   .reset-buttons-1,
   .reset-buttons-2,
   .reset-buttons-3,
@@ -2344,23 +2408,29 @@ footer {
     margin-bottom: 20px;
     font-size: 16px;
   }
+
   .reset-buttons-1 i {
     margin-right: 10px;
   }
+
   .reset-btn-1 {
     padding-left: 10px;
   }
+
   .reset-btn-1 img {
     margin-right: 13px;
     width: 20px;
   }
+
   .reset-btn-2 img {
     width: 20px;
   }
+
   .footer-content {
     font-size: 10px;
     line-height: 16px;
   }
+
   .text-6 {
     font-size: 16px;
     height: 35px;
@@ -2370,9 +2440,11 @@ footer {
     font-size: 14px;
     margin-left: 9px;
   }
+
   .text-2 {
     margin-bottom: 30px !important;
   }
+
   .register-text-1 {
     margin-left: 0px !important;
     margin: 10px auto !important;
@@ -2472,6 +2544,7 @@ footer {
   .footer-item {
     width: 100%;
   }
+
   .logos-item img {
     width: 100px;
     margin-bottom: 0;
@@ -2482,6 +2555,7 @@ footer {
     width: 100%;
     margin-bottom: 20px;
   }
+
   .text-5 {
     font-size: 16px;
   }
@@ -2549,6 +2623,11 @@ footer {
     width: 100%;
   }
 }
+
 .login-text-2 {
   cursor: pointer;
+}
+
+.mat-step-header {
+  pointer-events: none;
 }

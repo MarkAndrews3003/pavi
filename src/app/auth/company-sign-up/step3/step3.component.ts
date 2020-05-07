@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {AbstractControl, FormGroup} from '@angular/forms';
 import {COUNTRY_LIST} from '../../../core/constants/countries';
 
 @Component({
@@ -10,7 +10,7 @@ import {COUNTRY_LIST} from '../../../core/constants/countries';
 export class Step3Component implements OnInit {
   @Input('group') companyDetailsFormGroup: FormGroup;
   @Output('registerCompany') register = new EventEmitter();
-  countries = COUNTRY_LIST;
+  isSubmitted = false;
 
   constructor() {
   }
@@ -19,6 +19,24 @@ export class Step3Component implements OnInit {
   }
 
   registerCompany() {
-    this.register.emit();
+    this.isSubmitted = true;
+    if (this.companyDetailsFormGroup.valid) {
+      this.register.emit();
+    }
+  }
+
+  /**
+   * E-mail field getter
+   */
+  get email(): AbstractControl {
+    return this.companyDetailsFormGroup.get('email');
+  }
+
+  get phone(): AbstractControl {
+    return this.companyDetailsFormGroup.get('phone');
+  }
+
+  get address(): AbstractControl {
+    return this.companyDetailsFormGroup.get('address');
   }
 }
