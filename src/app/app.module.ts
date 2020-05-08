@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RequestInterceptor} from './core/helpers/http.interceptor';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -27,7 +28,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
