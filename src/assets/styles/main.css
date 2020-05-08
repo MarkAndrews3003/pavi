@@ -403,7 +403,6 @@ header {
   width: 370px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  padding: 60px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1716,6 +1715,13 @@ footer {
   align-items: center;
   font-size: 30px;
   font-family: "Segoe Regular";
+  transition: 0.3s ease-in-out;
+}
+.profile-save-btn:hover {
+  cursor: pointer;
+  background: white;
+  color: #0265C9 !important;
+  border: 1px solid #0265C9;
 }
 .profile-item {
   display: flex;
@@ -1819,7 +1825,7 @@ footer {
 .profile-logos-center .owl-carousel .owl-nav button.owl-prev {
   position: absolute;
   top: -60px;
-  left: -44px;
+  left: 1px;
   width: 50px;
   font-size: 75px;
   transform: rotate(90deg);
@@ -1829,7 +1835,7 @@ footer {
 }
 .profile-logos-center .owl-carousel .owl-nav button.owl-next {
   position: absolute;
-  bottom: -60px;
+  bottom: -75px;
   left: 0;
   width: 50px;
   font-size: 75px;
@@ -1872,10 +1878,54 @@ footer {
   box-shadow: 0px 0px 10px #87878729;
 }
 
+.login-text-2 {
+  cursor: pointer;
+}
+
+.mat-step-header {
+  pointer-events: none;
+}
+.change-email-btn {
+  width: 260px;
+  height: 60px;
+  border: 1px solid #0265C9;
+  color: #0265C9 !important;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: "Segoe Regular";
+  transition: 0.3s ease-in-out;
+}
+.change-email-btn:hover {
+  background: #0265C9;
+  color: white !important;
+  cursor: pointer;
+}
+.profile-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-btns .profile-item {
+  justify-content: flex-end;
+}
+
+
+
+
+
 
 
 
 @media (max-width: 1900px) {
+  .profile-btns .profile-item {
+    margin-right: 40px;
+  }
+  .profile-btns {
+    width: 83%;
+  }
   .section-block-10 {
     padding: 0 90px;
   }
@@ -1883,11 +1933,27 @@ footer {
     padding: 0 90px;
   }
 }
-
-
 @media (max-width: 1700px) {
+  .profile-btns .profile-item {
+    margin-right: 0;
+  }
+  .profile-logos-center .logos-item {
+    width: 280px;
+  }
   .profile-logos-center {
-    width: 52%;
+    width: 51%;
+  }
+  .profile-logos-block .logos-item {
+    width: 230px;
+  }
+  .profile-logos-block .logos-block {
+    padding: 0 20px;
+  }
+  .profile-logos-block .logos-item {
+    padding: 0;
+  }
+  .profile-logos-block .logos-item-img img {
+    width: 100px;
   }
   .profile-logos-center .logos-item-img img {
     width: 170px;
@@ -2070,6 +2136,15 @@ footer {
   }
 }
 @media (max-width: 1400px) {
+  .profile-logos {
+    padding: 0 25px;
+  }
+  .profile-logos-center {
+    width: 48%;
+  }
+  .dotes-1, .dotes-2 {
+    display: none;
+  }
   .section-block-10 {
     height: 990px;
   }
@@ -2230,8 +2305,62 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .change-email-btn {
+    font-size: 24px;
+  }
+  .profile-btns {
+    width: 83%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile-btns .profile-item {
+    justify-content: center;
+  }
+  .profile-logos {
+    flex-direction: column;
+  }
+  .profile-logos-block {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .profile-logos-center {
+    margin: 0 auto;
+  }
+  .profile-logos-block .logos-item-img {
+    height: 70px;
+    border-radius: 0;
+  }
+  .profile-logos-block .logos-item-img img {
+    width: 55px;
+  }
+  .profile-logos-center .logos-item-img img {
+    width: 115px;
+  }
+  .logos-block {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .profile-logos-center {
+    width: 490px;
+  }
+  .text-6 {
+    font-size: 17px;
+     height: 40px;
+  }
+  .profile-logos-center .logos-item {
+    width: 230px;
+  }
+  .logos-item-img {
+    height: 70px;
+    border-radius: 0;
+  }
   .section-block-10 {
     height: auto;
+  }
+  .profile-logos-center .owl-carousel .owl-nav button.owl-next {
+    bottom: -35px;
   }
   .home-header {
     padding: 0 10px;
@@ -2600,7 +2729,6 @@ footer {
     font-size: 16px;
   }
 }
-
 @media (max-width: 767px) {
   .profile-item input {
     width: 58%;
@@ -2637,13 +2765,18 @@ footer {
   .logos-item-img {
     height: 100px;
   }
-  .logos-block {
-    padding: 0;
-  }
   .receive-code-img {
     width: 100%;
   }
-
+  .profile-logos-block .logos-item-img img {
+    width: 70px;
+  }
+  .profile-logos-center .logos-item {
+    width: 190px;
+  }
+  .profile-logos-center {
+    width: 100%;
+  }
   .reset-item-code .reset-item-input {
     width: 240px;
   }
@@ -2700,14 +2833,6 @@ footer {
   .footer-content {
     font-size: 12px;
     line-height: 12px;
-  }
-
-  .logos-item {
-    padding: 25px 40px;
-  }
-
-  .logos-item img {
-    width: 110px;
   }
 
   .register-big-img {
@@ -2810,9 +2935,31 @@ footer {
     max-width: 400px;
     line-height: 31px;
   }
+  .profile-item input::placeholder {
+    font-size: 20px;
+  }
+  .profile-item label {
+    font-size: 20px;
+  }
 }
-
 @media (max-width: 480px) {
+  .profile-btns {
+    width: 100%;
+  }
+  .change-email-btn,
+  .profile-save-btn,
+  .profile-edit-btn {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+  }
+  .profile-logos-center .logos-item {
+    width: 100%;
+    margin: 0;
+  }
+  .profile-logos-block {
+    align-items: center;
+  }
   .section-block-11 .system-decor {
     height: 80px;
     border: 0;
@@ -2820,6 +2967,10 @@ footer {
   .see-all-jobs {
     margin-right: 0;
     margin-top: 20px;
+  }
+  .profile-logos-block {
+    align-items: center;
+    flex-direction: column;
   }
   .section-block-11 .system-decor-1 {
     width: 100%;
@@ -2851,9 +3002,7 @@ footer {
     font-size: 20px;
     margin-right: 0;
   }
-  .profile-item input::placeholder {
-    font-size: 20px;
-  }
+
   .mask-text-2 {
     font-size: 23px;
   }
@@ -3067,12 +3216,10 @@ footer {
   }
 
   .logos-item img {
-    width: 100px;
     margin-bottom: 0;
   }
 
   .logos-item {
-    padding: 20px;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -3143,12 +3290,4 @@ footer {
     flex-direction: column;
     width: 100%;
   }
-}
-
-.login-text-2 {
-  cursor: pointer;
-}
-
-.mat-step-header {
-  pointer-events: none;
 }
