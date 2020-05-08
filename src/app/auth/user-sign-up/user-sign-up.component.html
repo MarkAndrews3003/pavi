@@ -29,9 +29,9 @@
       <p class="login-text-3">Sign Up</p>
       <p class="login-text-4">Chose versions of Sign In.</p>
       <div class="login-block-1 mb-4">
-        <a class="login-google"><i class="fab fa-google"></i> Sign Up With Google</a>
-        <a class="login-social"><i class="fab fa-twitter"></i></a>
-        <a class="login-social"><i class="fab fa-facebook-square"></i></a>
+        <a class="login-google" [href]="getGoogleAuthUrl()"><i class="fab fa-google"></i> Sign Up With Google</a>
+        <a class="login-social" [href]="getTwitterAuthUrl()"><i class="fab fa-twitter"></i></a>
+        <a class="login-social" [href]="getFbAuthUrl()"><i class="fab fa-facebook-square"></i></a>
       </div>
       <p class="login-text-7">Private</p>
       <div class="line-block">

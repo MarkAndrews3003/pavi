@@ -4,7 +4,7 @@ import {CompaniesService} from '../../core/services/companies.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {EMAIL_PATTERN} from '../../core/constants/general';
+import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
 
 @Component({
   selector: 'app-company-sign-up',
@@ -74,6 +74,17 @@ export class CompanySignUpComponent implements OnInit {
         localStorage.setItem('token', dt.token);
       });
     }
+  }
+
+  getGoogleAuthUrl() {
+    return `${API_URL}auth/google`;
+  }
+  getFbAuthUrl() {
+    return `${API_URL}auth/facebook`;
+  }
+
+  getTwitterAuthUrl() {
+    return `${API_URL}auth/twitter`;
   }
 
 
