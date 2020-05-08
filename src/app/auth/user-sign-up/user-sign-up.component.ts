@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {EMAIL_PATTERN} from '../../core/constants/general';
+import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
 import {passwordConfirmation} from '../../core/helpers/password-confirmation';
 
 @Component({
@@ -44,11 +44,10 @@ export class UserSignUpComponent implements OnInit {
   register() {
     this.isSubmitted = true;
     if (this.userRegisterForm.valid) {
-      console.log('valid')
-      // this.auth.register(this.userRegisterForm.value).subscribe((dt: any) => {
-      //   this.router.navigate(['/']);
-      //   localStorage.setItem('token', dt.token);
-      // });
+      this.auth.register(this.userRegisterForm.value).subscribe((dt: any) => {
+        this.router.navigate(['/']);
+        localStorage.setItem('token', dt.token);
+      });
     }
   }
 
@@ -58,6 +57,17 @@ export class UserSignUpComponent implements OnInit {
 
   comparePasswords() {
     this.passwordsMatch = this.pass.value === this.confirmPass.value;
+  }
+
+  getGoogleAuthUrl() {
+    return `${API_URL}auth/google`;
+  }
+  getFbAuthUrl() {
+    return `${API_URL}auth/facebook`;
+  }
+
+  getTwitterAuthUrl() {
+    return `${API_URL}auth/twitter`;
   }
 
   /**

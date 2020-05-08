@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {AbstractControl, FormGroup} from '@angular/forms';
 import {INDUSTRY_LIST} from '../../../core/constants/industries';
+import {COUNTRY_LIST} from '../../../core/constants/countries';
 
 @Component({
   selector: 'app-step1',
@@ -10,6 +11,8 @@ import {INDUSTRY_LIST} from '../../../core/constants/industries';
 export class Step1Component implements OnInit {
   @Input('group') companyInfoFormGroup: FormGroup;
   industries = INDUSTRY_LIST;
+  countries = COUNTRY_LIST;
+  isSubmitted = false;
 
   constructor() {
   }
@@ -18,8 +21,27 @@ export class Step1Component implements OnInit {
   }
 
   changeCountry(e) {
-    console.log(e.target.value)
     this.companyInfoFormGroup.patchValue({country: e.target.value});
+  }
+
+  changeIndustry(e) {
+    this.companyInfoFormGroup.patchValue({industry: e.target.value});
+  }
+
+  submit() {
+    this.isSubmitted = true;
+  }
+
+  get companyCtrl(): AbstractControl {
+    return this.companyInfoFormGroup.get('name');
+  }
+
+  get industryCtrl(): AbstractControl {
+    return this.companyInfoFormGroup.get('industry');
+  }
+
+  get countryCtrl(): AbstractControl {
+    return this.companyInfoFormGroup.get('country');
   }
 
 }

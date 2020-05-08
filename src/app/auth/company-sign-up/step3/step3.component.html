@@ -1,25 +1,24 @@
 <form [formGroup]="companyDetailsFormGroup">
-  <p class="login-text-7">Company</p>
-  <div class="line-block">
-    <span class="line-1"></span>
-    <span>OR</span>
-    <span class="line-1"></span>
-  </div>
   <div class="register-block-1">
     <div>
       <div class="login-item">
         <label class="logos-item-label">Mobile Phone</label>
         <input formControlName="phone" placeholder="Mobile Phone*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && phone.hasError('required')">Phone is <strong>required</strong></mat-error>
       </div>
       <div class="login-item">
         <label class="logos-item-label">Email</label>
         <input formControlName="email" placeholder="Email*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+        <mat-error *ngIf="isSubmitted && email.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
+        </mat-error>
       </div>
     </div>
     <div>
       <div class="login-item">
         <label class="logos-item-label">Address</label>
         <input formControlName="address" placeholder="Address*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && address.hasError('required')">Address is <strong>required</strong></mat-error>
       </div>
     </div>
   </div>

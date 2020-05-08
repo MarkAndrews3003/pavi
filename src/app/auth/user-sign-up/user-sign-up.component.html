@@ -1,6 +1,6 @@
 <section class="register-content">
   <div class="register-left-side">
-    <img class="register-big-img" src="assets/images/login-1.svg">
+    <img class="register-big-img" src="assets/images/login-1.svg" (click)="router.navigate(['/'])">
     <div class="left-block-4" (click)="router.navigate(['auth/user-registration'])">
       <div>
         <img src="assets/images/img-30.svg">
@@ -29,9 +29,9 @@
       <p class="login-text-3">Sign Up</p>
       <p class="login-text-4">Chose versions of Sign In.</p>
       <div class="login-block-1 mb-4">
-        <a class="login-google"><i class="fab fa-google"></i> Sign Up With Google</a>
-        <a class="login-social"><i class="fab fa-twitter"></i></a>
-        <a class="login-social"><i class="fab fa-facebook-square"></i></a>
+        <a class="login-google" [href]="getGoogleAuthUrl()"><i class="fab fa-google"></i> Sign Up With Google</a>
+        <a class="login-social" [href]="getTwitterAuthUrl()"><i class="fab fa-twitter"></i></a>
+        <a class="login-social" [href]="getFbAuthUrl()"><i class="fab fa-facebook-square"></i></a>
       </div>
       <p class="login-text-7">Private</p>
       <div class="line-block">
@@ -63,7 +63,8 @@
           <div class="login-item">
             <label class="logos-item-label">Email</label>
             <input class="logos-item-input" placeholder="Email*" formControlName="email">
-            <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong></mat-error>
+            <mat-error *ngIf="isSubmitted && email.hasError('required')">E-mail is <strong>required</strong>
+            </mat-error>
             <mat-error *ngIf="isSubmitted && email.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
             </mat-error>
           </div>

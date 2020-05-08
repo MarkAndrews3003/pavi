@@ -1,25 +1,28 @@
-<form [formGroup]="accountInfoFormGroup">
-  <p class="login-text-7">Company</p>
-  <div class="line-block">
-    <span class="line-1"></span>
-    <span>OR</span>
-    <span class="line-1"></span>
-  </div>
+<form [formGroup]="accountInfo">
+  <ng-template matStepLabel>Account info</ng-template>
   <div class="register-block-1">
     <div>
       <div class="login-item">
         <label class="logos-item-label">First Name</label>
         <input formControlName="first_name" placeholder="First Name*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && firstName.hasError('required')">First name is
+          <strong>required</strong>
+        </mat-error>
       </div>
       <div class="login-item">
         <label class="logos-item-label">Password</label>
         <input type="password" formControlName="password" placeholder="Password*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && pass.hasError('required')">Password is <strong>required</strong>
+        </mat-error>
       </div>
     </div>
     <div>
       <div class="login-item">
         <label class="logos-item-label">Last Name</label>
         <input formControlName="last_name" placeholder="Last Name*" class="logos-item-input">
+        <mat-error *ngIf="isSubmitted && lastName.hasError('required')">Last name is
+          <strong>required</strong>
+        </mat-error>
       </div>
       <div class="login-item">
         <label class="logos-item-label">Gender</label>
@@ -33,18 +36,19 @@
             <label for="female">Female</label><br>
           </div>
         </div>
+        <mat-error *ngIf="isSubmitted && gender.hasError('required')">Gender is <strong>required</strong>
+        </mat-error>
       </div>
     </div>
   </div>
+
   <div class="last-block-form">
     <div class="register-buttons">
       <button class="reset-btn" matStepperPrevious><i class="fas fa-chevron-left"></i>Previous</button>
     </div>
     <div class="register-buttons">
-      <button class="login-btn" matStepperNext>Next<i class="fas fa-chevron-right"></i></button>
+      <button class="login-btn" matStepperNext (click)="isSubmitted = true">Next<i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 </form>
-
-
-

@@ -1,11 +1,11 @@
 <section class="register-content">
   <div class="register-left-side">
-    <img class="register-big-img" src="assets/images/login-1.svg">
+    <img class="register-big-img" src="assets/images/login-1.svg" (click)="router.navigate(['/'])">
     <div class="left-block-4">
       <div (click)="router.navigate(['auth/user-registration'])">
         <img src="assets/images/img-30.svg">
         <div class="left-block-5">
-          <p class="login-text-5" >Private</p>
+          <p class="login-text-5">Private</p>
           <p class="login-text-8">Personal</p>
         </div>
       </div>
@@ -15,7 +15,7 @@
       <div (click)="router.navigate(['auth/company-registration'])">
         <img src="assets/images/img-32.svg">
         <div class="left-block-5">
-          <p class="login-text-5" >Company</p>
+          <p class="login-text-5">Company</p>
           <p class="login-text-8">Business</p>
         </div>
       </div>
@@ -23,45 +23,53 @@
     </div>
   </div>
   <div class="register-right-side">
-    <p class="register-text-1">Don't have an account ? <a class="login-text-2" (click)="router.navigate(['auth/user-registration'])">Sign In Here</a></p>
-    <form class="register-form" [formGroup]="companyRegistrationForm" >
-      <p class="login-text-3">Sign Up</p>
-      <p class="login-text-4">Chose versions of Sign In.</p>
-      <div class="login-block-1 mb-4">
-        <a class="login-google"><i class="fab fa-google"></i> Sign Up With Google</a>
-        <a class="login-social"><i class="fab fa-twitter"></i></a>
-        <a class="login-social"><i class="fab fa-facebook-square"></i></a>
+    <p class="register-text-1">Don't have an account ? <a class="login-text-2"
+                                                          (click)="router.navigate(['auth/user-registration'])">Sign In
+      Here</a></p>
+    <p class="login-text-3">Sign Up</p>
+    <p class="login-text-4">Chose versions of Sign In.</p>
+    <div class="login-block-1 mb-4">
+      <a class="login-google" [href]="getGoogleAuthUrl()"><i class="fab fa-google"></i> Sign Up With Google</a>
+      <a class="login-social" [href]="getTwitterAuthUrl()"><i class="fab fa-twitter"></i></a>
+      <a class="login-social" [href]="getFbAuthUrl()"><i class="fab fa-facebook-square"></i></a>
+    </div>
+    <div>
+      <p class="login-text-7">Company</p>
+      <div class="line-block">
+        <span class="line-1"></span>
+        <span>OR</span>
+        <span class="line-1"></span>
       </div>
-      <div>
-        <p class="login-text-7">Company</p>
-        <div class="line-block">
-          <span class="line-1"></span>
-          <span>OR</span>
-          <span class="line-1"></span>
-        </div>
-        <mat-horizontal-stepper  labelPosition="bottom" #stepper [selectedIndex]="currentStep-1" (selectionChange)="stepChanged($event)">
+
+      <form [formGroup]="companyRegistrationForm">
+
+        <mat-horizontal-stepper [linear]="isLinear" #stepper [selectedIndex]="currentStep-1" labelPosition="bottom">
+
           <!-- 'Step passed' sign-->
           <ng-template matStepperIcon="edit">
             <mat-icon>done</mat-icon>
           </ng-template>
-          <!--  Step 1 -->
-          <mat-step [stepControl]="companyRegistrationForm.get('companyInfo')">
+
+          <!-- Step 1 -->
+          <mat-step [stepControl]="companyInfo">
             <ng-template matStepLabel>Company info</ng-template>
-            <app-step1 [group]="companyInfoFormGroup"></app-step1>
+            <app-step1 [group]="companyInfo"></app-step1>
           </mat-step>
+
           <!-- Step 2 -->
-          <mat-step [stepControl]="companyRegistrationForm.get('personalInfo')">
+          <mat-step [stepControl]="accountInfo">
             <ng-template matStepLabel>Account info</ng-template>
-            <app-step2 [group]="accountInfoFormGroup"></app-step2>
+            <app-step2 [group]="accountInfo"></app-step2>
           </mat-step>
-          <!--  Step 3 -->
-          <mat-step [stepControl]="companyRegistrationForm.get('companyDetails')">
+
+          <!-- Step 3 -->
+          <mat-step>
             <ng-template matStepLabel>Company details</ng-template>
-            <app-step3 [group]="companyDetailsFormGroup" (registerCompany)="registerCompany()"></app-step3>
+            <app-step3 [group]="contactDetails" (registerCompany)="registerCompany()"></app-step3>
           </mat-step>
         </mat-horizontal-stepper>
-      </div>
-    </form>
+
+      </form>
+    </div>
   </div>
 </section>
-
