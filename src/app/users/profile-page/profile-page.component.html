@@ -101,6 +101,8 @@
             </div>
           </div>
           <div class="changes-passwords">
+            <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
+
             <div class="profile-item">
               <label>Old Password:</label>
               <input placeholder="AB********123">
@@ -113,6 +115,7 @@
               <label>Confirm New Password:</label>
               <input placeholder="Confirm New Password">
             </div>
+            </form>
           </div>
           <div class="form-elements">
             <div class="profile-item">
@@ -145,7 +148,7 @@
               <a class="change-email-btn">Change E-mail</a>
             </div>
             <div class="profile-item">
-              <a class="change-email-btn-2">Change Password</a>
+              <a class="change-email-btn-2" (click)="showChangePassForm()">Change Password</a>
             </div>
           </div>
         </form>
@@ -155,7 +158,7 @@
 </section>
 <section class="section-block-2 section-block-11">
   <div class="system-decor">
-    <div class="system-decor-1">My Liked Jobs</div>
+    <div class="system-decor-1">My Favorite Jobs</div>
     <a class="see-all-jobs">See All Jobs <i class="fas fa-chevron-right"></i></a>
     <span class="system-circle-1"></span>
     <span class="system-circle-2"></span>
