@@ -17,6 +17,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RequestInterceptor} from './core/helpers/http.interceptor';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { ProfilePageOpenComponent } from './profile-page-open/profile-page-open.component';
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -29,7 +30,8 @@ export function tokenGetter() {
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    ProfilePageOpenComponent
   ],
   imports: [
     BrowserModule,

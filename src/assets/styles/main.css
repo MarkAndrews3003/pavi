@@ -1843,6 +1843,7 @@ footer {
 }
 .see-all-jobs i {
   font-size: 20px;
+  margin: 0 10px;
 }
 .see-all-jobs:hover {
   cursor: pointer;
@@ -2048,13 +2049,60 @@ footer {
 .changes-passwords-open {
   display: flex;
 }
-
-
-
-
-
-
-
+.profile-page-open-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+.profile-page-open-content .logos-item {
+  width: 310px;
+  box-shadow: 0px 0px 10px #87878729;
+  margin-bottom: 25px;
+}
+.profile-page-open-content .logos-block {
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.profile-page-open-pagination {
+  max-width: 260px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.profile-page-open-pagination a {
+  font-size: 20px;
+  color: black !important;
+  font-family: "Segoe Bold";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-page-open-pagination a:hover,
+.profile-page-open-pagination a.active{
+  color: #0265C9 !important;
+}
+.pagination-left,
+.pagination-right {
+  height: 43px;
+  width: 43px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.pagination-left i,
+.pagination-right i {
+  color: white;
+}
+.pagination-right {
+  background: #0265C9;
+}
+.pagination-left {
+  background: #CCCCCC;
+}
 
 
 
@@ -2074,6 +2122,12 @@ footer {
   }
 }
 @media (max-width: 1700px) {
+  .profile-page-open-content .logos-item-img img {
+    width: initial;
+  }
+  .profile-page-open-content .logos-item-img {
+    height: 130px;
+  }
   .profile-btns .profile-item {
     margin-right: 0;
   }
@@ -2871,6 +2925,9 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .profile-page-open-content {
+    justify-content: center;
+  }
   .profile-item input {
     width: 58%;
   }
