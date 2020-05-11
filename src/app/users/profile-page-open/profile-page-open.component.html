@@ -7,12 +7,12 @@
     <i class="fab fa-facebook-f"></i>
     <i class="fab fa-pinterest"></i>
     <i class="fab fa-twitter"></i>
-    <a class="logout">Logout</a>
+    <a class="logout" (click)="auth.logOut()" *ngIf="auth.loggedIn()">Logout</a>
   </div>
 </header>
 <nav class="home-header navbar navbar-expand-lg navbar-light">
   <div class="header-left">
-    <a class="header-left-logo navbar-brand" href="index.html">
+    <a class="header-left-logo navbar-brand" href="../../../index.html">
       Logo
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -31,7 +31,7 @@
       <a class="search-btn"><i class="fas fa-search"></i></a>
     </div>
     <div class="header-small-block">
-      <img class="header-img" src="assets/images/user.png">
+      <img class="header-img" src="../../../assets/images/user.png">
       <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -50,15 +50,15 @@
 </section>
 <section class="section-block-10">
   <div class="section-block-10-item">
-    <img class="change-photo-img" src="assets/images/profile-page-2.svg">
+    <img class="change-photo-img" src="../../../assets/images/profile-page-2.svg">
     <div class="mask-img">
       <div class="mask-content">
-        <img src="assets/images/mask.png"><span>Change Photo</span>
+        <img src="../../../assets/images/mask.png"><span>Change Photo</span>
       </div>
     </div>
     <div class="item-content">
       <p class="mask-text-1">
-        <img src="assets/images/profile-page-3.svg">
+        <img src="../../../assets/images/profile-page-3.svg">
         <span  class="profile-text-2">About</span>
       </p>
       <p class="profile-text-1">
@@ -77,10 +77,10 @@
   </div>
   <div class="section-block-10-item-2">
     <div class="section-block-10-header">
-        <p class="mask-text-2">Jessica Alba</p>
-        <div class="mask-content-2">
-          <img src="assets/images/mask.png"><span>Change Photo</span>
-        </div>
+      <p class="mask-text-2">Jessica Alba</p>
+      <div class="mask-content-2">
+        <img src="../../../assets/images/mask.png"><span>Change Photo</span>
+      </div>
     </div>
     <div class="section-block-10-content">
       <div class="section-block-10-info">
@@ -156,16 +156,16 @@
 <section class="section-block-2 section-block-11">
   <div class="system-decor">
     <div class="system-decor-1">My Liked Jobs</div>
-    <a class="see-all-jobs">See All Jobs <i class="fas fa-chevron-right"></i></a>
+    <a class="see-all-jobs"><i class="fas fa-chevron-left"></i>Back</a>
     <span class="system-circle-1"></span>
     <span class="system-circle-2"></span>
   </div>
 </section>
 <section class="profile-logos">
-  <div class="profile-logos-block">
-    <div class="active logos-item">
+  <div class="profile-page-open-content">
+    <div class="logos-item">
       <div class="logos-item-img">
-        <img src="assets/images/solaytic.png">
+        <img src="../../../assets/images/atica.png">
       </div>
       <div class="logos-block">
         <p class="text-5">Interior Designer</p>
@@ -174,14 +174,14 @@
         </p>
         <p class="text-5">Part Time</p>
         <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
         </p>
         <a class="text-6">More<i class="fas fa-angle-right"></i></a>
       </div>
     </div>
-    <div class="active logos-item">
+    <div class="logos-item">
       <div class="logos-item-img">
-        <img src="assets/images/lighting.png">
+        <img src="../../../assets/images/atica.png">
       </div>
       <div class="logos-block">
         <p class="text-5">Interior Designer</p>
@@ -190,87 +190,14 @@
         </p>
         <p class="text-5">Part Time</p>
         <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
         </p>
         <a class="text-6">More<i class="fas fa-angle-right"></i></a>
       </div>
     </div>
-
-  </div>
-  <div class="logos profile-logos-center">
-    <div class="owl-carousel owl-theme">
-      <div class="item logos-item">
-        <div class="logos-item-img">
-          <img src="assets/images/aven.png">
-        </div>
-        <div class="logos-block">
-          <p class="text-5">Interior Designer</p>
-          <p class="text-11">
-            <span>Founders: </span>3 days ago
-          </p>
-          <p class="text-5">Part Time</p>
-          <p class="text-12">
-            In Austin, Tx <img src="assets/images/heart.png">
-          </p>
-          <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-        </div>
-      </div>
-      <div class="item logos-item">
-        <div class="logos-item-img">
-          <img src="assets/images/kanba.png">
-        </div>
-        <div class="logos-block">
-          <p class="text-5">Interior Designer</p>
-          <p class="text-11">
-            <span>Founders: </span>3 days ago
-          </p>
-          <p class="text-5">Part Time</p>
-          <p class="text-12">
-            In Austin, Tx <img src="assets/images/heart.png">
-          </p>
-          <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-        </div>
-      </div>
-      <div class="item logos-item">
-        <div class="logos-item-img">
-          <img src="assets/images/treva.png">
-        </div>
-        <div class="logos-block">
-          <p class="text-5">Interior Designer</p>
-          <p class="text-11">
-            <span>Founders: </span>3 days ago
-          </p>
-          <p class="text-5">Part Time</p>
-          <p class="text-12">
-            In Austin, Tx <img src="assets/images/heart.png">
-          </p>
-          <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-        </div>
-      </div>
-      <div class="item logos-item">
-        <div class="logos-item-img">
-          <img src="assets/images/circle.png">
-        </div>
-        <div class="logos-block">
-          <p class="text-5">Interior Designer</p>
-          <p class="text-11">
-            <span>Founders: </span>3 days ago
-          </p>
-          <p class="text-5">Part Time</p>
-          <p class="text-12">
-            In Austin, Tx <img src="assets/images/heart.png">
-          </p>
-          <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="dotes-1"><img src="assets/images/dotes-1.svg"></div>
-    <div class="dotes-2"><img src="assets/images/dotes-2.svg"></div>
-  </div>
-  <div class="profile-logos-block">
-    <div class="active logos-item">
+    <div class="logos-item">
       <div class="logos-item-img">
-        <img src="assets/images/atica.png">
+        <img src="../../../assets/images/utosia.png">
       </div>
       <div class="logos-block">
         <p class="text-5">Interior Designer</p>
@@ -279,14 +206,14 @@
         </p>
         <p class="text-5">Part Time</p>
         <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
         </p>
         <a class="text-6">More<i class="fas fa-angle-right"></i></a>
       </div>
     </div>
-    <div class="active logos-item">
+    <div class="logos-item">
       <div class="logos-item-img">
-        <img src="assets/images/utosia.png">
+        <img src="../../../assets/images/solaytic.png">
       </div>
       <div class="logos-block">
         <p class="text-5">Interior Designer</p>
@@ -295,20 +222,204 @@
         </p>
         <p class="text-5">Part Time</p>
         <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/lighting.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/atica.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/utosia.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/solaytic.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/lighting.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/atica.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/utosia.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/solaytic.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/lighting.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/solaytic.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
+        </p>
+        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+    <div class="logos-item">
+      <div class="logos-item-img">
+        <img src="../../../assets/images/lighting.png">
+      </div>
+      <div class="logos-block">
+        <p class="text-5">Interior Designer</p>
+        <p class="text-11">
+          <span>Founders: </span>3 days ago
+        </p>
+        <p class="text-5">Part Time</p>
+        <p class="text-12">
+          In Austin, Tx <img src="../../../assets/images/heart.png">
         </p>
         <a class="text-6">More<i class="fas fa-angle-right"></i></a>
       </div>
     </div>
   </div>
 </section>
-
-
+<div class="profile-page-open-pagination">
+  <a class="pagination-left" href="#"><i class="fas fa-angle-left"></i></a>
+  <a class="active" href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a class="pagination-right" href="#"><i class="fas fa-angle-right"></i></a>
+</div>
 <footer>
   <div class="footer-left">
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="assets/images/img-1.png">
+        <img src="../../../assets/images/img-1.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Address</p>
@@ -319,7 +430,7 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="assets/images/img-4.png">
+        <img src="../../../assets/images/img-4.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Mail</p>
@@ -331,7 +442,7 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="assets/images/img-29.png">
+        <img src="../../../assets/images/img-29.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Navigation</p>
@@ -345,7 +456,7 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="assets/images/img-2.png">
+        <img src="../../../assets/images/img-2.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Call</p>
@@ -356,7 +467,7 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="assets/images/img-3.png">
+        <img src="../../../assets/images/img-3.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Social Medias</p>
@@ -385,6 +496,7 @@
   </div>
 </footer>
 <div class="footer-content">@ 2020 PICANTE BY 00000 000000 ALL RIGHTS RESERVED</div>
+
 
 
 

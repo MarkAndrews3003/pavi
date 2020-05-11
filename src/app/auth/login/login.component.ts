@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
 
       this.auth.login(this.loginForm.value).subscribe(async (dt: any) => {
-        await this.router.navigate(['/']);
         localStorage.setItem('token', dt.token);
+        await this.router.navigate(['users/profile-page']);
       });
     }
   }
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
   getGoogleAuthUrl() {
     return `${API_URL}auth/google`;
   }
+
   getFbAuthUrl() {
     return `${API_URL}auth/facebook`;
   }

@@ -2924,6 +2924,11 @@ footer {
     font-size: 16px;
   }
 }
+
+
+.logout{
+  cursor: pointer;
+}
 @media (max-width: 767px) {
   .profile-page-open-content {
     justify-content: center;

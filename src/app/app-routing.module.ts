@@ -1,9 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {ProfilePageComponent} from './profile-page/profile-page.component';
-import {ProfilePageOpenComponent} from './profile-page-open/profile-page-open.component';
 import {NonAuthGuard} from './core/guards/non-auth.guard';
+import {AuthGuard} from './core/guards/auth.guard';
 
 
 const routes: Routes = [
@@ -12,17 +11,14 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'profile-page',
-    component: ProfilePageComponent
-  },
-  {
-    path: 'profile-page-open',
-    component: ProfilePageOpenComponent
-  },
-  {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
     canActivate: [NonAuthGuard]
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule),
+    canActivate: [AuthGuard]
   }
 ];
 
