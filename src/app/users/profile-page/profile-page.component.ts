@@ -10,7 +10,10 @@ import {Router} from '@angular/router';
 })
 export class ProfilePageComponent implements OnInit {
   changePasswordForm: FormGroup;
+  profileImgTextForm: FormGroup;
+  coverImgForm: FormGroup;
   showChangePass = false;
+  showProfileImgTextControls = false;
 
   constructor(
     public auth: AuthService,
@@ -18,6 +21,8 @@ export class ProfilePageComponent implements OnInit {
     public router: Router
   ) {
     this.changePasswordForm = this.fb.group({});
+    this.profileImgTextForm = this.fb.group({});
+    this.coverImgForm = this.fb.group({});
   }
 
   ngOnInit(): void {
@@ -25,6 +30,10 @@ export class ProfilePageComponent implements OnInit {
 
   showChangePassForm() {
     this.showChangePass = true;
+  }
+
+  toggleProfileImgText() {
+    this.showProfileImgTextControls = !this.showProfileImgTextControls;
   }
 
 }

@@ -51,36 +51,46 @@
 <section class="section-block-10">
   <div class="section-block-10-item">
     <img class="change-photo-img" src="../../../assets/images/profile-page-2.svg">
-    <div class="mask-img">
-      <div class="mask-content">
-        <img src="../../../assets/images/mask.png"><span>Change Photo</span>
+    <form [formGroup]="profileImgTextForm">
+
+      <div class="mask-img" *ngIf="showProfileImgTextControls">
+        <label class="mask-content" for="profile-image">
+          <img src="../../../assets/images/mask.png"><span>Change Photo</span>
+          <input id="profile-image" type="file">
+        </label>
       </div>
-    </div>
-    <div class="item-content">
-      <p class="mask-text-1">
-        <img src="../../../assets/images/profile-page-3.svg">
-        <span  class="profile-text-2">About</span>
-      </p>
-      <p class="profile-text-1">
-        Kim Yo-jong is the younger sister of North Korean leader Kim Jong-un. She joined the Workers' Party of Korea (WPK) in 2007, eventually serving as secretariat to her father,
-        Kim Jong-il, until his death in 2011. Kim Yo-jong continued to ascend her party's ranks under her brother's rule,
-        taking control of his image as first vice-department director of the Propaganda and Agitation Department and later becoming an alternate member of the WPK's
-        powerful politburo. After making a highly publicized appearance at the 2018 Winter Olympics,
-        Kim joined her brother for his denuclearization summits with U.S. President Donald Trump.
-      </p>
-    </div>
+      <div class="item-content">
+        <p class="mask-text-1">
+          <img src="../../../assets/images/profile-page-3.svg">
+          <span class="profile-text-2">About</span>
+        </p>
+        <p class="profile-text-1" *ngIf="!showProfileImgTextControls">
+          Kim Yo-jong is the younger sister of North Korean leader Kim Jong-un. She joined the Workers' Party of Korea
+          (WPK) in 2007, eventually serving as secretariat to her father,
+          Kim Jong-il, until his death in 2011. Kim Yo-jong continued to ascend her party's ranks under her brother's
+          rule,
+          taking control of his image as first vice-department director of the Propaganda and Agitation Department and
+          later becoming an alternate member of the WPK's
+          powerful politburo. After making a highly publicized appearance at the 2018 Winter Olympics,
+          Kim joined her brother for his denuclearization summits with U.S. President Donald Trump.
+        </p>
+      </div>
+    </form>
     <div class="edit-delete-save-btns">
       <a class="profile-delete-btn">Delete</a>
       <a class="profile-save-2-btn">Save</a>
-      <a class="profile-edit-btn">Edit<i class="fas fa-chevron-right"></i></a>
+      <a class="profile-edit-btn" (click)="toggleProfileImgText()">Edit<i class="fas fa-chevron-right"></i></a>
     </div>
   </div>
   <div class="section-block-10-item-2">
     <div class="section-block-10-header">
-        <p class="mask-text-2">Jessica Alba</p>
-        <div class="mask-content-2">
+      <p class="mask-text-2">Jessica Alba</p>
+      <form [formGroup]="coverImgForm">
+        <label class="mask-content-2" for="cover-image" *ngIf="showProfileImgTextControls">
           <img src="../../../assets/images/mask.png"><span>Change Photo</span>
-        </div>
+          <input id="cover-image" type="file">
+        </label>
+      </form>
     </div>
     <div class="section-block-10-content">
       <div class="section-block-10-info">
@@ -103,18 +113,18 @@
           <div class="changes-passwords">
             <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
 
-            <div class="profile-item">
-              <label>Old Password:</label>
-              <input placeholder="AB********123">
-            </div>
-            <div class="profile-item">
-              <label>New password:</label>
-              <input placeholder="New Password">
-            </div>
-            <div class="profile-item">
-              <label>Confirm New Password:</label>
-              <input placeholder="Confirm New Password">
-            </div>
+              <div class="profile-item">
+                <label>Old Password:</label>
+                <input placeholder="AB********123">
+              </div>
+              <div class="profile-item">
+                <label>New password:</label>
+                <input placeholder="New Password">
+              </div>
+              <div class="profile-item">
+                <label>Confirm New Password:</label>
+                <input placeholder="Confirm New Password">
+              </div>
             </form>
           </div>
           <div class="form-elements">
