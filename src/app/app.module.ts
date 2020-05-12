@@ -18,6 +18,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RequestInterceptor} from './core/helpers/http.interceptor';
 import { ProfilePageComponent } from './users/profile-page/profile-page.component';
 import { ProfilePageOpenComponent } from './users/profile-page-open/profile-page-open.component';
+import {GetAuthUserPipe} from './shared/pipes/get-auth-user.pipe';
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -51,6 +52,7 @@ export function tokenGetter() {
   ],
   providers: [
     JwtHelperService,
+    GetAuthUserPipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,

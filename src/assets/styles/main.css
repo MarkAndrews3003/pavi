@@ -283,6 +283,10 @@ header {
   width: 50%;
 }
 
+.section-block-1-left{
+  text-align: center;
+}
+
 .system-decor {
   border: 1px solid #0265C9;
   width: 1347px;
