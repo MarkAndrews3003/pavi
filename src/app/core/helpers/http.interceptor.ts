@@ -13,6 +13,7 @@ import {
 import {Observable} from 'rxjs';
 
 import {ToastrService} from 'ngx-toastr';
+import {CommonService} from '../services/common.service';
 
 // import {CommonService} from '../services/common.service';
 
@@ -21,7 +22,7 @@ export class RequestInterceptor implements HttpInterceptor {
 
   constructor(public router: Router,
               public toastr: ToastrService,
-              // private common: CommonService
+              private common: CommonService
   ) {
   }
 
@@ -52,6 +53,10 @@ export class RequestInterceptor implements HttpInterceptor {
         } else if (err.status === 200 || err.status === 0 || err.error.hasOwnProperty('conn_error') && err.status !== 304) {
           this.toastr.error('Please check server connection.', 'Unable to connect to server');
         } else {
+
+          this.common.companyNameExists = err.error.hasOwnProperty('company_name_exists');
+          console.log(this.common.companyNameExists)
+
           if (err.error.hasOwnProperty('msg')) {
             this.toastr.error('', err.error.msg);
           } else if (message) {
