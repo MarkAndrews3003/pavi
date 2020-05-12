@@ -47,7 +47,22 @@ $( document ).ready(function() {
       $('.profile-save-btn').toggleClass('profile-save-btn-open');
     });
   }
-
+  if($('.slider-round-right-1').length) {
+    $( ".slider-round-right-1" ).click(function() {
+      $('.find-job-block-info-1').css('display','none');
+      $('.find-job-block-info-2').css('display','flex');
+      $('.slider-round-1').css('display','none');
+      $('.slider-round-2').css('display','flex');
+    });
+  }
+  if($('.slider-round-right-2').length) {
+    $( ".slider-round-right-2" ).click(function() {
+      $('.find-job-block-info-1').css('display','flex');
+      $('.find-job-block-info-2').css('display','none');
+      $('.slider-round-1').css('display','flex');
+      $('.slider-round-2').css('display','none');
+    });
+  }
 
   if($('.glider').length) {
     new Glider(document.querySelector(".glider"), {
