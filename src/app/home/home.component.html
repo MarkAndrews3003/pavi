@@ -12,7 +12,7 @@
 </header>
 <nav class="home-header navbar navbar-expand-lg navbar-light">
   <div class="header-left">
-    <a class="header-left-logo navbar-brand" href="index.html">
+    <a class="header-left-logo navbar-brand" (click)="router.navigate(['/'])">
       Logo
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -54,7 +54,7 @@
       <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
     </ng-container>
     <ng-container *ngIf="auth.loggedIn()">
-      <p>Welcome! <span>{{authUser.first_name + ' '+ authUser.last_name}}</span></p>
+      <p>Welcome! <span class="auth-user-name" (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' '+ authUser.last_name}}</span></p>
     </ng-container>
   </div>
   <div class="section-block-1-right">

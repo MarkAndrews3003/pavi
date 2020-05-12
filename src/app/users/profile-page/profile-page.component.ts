@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../core/services/auth.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -13,7 +14,8 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(
     public auth: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public router: Router
   ) {
     this.changePasswordForm = this.fb.group({});
   }
