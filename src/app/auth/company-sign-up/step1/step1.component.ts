@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl, FormGroup} from '@angular/forms';
 import {INDUSTRY_LIST} from '../../../core/constants/industries';
 import {COUNTRY_LIST} from '../../../core/constants/countries';
+import {CompaniesService} from '../../../core/services/companies.service';
+import {CommonService} from '../../../core/services/common.service';
 
 @Component({
   selector: 'app-step1',
@@ -10,11 +12,15 @@ import {COUNTRY_LIST} from '../../../core/constants/countries';
 })
 export class Step1Component implements OnInit {
   @Input('group') companyInfoFormGroup: FormGroup;
+  @Input('stepper') stepper;
   industries = INDUSTRY_LIST;
   countries = COUNTRY_LIST;
   isSubmitted = false;
 
-  constructor() {
+  constructor(
+    private companiesService: CompaniesService,
+    public common: CommonService
+  ) {
   }
 
   ngOnInit(): void {
@@ -28,8 +34,19 @@ export class Step1Component implements OnInit {
     this.companyInfoFormGroup.patchValue({industry: e.target.value});
   }
 
+  checkCompanyName(e) {
+    this.companiesService.checkCompanyName({name: e.target.value}).subscribe(dt => {
+      this.common.companyNameExists = false;
+    });
+  }
+
   submit() {
     this.isSubmitted = true;
+    if (this.common.companyNameExists) {
+      return false;
+    } else {
+      this.stepper.next();
+    }
   }
 
   get companyCtrl(): AbstractControl {

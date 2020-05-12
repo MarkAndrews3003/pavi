@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CompaniesService} from '../../core/services/companies.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
 import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
+import {MatStepper} from '@angular/material/stepper';
 
 @Component({
   selector: 'app-company-sign-up',
@@ -20,7 +21,6 @@ export class CompanySignUpComponent implements OnInit {
   accountInfo: FormGroup;
   contactDetails: FormGroup;
 
-
   constructor(
     private fb: FormBuilder,
     private companiesService: CompaniesService,
@@ -35,7 +35,7 @@ export class CompanySignUpComponent implements OnInit {
 
   initForm() {
     this.companyInfo = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required]],
       industry: ['', Validators.required],
       country: ['', Validators.required],
     });

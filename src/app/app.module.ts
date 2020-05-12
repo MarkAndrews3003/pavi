@@ -19,6 +19,7 @@ import {RequestInterceptor} from './core/helpers/http.interceptor';
 import { ProfilePageComponent } from './users/profile-page/profile-page.component';
 import { ProfilePageOpenComponent } from './users/profile-page-open/profile-page-open.component';
 import { FindJobComponent } from './find-job/find-job.component';
+import {GetAuthUserPipe} from './shared/pipes/get-auth-user.pipe';
 
 // Token getter for JWT module
 export function tokenGetter() {
@@ -53,6 +54,7 @@ export function tokenGetter() {
   ],
   providers: [
     JwtHelperService,
+    GetAuthUserPipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: RequestInterceptor,

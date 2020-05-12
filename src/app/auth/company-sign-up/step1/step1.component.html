@@ -4,9 +4,11 @@
     <div>
       <div class="login-item">
         <label class="logos-item-label">Company Name</label>
-        <input formControlName="name" class="logos-item-input" placeholder="Company Name*">
+        <input formControlName="name" class="logos-item-input" placeholder="Company Name*"
+               (keyup)="checkCompanyName($event)">
         <mat-error *ngIf="isSubmitted && companyCtrl.hasError('required')">Company name is <strong>required</strong>
         </mat-error>
+        <mat-error *ngIf="common.companyNameExists">Company with such name <strong>exists</strong></mat-error>
       </div>
       <label for="industry" class="logos-item-label">Industry</label>
       <select id="industry" class="logos-item-input" (change)="changeIndustry($event)" formControlName="industry">
@@ -36,7 +38,7 @@
       <!--      <a class="reset-btn"><i class="fas fa-chevron-left"></i>Reset All</a>-->
     </div>
     <div class="register-buttons">
-      <button class="login-btn" matStepperNext (click)="submit()">Next<i class="fas fa-chevron-right"></i>
+      <button class="login-btn" (click)="submit()">Next<i class="fas fa-chevron-right"></i>
       </button>
     </div>
   </div>

@@ -15,4 +15,8 @@ export class CompaniesService {
   register(params) {
     return this.httpClient.post(`${API_URL}companies/register`, params);
   }
+
+  checkCompanyName(params) {
+    return this.httpClient.get(`${API_URL}companies/check-name`, {params});
+  }
 }
