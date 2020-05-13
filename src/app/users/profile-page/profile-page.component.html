@@ -45,23 +45,25 @@
     </div>
   </div>
 </nav>
-<section class="section-block-8">
+<section class="section-block-8 cover-image" [style.backgroundImage]="'url('+coverImage+')'">
   <div class="section-block-9"></div>
 </section>
 <section class="section-block-10">
   <div class="section-block-10-item">
-    <img class="change-photo-img" src="../../../assets/images/profile-page-2.svg">
+<!--    <img class="change-photo-img" [src]="profileImage">-->
+    <div class="profile-image change-photo-img" [style.backgroundImage]="'url('+profileImage+')'"></div>
     <form [formGroup]="profileImgTextForm">
 
       <div class="mask-img" *ngIf="showProfileImgTextControls">
         <label class="mask-content" for="profile-image">
           <img src="../../../assets/images/mask.png"><span>Change Photo</span>
-          <input id="profile-image" type="file">
+          <input id="profile-image" type="file" (change)="changeProfileImage($event)">
         </label>
       </div>
       <div class="item-content">
+
         <p class="mask-text-1">
-          <img src="../../../assets/images/profile-page-3.svg">
+<!--          <img src="../../../assets/images/profile-page-3.svg">-->
           <span class="profile-text-2">About</span>
         </p>
         <p class="profile-text-1" *ngIf="!showProfileImgTextControls">
@@ -87,8 +89,9 @@
       <p class="mask-text-2">Jessica Alba</p>
       <form [formGroup]="coverImgForm">
         <label class="mask-content-2" for="cover-image" *ngIf="showProfileImgTextControls">
+
           <img src="../../../assets/images/mask.png"><span>Change Photo</span>
-          <input id="cover-image" type="file">
+          <input id="cover-image" type="file" (change)="changeCoverImage($event)">
         </label>
       </form>
     </div>

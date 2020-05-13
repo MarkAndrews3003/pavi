@@ -1,7 +1,16 @@
-.profile-edit-btn{
+.profile-edit-btn {
 
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
+}
+
+.change-photo-img {
+  width: 500px;
+}
+
+.profile-image {
+  background-size: cover;
+  height: 420px;
 }
