@@ -2528,8 +2528,12 @@ footer {
 .dream-job-btn i {
   margin-left: 8px;
 }
-
-
+.more-jobs-open {
+  display: none;
+}
+.back-all-jobs {
+  display: none;
+}
 
 
 
@@ -2799,7 +2803,10 @@ footer {
     flex-direction: column;
   }
   .section-block-10-item-2 {
-    bottom: 215px;
+    bottom: 175px;
+  }
+  .section-block-10-content {
+    padding: 0 20px;
   }
   .mask-text-2 {
     margin-bottom: 30px !important;
@@ -2952,6 +2959,9 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .section-block-10-content {
+    padding: 0;
+  }
   .after-login {
     flex-direction: column;
   }
