@@ -50,7 +50,7 @@
 </section>
 <section class="section-block-10">
   <div class="section-block-10-item">
-<!--    <img class="change-photo-img" [src]="profileImage">-->
+    <!--    <img class="change-photo-img" [src]="profileImage">-->
     <div class="profile-image change-photo-img" [style.backgroundImage]="'url('+profileImage+')'"></div>
     <form [formGroup]="profileImgTextForm">
 
@@ -63,7 +63,7 @@
       <div class="item-content">
 
         <p class="mask-text-1">
-<!--          <img src="../../../assets/images/profile-page-3.svg">-->
+          <!--          <img src="../../../assets/images/profile-page-3.svg">-->
           <span class="profile-text-2">About</span>
         </p>
         <p class="profile-text-1" *ngIf="!showProfileImgTextControls">
@@ -98,73 +98,74 @@
     <div class="section-block-10-content">
       <div class="section-block-10-info">
         <p class="profile-text-3">Contact Information</p>
-        <a class="profile-save-btn">Save</a>
-        <a class="profile-edit-profile-btn">Edit Profile</a>
+        <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
+        <a class="profile-edit-profile-btn" *ngIf="!showEditProfileForm" (click)="showEditProfileForm = true">Edit
+          Profile</a>
       </div>
       <div class="section-block-10-form">
-        <form>
-          <div class="old-new-email">
-            <div class="profile-item">
-              <label>Old Email:</label>
-              <input placeholder="hello@name.com">
-            </div>
-            <div class="profile-item">
-              <label>New E-mail Address:</label>
-              <input placeholder="New E-mail">
-            </div>
-          </div>
-          <div class="changes-passwords">
-            <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
-
-              <div class="profile-item">
-                <label>Old Password:</label>
-                <input placeholder="AB********123">
-              </div>
-              <div class="profile-item">
-                <label>New password:</label>
-                <input placeholder="New Password">
-              </div>
-              <div class="profile-item">
-                <label>Confirm New Password:</label>
-                <input placeholder="Confirm New Password">
-              </div>
-            </form>
-          </div>
+        <form [formGroup]="profileForm" *ngIf="!showChangeEmail && !showChangePass">
           <div class="form-elements">
             <div class="profile-item">
               <label>Phone:</label>
-              <input placeholder="+1 123 455 7890">
+              <input placeholder="+1 123 455 7890" formControlName="phone">
             </div>
             <div class="profile-item">
               <label>Age:</label>
-              <input placeholder="25">
+              <input placeholder="25" disabled>
             </div>
             <div class="profile-item">
               <label>Country:</label>
-              <input placeholder="Usa">
+              <input placeholder="Usa" formControlName="country">
             </div>
             <div class="profile-item">
               <label>Gender:</label>
-              <input placeholder="Female">
+              <input placeholder="Female" disabled>
             </div>
             <div class="profile-item">
               <label>Email:</label>
-              <input placeholder="hello@name.com">
+              <input placeholder="hello@name.com" disabled>
             </div>
             <div class="profile-item">
               <label>Password:</label>
-              <input placeholder="AB********123">
+              <input placeholder="AB********123" disabled>
             </div>
           </div>
           <div class="profile-btns">
             <div class="profile-item">
-              <a class="change-email-btn">Change E-mail</a>
+              <a class="change-email-btn" (click)="showChangeEmailForm()">Change E-mail</a>
             </div>
             <div class="profile-item">
               <a class="change-email-btn-2" (click)="showChangePassForm()">Change Password</a>
             </div>
           </div>
         </form>
+        <div class="old-new-email" *ngIf="showChangeEmail">
+          <div class="profile-item">
+            <label>Old Email:</label>
+            <input placeholder="hello@name.com">
+          </div>
+          <div class="profile-item">
+            <label>New E-mail Address:</label>
+            <input placeholder="New E-mail">
+          </div>
+        </div>
+        <div class="changes-passwords">
+          <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
+
+            <div class="profile-item">
+              <label>Old Password:</label>
+              <input placeholder="AB********123">
+            </div>
+            <div class="profile-item">
+              <label>New password:</label>
+              <input placeholder="New Password">
+            </div>
+            <div class="profile-item">
+              <label>Confirm New Password:</label>
+              <input placeholder="Confirm New Password">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

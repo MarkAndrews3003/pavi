@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../core/services/auth.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UsersService} from '../../core/services/users.service';
 import {GetAuthUserPipe} from '../../shared/pipes/get-auth-user.pipe';
@@ -15,7 +15,10 @@ export class ProfilePageComponent implements OnInit {
   changePasswordForm: FormGroup;
   profileImgTextForm: FormGroup;
   coverImgForm: FormGroup;
+  profileForm: FormGroup;
   showChangePass = false;
+  showChangeEmail = false;
+  showEditProfileForm = false;
   showProfileImgTextControls = true;
   authUser;
   profileImage = 'assets/images/profile-page-2.svg';
@@ -29,10 +32,20 @@ export class ProfilePageComponent implements OnInit {
     private getAuthUser: GetAuthUserPipe
   ) {
     this.changePasswordForm = this.fb.group({});
+    this.profileForm = this.fb.group({
+      country: ['', Validators.required],
+      phone: ['', Validators.required],
+      // gender: ['', Validators.required],
+      // password: ['', Validators.required],
+      // email: ['', Validators.required],
+
+    });
     this.profileImgTextForm = this.fb.group({
       avatar: ['']
     });
-    this.coverImgForm = this.fb.group({});
+    this.coverImgForm = this.fb.group({
+      cover: ['']
+    });
   }
 
   ngOnInit(): void {
@@ -46,7 +59,11 @@ export class ProfilePageComponent implements OnInit {
   }
 
   showChangePassForm() {
-    this.showChangePass = true;
+    this.showChangePass = !this.showChangePass;
+  }
+
+  showChangeEmailForm() {
+    this.showChangeEmail = !this.showChangeEmail;
   }
 
   toggleProfileImgText() {
@@ -85,6 +102,10 @@ export class ProfilePageComponent implements OnInit {
         this.coverImage = `${API_URL}uploads/covers/${this.authUser.cover}`;
       });
     }
+  }
+
+  saveProfileDetails() {
+    console.log(this.profileForm.value)
   }
 
 
