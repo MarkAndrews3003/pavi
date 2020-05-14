@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
-    console.log(this.authUser)
   }
 
 }

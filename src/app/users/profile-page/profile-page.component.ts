@@ -23,6 +23,7 @@ export class ProfilePageComponent implements OnInit {
   authUser;
   profileImage = 'assets/images/profile-page-2.svg';
   coverImage = 'assets/images/profile-page.png';
+  changeEmailForm: FormGroup;
 
   constructor(
     public auth: AuthService,
@@ -45,6 +46,10 @@ export class ProfilePageComponent implements OnInit {
     });
     this.coverImgForm = this.fb.group({
       cover: ['']
+    });
+    this.changeEmailForm = this.fb.group({
+      old_email: [''],
+      new_email: ['']
     });
   }
 
@@ -106,7 +111,29 @@ export class ProfilePageComponent implements OnInit {
 
   saveProfileDetails() {
     console.log(this.profileForm.value)
+    this.usersService.updateProfileInfo(this.profileForm.value).subscribe(dt => {
+
+    });
   }
 
+  backToMainForm() {
+    // this.showEditProfileForm = false;
+    this.showChangePass = false;
+    this.showChangeEmail = false;
+  }
+
+  changeEmail() {
+    console.log(this.changeEmailForm.value)
+    this.usersService.changeEmail(this.changeEmailForm.value).subscribe(dt =>{
+
+    });
+  }
+
+  changePassword() {
+    console.log(this.changePasswordForm.value)
+    this.usersService.changePassword(this.changePasswordForm.value).subscribe(dt =>{
+
+    });
+  }
 
 }

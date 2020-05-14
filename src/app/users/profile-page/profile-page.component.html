@@ -99,8 +99,8 @@
       <div class="section-block-10-info">
         <p class="profile-text-3">Contact Information</p>
         <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
-        <a class="profile-edit-profile-btn" *ngIf="!showEditProfileForm" (click)="showEditProfileForm = true">Edit
-          Profile</a>
+        <a class="profile-edit-profile-btn" *ngIf="!showChangeEmail && !showChangePass && !showEditProfileForm"
+           (click)="showEditProfileForm = true">Edit Profile</a>
       </div>
       <div class="section-block-10-form">
         <form [formGroup]="profileForm" *ngIf="!showChangeEmail && !showChangePass">
@@ -140,14 +140,18 @@
           </div>
         </form>
         <div class="old-new-email" *ngIf="showChangeEmail">
-          <div class="profile-item">
-            <label>Old Email:</label>
-            <input placeholder="hello@name.com">
-          </div>
-          <div class="profile-item">
-            <label>New E-mail Address:</label>
-            <input placeholder="New E-mail">
-          </div>
+          <form [formGroup]="changeEmailForm">
+            <div class="profile-item">
+              <label>Old Email:</label>
+              <input placeholder="hello@name.com" formControlName="old_email">
+            </div>
+            <div class="profile-item">
+              <label>New E-mail Address:</label>
+              <input placeholder="New E-mail" formControlName="new_email">
+            </div>
+            <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
+            <a class="change-email-btn-2" (click)="changeEmail()">Change the email</a>
+          </form>
         </div>
         <div class="changes-passwords">
           <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
@@ -164,6 +168,8 @@
               <label>Confirm New Password:</label>
               <input placeholder="Confirm New Password">
             </div>
+            <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
+            <a class="change-email-btn-2" (click)="changePassword()">Change password</a>
           </form>
         </div>
       </div>
