@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
+  hideSubmitMessage: boolean = true;
+  showSubmitMessage: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  submitContactMessage() {
+    this.hideSubmitMessage = false;
+    this.showSubmitMessage = true;
+  }
 }

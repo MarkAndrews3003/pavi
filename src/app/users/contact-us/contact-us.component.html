@@ -1,1 +1,159 @@
-<p>contact-us works!</p>
+<header>
+  <a class="number-text-1">+1 (000) 000-0000</a>
+  <p>Awesome weeks at Timbro! All "Affengeil" pictures 50% reduced & free shipping from 80 € ONLY FOR A SHORT TIME</p>
+  <div class="header-first-left">
+    <a>Refer a Friend</a>
+    <a>FAQ</a>
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-pinterest"></i>
+    <i class="fab fa-twitter"></i>
+    <a class="logout">Logout</a>
+  </div>
+</header>
+<nav class="home-header navbar navbar-expand-lg navbar-light">
+  <div class="header-left">
+    <a class="header-left-logo navbar-brand">
+      Logo
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="header-right collapse navbar-collapse nav-menu" id="navbarSupportedContent">
+    <ul>
+      <li><a>Home</a></li>
+      <li><a>About Us</a></li>
+      <li><a class="active">Contact Us</a></li>
+      <li><a>Find Job</a></li>
+    </ul>
+    <div class="header-btns">
+      <input placeholder="Search for ...">
+      <a class="search-btn"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="header-small-block">
+      <img class="header-img" src="assets/images/user.png">
+      <div class="dropdown language-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          En
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">USA</a>
+          <a class="dropdown-item" href="#">Ru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="about-content-2" *ngIf="showSubmitMessage">
+  <p class="find-job-text-1">Thank You For Your Message</p>
+</section>
+<section class="about-content" *ngIf="hideSubmitMessage">
+  <p class="find-job-text-1">Contact Us</p>
+</section>
+<section class="about-text" *ngIf="hideSubmitMessage">
+  <div class="about-text-left">
+    <img src="assets/images/slack.svg">
+  </div>
+  <form>
+    <div class="contact-block-1">
+      <div>
+        <label>Name*</label>
+        <input placeholder="Name">
+      </div>
+      <div>
+        <label>Name*</label>
+        <input placeholder="Name">
+      </div>
+    </div>
+    <div class="contact-block-1">
+      <textarea></textarea>
+    </div>
+    <div class="contact-block-2">
+      <a class="contact-btn" (click)="submitContactMessage()">Submit</a>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <div class="footer-item">
+      <div class="footer-item-left">
+        <img src="assets/images/img-1.png">
+      </div>
+      <div class="footer-item-right">
+        <p class="text-9">Address</p>
+        <p class="text-10">
+          21 Hight Street Cleethorpes North East Lincolnshire DN35 8LA
+        </p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <div class="footer-item-left">
+        <img src="assets/images/img-4.png">
+      </div>
+      <div class="footer-item-right">
+        <p class="text-9">Mail</p>
+        <p class="text-10">
+          info@Velosport.com<br>
+          info@Velosport.com
+        </p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <div class="footer-item-left">
+        <img src="assets/images/img-29.png">
+      </div>
+      <div class="footer-item-right">
+        <p class="text-9">Navigation</p>
+        <p class="text-10">
+          <a>Home</a>
+          <a>About Us</a>
+          <a>Contact Us</a>
+          <a>Job</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <div class="footer-item-left">
+        <img src="assets/images/img-2.png">
+      </div>
+      <div class="footer-item-right">
+        <p class="text-9">Call</p>
+        <p class="text-10">
+          <a>+1 (212) 661-2124</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-item">
+      <div class="footer-item-left">
+        <img src="assets/images/img-3.png">
+      </div>
+      <div class="footer-item-right">
+        <p class="text-9">Social Medias</p>
+        <p class="text-10">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-pinterest"></i>
+          <i class="fab fa-twitter"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-right">
+    <p class="text-7">Request a List of headings</p>
+    <p class="text-8">Please enter your email address to receive course titles, the topics will be emailed to you.</p>
+    <div class="footer-input">
+      <input placeholder="Name@gmail.com">
+      <a class="footer-send-btn">Send</a>
+    </div>
+    <div class="footer-block">
+      <label class="container">
+        <p class="text-8 mb-0">Your email has been successfully registered, headlines will be sent to you soon.</p>
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+  </div>
+</footer>
+<div class="footer-content">@ 2020 PICANTE BY 00000 000000 ALL RIGHTS RESERVED</div>
+

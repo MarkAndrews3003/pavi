@@ -27,7 +27,9 @@ a, a:hover {
   text-decoration: none;
 }
 
-button:active, button:focus {
+button:active,
+button:focus,
+textarea:focus {
   outline: none !important;
 }
 
@@ -2115,6 +2117,38 @@ footer {
   background-size: cover;
   height: 464px;
 }
+.about-content {
+  width: 100%;
+  background: url("../../assets/images/about.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 194px;
+  margin-bottom: 46px;
+}
+.about-content-2 {
+  width: 100%;
+  background: url("../../assets/images/show-contact.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  margin-bottom: 110px;
+}
+.about-text-left {
+  margin-right: 50px;
+}
+.about-text-1 {
+  color: #707070;
+  font-size: 16px;
+  font-family: "Segoe Regular";
+  margin-bottom: 20px !important;
+  line-height: 20px;
+}
+.about-text {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 270px 0 110px;
+}
 .find-job-text-1 {
   max-width: 545px;
   margin: 0 auto !important;
@@ -2531,7 +2565,67 @@ footer {
 .back-all-jobs {
   display: none;
 }
-
+.contact-block-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-block-1 label {
+  color: #000;
+  font-size: 15px;
+  font-family: "Segoe UI Semibold";
+  margin-left: 20px;
+  margin-bottom: 15px !important;
+}
+.contact-block-1 input {
+  width: 430px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: #CCCCCC;
+  font-size: 15px;
+  padding-left: 20px;
+  background: transparent;
+  font-family: "Segoe Regular";
+  border: 1px solid #F5F5F5;
+}
+.about-text form {
+  width: 100%;
+}
+.contact-block-1 textarea {
+  width: 100%;
+  height: 170px;
+  border: 1px solid #9D9D9D29;
+  margin-bottom: 48px;
+  margin-top: 40px;
+  box-shadow: 0px 0px 10px #9D9D9D29;
+  padding: 15px;
+}
+.contact-block-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+.contact-btn {
+  width: 196px;
+  height: 43px;
+  background: #0265C9;
+  border: 1px solid #0265C9;
+  color: #fff !important;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Segoe Regular";
+  transition: 0.3s ease-in-out;
+}
+.contact-btn:hover {
+  cursor: pointer;
+  background: white;
+  color: #0265C9!important;
+}
 
 
 
@@ -2559,6 +2653,9 @@ footer {
   }
 }
 @media (max-width: 1700px) {
+  .contact-block-1 input {
+    width: 345px;
+  }
   .find-job-block {
     padding: 0 50px;
   }
@@ -2779,6 +2876,12 @@ footer {
   }
 }
 @media (max-width: 1400px) {
+  .contact-block-1 input {
+    width: 310px;
+  }
+  .about-text {
+    padding: 0 120px;
+  }
   .founders {
     flex-direction: column;
     border: 1px solid silver;
@@ -2963,6 +3066,19 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .contact-block-1 {
+    flex-direction: column;
+  }
+  .contact-block-1 > div {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .contact-block-1 input {
+    width: 100%;
+  }
+  .about-text {
+    padding: 0 80px;
+  }
   .section-block-10-content {
     padding: 0;
   }
@@ -3242,6 +3358,9 @@ footer {
   }
 }
 @media (max-width: 992px) {
+  .about-text-left {
+    display: none;
+  }
   .find-job-block {
     flex-direction: column;
     justify-content: center;
@@ -3441,6 +3560,13 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .about-text {
+    padding: 0 20px;
+  }
+  .about-text-1 {
+    font-size: 13px;
+    text-align: center;
+  }
   .find-job-block-right-block {
     flex-direction: column-reverse;
   }
