@@ -1271,7 +1271,9 @@ footer {
   border: 1px solid #0265C9;
   color: #0265C9;
 }
-
+.mat-horizontal-stepper-header-container {
+  width: 368px;
+}
 .mat-step-label {
   color: #CCCCCC !important;
 }
@@ -1294,17 +1296,18 @@ footer {
 .mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
   margin-right: 0;
   margin-left: 0;
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
 }
 
 .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,
 .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before {
-  top: 40px !important;
+  top: 50px !important;
+  right: -4px !important;
 }
 
 .mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
-  top: 40px !important;
+  top: 50px !important;
 }
 
 .mat-form-field {
@@ -2904,7 +2907,7 @@ footer {
     display: none;
   }
   .section-block-10 {
-    height: 990px;
+    height: 1125px;
   }
   .section-block-10-header {
     flex-direction: column;
@@ -3066,6 +3069,10 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .mat-horizontal-stepper-header-container {
+    width: 368px;
+    margin: 0 auto;
+  }
   .contact-block-1 {
     flex-direction: column;
   }
@@ -3560,6 +3567,9 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .section-block-10 {
+    padding: 0;
+  }
   .about-text {
     padding: 0 20px;
   }
@@ -3584,7 +3594,7 @@ footer {
     width: 100%;
   }
   .profile-text-3 {
-    font-size: 36px;
+    font-size: 32px;
   }
   .section-block-10-item {
     width: 400px;
@@ -3790,6 +3800,9 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .section-block-10-header form {
+    width: 95%;
+  }
   .dream-job-btn {
     width: 100%;
   }

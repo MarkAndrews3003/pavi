@@ -165,8 +165,14 @@
                   <label>New E-mail Address:</label>
                   <input placeholder="New E-mail" formControlName="new_email">
                 </div>
-                <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
-                <a class="change-email-btn-2" (click)="changeEmail()">Change the email</a>
+                <div class="profile-btns">
+                  <div class="profile-item">
+                    <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
+                  </div>
+                  <div class="profile-item">
+                    <a class="change-email-btn-2" (click)="changeEmail()">Change the email</a>
+                  </div>
+                </div>
               </form>
             </div>
             <div class="changes-passwords">
