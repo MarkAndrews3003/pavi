@@ -178,15 +178,16 @@
 </section>
 <section class="section-block-2 section-block-11">
   <div class="system-decor">
-    <div class="system-decor-1">My Favorite Jobs</div>
-    <a class="see-all-jobs go-all-jobs">See All Jobs <i class="fas fa-chevron-right"></i></a>
-    <a class="see-all-jobs back-all-jobs"><i class="fas fa-chevron-left"></i>Back</a>
+    <div class="system-decor-1" (click)="showAllJobs = false">My Favorite Jobs</div>
+    <a class="see-all-jobs go-all-jobs" (click)="showAllJobs = true">See All Jobs <i
+      class="fas fa-chevron-right"></i></a>
+    <a class="see-all-jobs back-all-jobs" (click)="showAllJobs = true"><i class="fas fa-chevron-left"></i>Back</a>
     <span class="system-circle-1"></span>
     <span class="system-circle-2"></span>
   </div>
 </section>
 
-<section class="more-jobs-close">
+<section class="more-jobs-close" *ngIf="!showAllJobs">
   <div class="profile-logos">
     <div class="profile-logos-block">
       <div class="active logos-item">
@@ -329,7 +330,7 @@
     </div>
   </div>
 </section>
-<section class="more-jobs-open">
+<section class="more-jobs-open" *ngIf="showAllJobs">
   <div class="profile-logos">
     <div class="profile-page-open-content">
       <div class="logos-item">

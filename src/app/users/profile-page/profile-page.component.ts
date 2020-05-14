@@ -19,6 +19,7 @@ export class ProfilePageComponent implements OnInit {
   showChangePass = false;
   showChangeEmail = false;
   showEditProfileForm = false;
+  showAllJobs = false;
   showProfileImgTextControls = true;
   authUser;
   profileImage = 'assets/images/profile-page-2.svg';
