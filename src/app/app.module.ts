@@ -17,7 +17,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RequestInterceptor} from './core/helpers/http.interceptor';
 import { ProfilePageComponent } from './users/profile-page/profile-page.component';
-import { FindJobComponent } from './find-job/find-job.component';
+import { FindJobComponent } from './users/find-job/find-job.component';
 import {GetAuthUserPipe} from './shared/pipes/get-auth-user.pipe';
 
 // Token getter for JWT module

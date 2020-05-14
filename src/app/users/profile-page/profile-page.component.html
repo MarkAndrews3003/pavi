@@ -22,9 +22,9 @@
   <div class="header-right collapse navbar-collapse nav-menu" id="navbarSupportedContent">
     <ul>
       <li><a href="">Home</a></li>
-      <li><a href="">About Us</a></li>
-      <li><a href="">Contact Us</a></li>
-      <li><a class="active" href="">Find Job</a></li>
+      <li><a (click)="router.navigate(['users/about'])">About Us</a></li>
+      <li><a (click)="router.navigate(['users/contact-us'])">Contact Us</a></li>
+      <li><a class="active" (click)="router.navigate(['users/find-job'])">Find Job</a></li>
     </ul>
     <div class="header-btns">
       <input placeholder="Search for ...">

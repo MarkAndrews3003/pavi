@@ -2529,7 +2529,7 @@ footer {
   margin-left: 8px;
 }
 .more-jobs-open {
-  display: none;
+  /*display: none;*/
 }
 .back-all-jobs {
   display: none;
