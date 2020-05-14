@@ -37,8 +37,11 @@ export class RequestInterceptor implements HttpInterceptor {
 
         if (typeof err.error === 'string') {
           if (err.status !== 422) {
-
-            this.toastr.error(JSON.parse(err.error)['msg'])
+            if (err.status === 404) {
+              this.toastr.error('', 'Not found');
+            } else {
+              this.toastr.error(JSON.parse(err.error)['msg'])
+            }
           } else {
             this.toastr.error(err.error); // db connection error
           }

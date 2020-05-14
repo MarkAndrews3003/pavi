@@ -15,6 +15,7 @@ import { NewPasswordComponent } from './new-password/new-password.component';
 import { SubmittedPasswordComponent } from './submitted-password/submitted-password.component';
 import { AuthComponent } from './auth.component';
 import { ReceiveCodeComponent } from './receive-code/receive-code.component';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -25,6 +26,9 @@ import { ReceiveCodeComponent } from './receive-code/receive-code.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    CookieService
   ]
 })
 export class AuthModule {
