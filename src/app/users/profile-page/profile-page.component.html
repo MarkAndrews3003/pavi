@@ -10,6 +10,7 @@
     <a class="logout" (click)="auth.logOut()" *ngIf="auth.loggedIn()">Logout</a>
   </div>
 </header>
+
 <nav class="home-header navbar navbar-expand-lg navbar-light">
   <div class="header-left">
     <a class="header-left-logo navbar-brand" (click)="router.navigate(['/'])">
@@ -31,7 +32,7 @@
       <a class="search-btn"><i class="fas fa-search"></i></a>
     </div>
     <div class="header-small-block">
-      <img class="header-img" src="../../../assets/images/user.png">
+      <img class="header-img" src="../../../assets/images/user.png" (click)="router.navigate(['users/profile-page'])">
       <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -45,9 +46,11 @@
     </div>
   </div>
 </nav>
+
 <section class="section-block-8 cover-image" [style.backgroundImage]="'url('+coverImage+')'">
   <div class="section-block-9"></div>
 </section>
+
 <section class="section-block-10">
   <div class="section-block-10-item">
     <!--    <img class="change-photo-img" [src]="profileImage">-->
@@ -76,12 +79,17 @@
           powerful politburo. After making a highly publicized appearance at the 2018 Winter Olympics,
           Kim joined her brother for his denuclearization summits with U.S. President Donald Trump.
         </p>
+        <textarea *ngIf="showProfileImgTextControls" formControlName="about_text">
+
+        </textarea>
       </div>
     </form>
     <div class="edit-delete-save-btns">
-      <a class="profile-delete-btn">Delete</a>
-      <a class="profile-save-2-btn">Save</a>
-      <a class="profile-edit-btn" (click)="toggleProfileImgText()">Edit<i class="fas fa-chevron-right"></i></a>
+<!--      <a class="profile-delete-btn">Delete</a>-->
+      <a class="profile-save-2-btn" *ngIf="showProfileImgTextControls" (click)="saveAboutText()">Save</a>
+      <a class="profile-edit-btn" (click)="toggleProfileImgText()" *ngIf="!showProfileImgTextControls">
+        Edit<i class="fas fa-chevron-right"></i>
+      </a>
     </div>
   </div>
   <div class="section-block-10-item-2">
@@ -95,84 +103,116 @@
         </label>
       </form>
     </div>
-    <div class="section-block-10-content">
-      <div class="section-block-10-info">
-        <p class="profile-text-3">Contact Information</p>
-        <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
-        <a class="profile-edit-profile-btn" *ngIf="!showChangeEmail && !showChangePass && !showEditProfileForm"
-           (click)="showEditProfileForm = true">Edit Profile</a>
-      </div>
-      <div class="section-block-10-form">
-        <form [formGroup]="profileForm" *ngIf="!showChangeEmail && !showChangePass">
-          <div class="form-elements">
-            <div class="profile-item">
-              <label>Phone:</label>
-              <input placeholder="+1 123 455 7890" formControlName="phone">
-            </div>
-            <div class="profile-item">
-              <label>Age:</label>
-              <input placeholder="25" disabled>
-            </div>
-            <div class="profile-item">
-              <label>Country:</label>
-              <input placeholder="Usa" formControlName="country">
-            </div>
-            <div class="profile-item">
-              <label>Gender:</label>
-              <input placeholder="Female" disabled>
-            </div>
-            <div class="profile-item">
-              <label>Email:</label>
-              <input placeholder="hello@name.com" disabled>
-            </div>
-            <div class="profile-item">
-              <label>Password:</label>
-              <input placeholder="AB********123" disabled>
-            </div>
-          </div>
-          <div class="profile-btns">
-            <div class="profile-item">
-              <a class="change-email-btn" (click)="showChangeEmailForm()">Change E-mail</a>
-            </div>
-            <div class="profile-item">
-              <a class="change-email-btn-2" (click)="showChangePassForm()">Change Password</a>
-            </div>
-          </div>
-        </form>
-        <div class="old-new-email" *ngIf="showChangeEmail">
-          <form [formGroup]="changeEmailForm">
-            <div class="profile-item">
-              <label>Old Email:</label>
-              <input placeholder="hello@name.com" formControlName="old_email">
-            </div>
-            <div class="profile-item">
-              <label>New E-mail Address:</label>
-              <input placeholder="New E-mail" formControlName="new_email">
-            </div>
-            <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
-            <a class="change-email-btn-2" (click)="changeEmail()">Change the email</a>
-          </form>
-        </div>
-        <div class="changes-passwords">
-          <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
 
-            <div class="profile-item">
-              <label>Old Password:</label>
-              <input placeholder="AB********123">
+    <div class="section-block-10-content">
+
+
+      <mat-horizontal-stepper [linear]="isLinear" #stepper [selectedIndex]="currentStep-1" labelPosition="bottom">
+
+        <!-- Step 1 -->
+        <mat-step>
+          <ng-template matStepLabel>About</ng-template>
+          <div class="section-block-10-info">
+            <p class="profile-text-3">Contact Information</p>
+            <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
+            <a class="profile-edit-profile-btn" *ngIf="!showChangeEmail && !showChangePass && !showEditProfileForm"
+               (click)="showEditProfileForm = true">Edit Profile</a>
+          </div>
+          <div class="section-block-10-form">
+            <form [formGroup]="profileForm" *ngIf="!showChangeEmail && !showChangePass">
+              <div class="form-elements">
+                <div class="profile-item">
+                  <label>Phone:</label>
+                  <input placeholder="+1 123 455 7890" formControlName="phone">
+                </div>
+                <div class="profile-item">
+                  <label>Age:</label>
+                  <input placeholder="25" disabled>
+                </div>
+                <div class="profile-item">
+                  <label>Country:</label>
+                  <input placeholder="Usa" formControlName="country">
+                </div>
+                <div class="profile-item">
+                  <label>Gender:</label>
+                  <input placeholder="Female" disabled>
+                </div>
+                <div class="profile-item">
+                  <label>Email:</label>
+                  <input placeholder="hello@name.com" disabled>
+                </div>
+                <div class="profile-item">
+                  <label>Password:</label>
+                  <input placeholder="AB********123" disabled>
+                </div>
+              </div>
+              <div class="profile-btns">
+                <div class="profile-item">
+                  <a class="change-email-btn" (click)="showChangeEmailForm()">Change E-mail</a>
+                </div>
+                <div class="profile-item">
+                  <a class="change-email-btn-2" (click)="showChangePassForm()">Change Password</a>
+                </div>
+              </div>
+            </form>
+            <div class="old-new-email" *ngIf="showChangeEmail">
+              <form [formGroup]="changeEmailForm">
+                <div class="profile-item">
+                  <label>Old Email:</label>
+                  <input placeholder="hello@name.com" formControlName="old_email">
+                </div>
+                <div class="profile-item">
+                  <label>New E-mail Address:</label>
+                  <input placeholder="New E-mail" formControlName="new_email">
+                </div>
+                <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
+                <a class="change-email-btn-2" (click)="changeEmail()">Change the email</a>
+              </form>
             </div>
-            <div class="profile-item">
-              <label>New password:</label>
-              <input placeholder="New Password">
+            <div class="changes-passwords">
+              <form [formGroup]="changePasswordForm" *ngIf="showChangePass">
+
+                <div class="profile-item">
+                  <label>Old Password:</label>
+                  <input placeholder="AB********123">
+                </div>
+                <div class="profile-item">
+                  <label>New password:</label>
+                  <input placeholder="New Password">
+                </div>
+                <div class="profile-item">
+                  <label>Confirm New Password:</label>
+                  <input placeholder="Confirm New Password">
+                </div>
+                <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
+                <a class="change-email-btn-2" (click)="changePassword()">Change password</a>
+              </form>
             </div>
-            <div class="profile-item">
-              <label>Confirm New Password:</label>
-              <input placeholder="Confirm New Password">
-            </div>
-            <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
-            <a class="change-email-btn-2" (click)="changePassword()">Change password</a>
-          </form>
-        </div>
-      </div>
+          </div>
+
+
+
+        </mat-step>
+
+        <!-- Step 2 -->
+        <mat-step>
+          <ng-template matStepLabel>CV/Resume</ng-template>
+        </mat-step>
+
+        <!-- Step 3 -->
+        <mat-step>
+          <ng-template matStepLabel>Portfolio</ng-template>
+        </mat-step>
+
+
+
+      </mat-horizontal-stepper>
+
+
+
+
+
+
     </div>
   </div>
 </section>

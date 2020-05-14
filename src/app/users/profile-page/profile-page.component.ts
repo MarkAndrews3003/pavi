@@ -25,6 +25,8 @@ export class ProfilePageComponent implements OnInit {
   profileImage = 'assets/images/profile-page-2.svg';
   coverImage = 'assets/images/profile-page.png';
   changeEmailForm: FormGroup;
+  isLinear = false;
+  currentStep = 1;
 
   constructor(
     public auth: AuthService,
@@ -43,7 +45,8 @@ export class ProfilePageComponent implements OnInit {
 
     });
     this.profileImgTextForm = this.fb.group({
-      avatar: ['']
+      // avatar: [''],
+      about_text: ['']
     });
     this.coverImgForm = this.fb.group({
       cover: ['']
@@ -80,9 +83,9 @@ export class ProfilePageComponent implements OnInit {
   changeProfileImage(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.profileImgTextForm.patchValue({
-        avatar: file
-      });
+      // this.profileImgTextForm.patchValue({
+      //   avatar: file
+      // });
 
       const formData = new FormData();
       formData.append('user_id', this.authUser._id);
@@ -117,6 +120,13 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
+  saveAboutText() {
+    console.log(this.profileImgTextForm.value)
+    this.usersService.changeAboutText(this.profileImgTextForm.value).subscribe(dt => {
+
+    });
+  }
+
   backToMainForm() {
     // this.showEditProfileForm = false;
     this.showChangePass = false;
@@ -125,14 +135,14 @@ export class ProfilePageComponent implements OnInit {
 
   changeEmail() {
     console.log(this.changeEmailForm.value)
-    this.usersService.changeEmail(this.changeEmailForm.value).subscribe(dt =>{
+    this.usersService.changeEmail(this.changeEmailForm.value).subscribe(dt => {
 
     });
   }
 
   changePassword() {
     console.log(this.changePasswordForm.value)
-    this.usersService.changePassword(this.changePasswordForm.value).subscribe(dt =>{
+    this.usersService.changePassword(this.changePasswordForm.value).subscribe(dt => {
 
     });
   }

@@ -4,7 +4,6 @@ import {AuthService} from '../../core/services/auth.service';
 import {Router} from '@angular/router';
 import {patternValidator} from '../../core/helpers/pattern-validator';
 import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
-import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private auth: AuthService,
     public router: Router,
-    private cookieService: CookieService
   ) {
   }
 
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
 
       this.auth.login(this.loginForm.value).subscribe(async (dt: any) => {
-        this.cookieService.set('token', dt.token);
         localStorage.setItem('token', dt.token);
 
         await this.router.navigate(['users/profile-page']);
