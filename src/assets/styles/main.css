@@ -1935,7 +1935,7 @@ footer {
 .login-text-2 {
   cursor: pointer;
 }
-.mat-step-header {
+.company-registration-form .mat-step-header {
   pointer-events: none;
 }
 .change-email-btn,

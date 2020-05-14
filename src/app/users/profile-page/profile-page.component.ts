@@ -25,6 +25,8 @@ export class ProfilePageComponent implements OnInit {
   profileImage = 'assets/images/profile-page-2.svg';
   coverImage = 'assets/images/profile-page.png';
   changeEmailForm: FormGroup;
+  isLinear = false;
+  currentStep = 1;
 
   constructor(
     public auth: AuthService,
