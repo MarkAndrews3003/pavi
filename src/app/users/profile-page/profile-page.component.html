@@ -31,7 +31,7 @@
       <a class="search-btn"><i class="fas fa-search"></i></a>
     </div>
     <div class="header-small-block">
-      <img class="header-img" src="../../../assets/images/user.png">
+      <img class="header-img" src="../../../assets/images/user.png" (click)="router.navigate(['users/profile-page'])">
       <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -76,12 +76,17 @@
           powerful politburo. After making a highly publicized appearance at the 2018 Winter Olympics,
           Kim joined her brother for his denuclearization summits with U.S. President Donald Trump.
         </p>
+        <textarea *ngIf="showProfileImgTextControls" formControlName="about_text">
+
+        </textarea>
       </div>
     </form>
     <div class="edit-delete-save-btns">
-      <a class="profile-delete-btn">Delete</a>
-      <a class="profile-save-2-btn">Save</a>
-      <a class="profile-edit-btn" (click)="toggleProfileImgText()">Edit<i class="fas fa-chevron-right"></i></a>
+<!--      <a class="profile-delete-btn">Delete</a>-->
+      <a class="profile-save-2-btn" *ngIf="showProfileImgTextControls" (click)="saveAboutText()">Save</a>
+      <a class="profile-edit-btn" (click)="toggleProfileImgText()" *ngIf="!showProfileImgTextControls">
+        Edit<i class="fas fa-chevron-right"></i>
+      </a>
     </div>
   </div>
   <div class="section-block-10-item-2">

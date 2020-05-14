@@ -31,4 +31,8 @@ export class UsersService {
   changePassword(params) {
     return this.httpClient.put(`${API_URL}users/change_pass`, params);
   }
+
+  changeAboutText(params) {
+    return this.httpClient.put(`${API_URL}users/change_description`, params);
+  }
 }

@@ -1995,10 +1995,10 @@ footer {
   margin-top: 30px;
 }
 .profile-delete-btn {
-  display: none;
+  /*display: none;*/
 }
 .profile-save-2-btn {
-  display: none;
+  /*display: none;*/
 }
 .profile-delete-btn-open {
   display: flex;
