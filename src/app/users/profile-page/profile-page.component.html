@@ -25,7 +25,7 @@
       <li><a href="">Home</a></li>
       <li><a (click)="router.navigate(['users/about'])">About Us</a></li>
       <li><a (click)="router.navigate(['users/contact-us'])">Contact Us</a></li>
-      <li><a class="active" (click)="router.navigate(['users/find-job'])">Find Job</a></li>
+      <li><a (click)="router.navigate(['users/find-job'])">Find Job</a></li>
     </ul>
     <div class="header-btns">
       <input placeholder="Search for ...">
@@ -109,8 +109,19 @@
 
       <mat-horizontal-stepper [linear]="isLinear" #stepper [selectedIndex]="currentStep-1" labelPosition="bottom">
 
+        <ng-template matStepperIcon="done" let-index="index">
+          <mat-icon>done_all</mat-icon>
+        </ng-template>
+
+        <!-- Custom icon with a context variable. -->
+        <ng-template matStepperIcon="number" let-index="index">
+          <i class="fa fa-user" *ngIf="index === 0"></i>
+          <i class="far fa-file-user" *ngIf="index === 1"></i>
+          <i class="fas fa-file-pdf" *ngIf="index === 2"></i>
+        </ng-template>
+
         <!-- Step 1 -->
-        <mat-step>
+        <mat-step  label="Step 1">
           <ng-template matStepLabel>About</ng-template>
           <div class="section-block-10-info">
             <p class="profile-text-3">Contact Information</p>
@@ -201,16 +212,14 @@
         </mat-step>
 
         <!-- Step 2 -->
-        <mat-step>
+        <mat-step label="Step 2 ">
           <ng-template matStepLabel>CV/Resume</ng-template>
         </mat-step>
 
         <!-- Step 3 -->
-        <mat-step>
+        <mat-step label="Step 3">
           <ng-template matStepLabel>Portfolio</ng-template>
         </mat-step>
-
-
 
       </mat-horizontal-stepper>
 
