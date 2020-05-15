@@ -35,4 +35,8 @@ export class UsersService {
   changeAboutText(params) {
     return this.httpClient.put(`${API_URL}users/change_description`, params);
   }
+
+  getAboutText(params) {
+    return this.httpClient.get(`${API_URL}users/get_description`, params);
+  }
 }

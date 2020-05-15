@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {UsersService} from '../../core/services/users.service';
 import {GetAuthUserPipe} from '../../shared/pipes/get-auth-user.pipe';
 import {API_URL} from '../../core/constants/general';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile-page',
@@ -27,13 +28,15 @@ export class ProfilePageComponent implements OnInit {
   changeEmailForm: FormGroup;
   isLinear = false;
   currentStep = 1;
+  aboutText;
 
   constructor(
     public auth: AuthService,
     private fb: FormBuilder,
     public router: Router,
     private usersService: UsersService,
-    private getAuthUser: GetAuthUserPipe
+    private getAuthUser: GetAuthUserPipe,
+    private toastr: ToastrService
   ) {
     this.changePasswordForm = this.fb.group({});
     this.profileForm = this.fb.group({
@@ -51,10 +54,7 @@ export class ProfilePageComponent implements OnInit {
     this.coverImgForm = this.fb.group({
       cover: ['']
     });
-    this.changeEmailForm = this.fb.group({
-      old_email: [''],
-      new_email: ['']
-    });
+
   }
 
   ngOnInit(): void {
@@ -65,6 +65,13 @@ export class ProfilePageComponent implements OnInit {
     if (this.authUser.cover) {
       this.coverImage = `${API_URL}uploads/covers/${this.authUser.cover}`;
     }
+
+    this.changeEmailForm = this.fb.group({
+      old_email: [this.authUser.email],
+      new_email: ['']
+    });
+
+    this.getAboutText();
   }
 
   showChangePassForm() {
@@ -123,7 +130,8 @@ export class ProfilePageComponent implements OnInit {
   saveAboutText() {
     console.log(this.profileImgTextForm.value)
     this.usersService.changeAboutText(this.profileImgTextForm.value).subscribe(dt => {
-
+      this.toastr.success('About text has been changed successfully');
+      this.showProfileImgTextControls = false;
     });
   }
 
@@ -136,13 +144,22 @@ export class ProfilePageComponent implements OnInit {
   changeEmail() {
     console.log(this.changeEmailForm.value)
     this.usersService.changeEmail(this.changeEmailForm.value).subscribe(dt => {
-
+      this.toastr.success('Email has been changed successfully');
     });
   }
 
   changePassword() {
     console.log(this.changePasswordForm.value)
     this.usersService.changePassword(this.changePasswordForm.value).subscribe(dt => {
+      this.toastr.success('Password has been changed successfully');
+    });
+  }
+
+  getAboutText() {
+    this.usersService.getAboutText({}).subscribe((dt: any) => {
+      this.aboutText = dt;
+
+      this.profileImgTextForm.patchValue({about_text: dt.profile_desc});
 
     });
   }
