@@ -65,7 +65,7 @@ li {
 .header-right ul li a {
   font-family: "Segoe Regular";
   font-size: 20px;
-  color: #0265C9;
+  color: #0265C9 !important;
 }
 
 .header-right ul li a.active {
@@ -74,6 +74,7 @@ li {
 
 .header-right ul li a:hover {
   font-family: "Segoe Bold";
+  cursor: pointer;
 }
 
 .header-btns {
@@ -1607,7 +1608,7 @@ footer {
   justify-content: space-between;
 }
 .section-block-11 {
-  margin-top: 75px;
+  margin-top: 10px;
   margin-bottom: 60px;
 }
 .mask-img {
@@ -1664,10 +1665,10 @@ footer {
   margin-left: 15px;
 }
 .section-block-10-item-2 {
-  width: 63%;
-  bottom: 106px;
+  width: 67%;
+  bottom: 0;
   position: relative;
-  padding-top: 260px;
+  padding-top: 155px;
 }
 .section-block-10-header {
   display: flex;
@@ -1693,11 +1694,11 @@ footer {
   font-size: 60px;
   color: white;
   line-height: 80px;
-  margin: 0 !important;
+  margin: 0 0 0 10px !important;
   font-family: "Segoe UI Semibold";
 }
 .section-block-10-content {
-  margin-top: 84px;
+  margin-top: 30px;
   margin-bottom: 40px;
   width: 100%;
 }
@@ -1706,12 +1707,14 @@ footer {
   line-height: 53px;
   color: #0265C9;
   font-family: "Segoe UI Semibold";
+  margin-bottom: 0 !important;
 }
 .section-block-10-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .profile-save-btn {
   width: 234px;
@@ -1722,11 +1725,30 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Segoe Regular";
   transition: 0.3s ease-in-out;
 }
 .profile-save-btn:hover {
+  cursor: pointer;
+  background: white;
+  color: #0265C9 !important;
+  border: 1px solid #0265C9;
+}
+.profile-delete-btn-2 {
+  width: 234px;
+  height: 60px;
+  background: #757575;
+  color: white !important;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family: "Segoe Regular";
+  transition: 0.3s ease-in-out;
+}
+.profile-delete-btn-2:hover {
   cursor: pointer;
   background: white;
   color: #0265C9 !important;
@@ -1740,12 +1762,31 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   border: 1px solid #CCCCCC;
   font-family: "Segoe Regular";
   transition: 0.3s ease-in-out;
 }
 .profile-edit-profile-btn:hover {
+  cursor: pointer;
+  background: white;
+  color: #0265C9 !important;
+  border: 1px solid #0265C9;
+}
+.resume-change-btn {
+  width: 130px;
+  height: 60px;
+  color: #757575 !important;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border: 1px solid #CCCCCC;
+  font-family: "Segoe Regular";
+  transition: 0.3s ease-in-out;
+}
+.resume-change-btn:hover {
   cursor: pointer;
   background: white;
   color: #0265C9 !important;
@@ -1953,7 +1994,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Segoe Regular";
   transition: 0.3s ease-in-out;
 }
@@ -1968,8 +2009,9 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-.profile-btns .profile-item {
-  justify-content: flex-end;
+.old-new-email .profile-btns .profile-item {
+  width: 50%;
+  margin-right: 23px;
 }
 .profile-btns-close {
   display: none;
@@ -1999,12 +2041,6 @@ footer {
   align-items: center;
   margin-top: 30px;
 }
-.profile-delete-btn {
-  /*display: none;*/
-}
-.profile-save-2-btn {
-  /*display: none;*/
-}
 .profile-delete-btn-open {
   display: flex;
 }
@@ -2019,13 +2055,12 @@ footer {
 }
 .old-new-email {
   flex-direction: column;
-  /*display: none;*/
 }
 .old-new-email-open {
   display: flex;
 }
 .old-new-email .profile-item {
-  width: 100%;
+  width: 540px
 }
 .old-new-email .profile-item input {
   border: 1px solid #CCCCCC;
@@ -2044,10 +2079,13 @@ footer {
 }
 .changes-passwords {
   flex-direction: column;
-  /*display: none;*/
 }
 .changes-passwords .profile-item {
-  width: 100%;
+  width: 580px;
+  margin-right: 0;
+}
+.changes-passwords .profile-btns {
+  width: 580px;
 }
 .changes-passwords .profile-item input {
   border: 1px solid #CCCCCC;
@@ -2629,11 +2667,41 @@ footer {
   background: white;
   color: #0265C9!important;
 }
-
-
-
-
-
+.mat-step-icon-content i {
+  font-size: 20px;
+}
+.resume-label {
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+}
+.resume-label img {
+  margin-right: 13px;
+  margin-top: -4px;
+}
+.resume-items .profile-item {
+  margin-right: 20px;
+  width: 460px;
+}
+.resume-items .profile-item label {
+  width: 210px;
+}
+.resume-items .profile-item input {
+  width: 210px;
+}
+.resume-text-1 {
+  font-size: 25px;
+  color: #0265C9;
+  font-family: "Segoe UI Semibold";
+  margin-left: 80px;
+  margin: 0!important;
+}
+.resume-items .profile-item {
+  justify-content: space-between;
+}
+.header-left-logo:hover {
+  cursor: pointer;
+}
 
 
 
@@ -2656,6 +2724,16 @@ footer {
   }
 }
 @media (max-width: 1700px) {
+  .profile-btns .profile-item {
+    justify-content: center;
+  }
+  .profile-btns {
+    width: 100%;
+  }
+  .profile-edit-profile-btn,
+  .resume-change-btn {
+    margin-top: 20px;
+  }
   .contact-block-1 input {
     width: 345px;
   }
@@ -2714,18 +2792,19 @@ footer {
   .section-block-10-content {
     margin-top: 70px;
   }
-  .profile-save-btn {
+  .profile-save-btn,
+  .profile-delete-btn-2 {
     margin-top: 30px;
   }
   .profile-item {
-    width: 83%;
+    width: 275px;
   }
   .section-block-10-form form {
     justify-content: center;
   }
   .section-block-10-item-2 {
-    width: 60%;
-    bottom: 122px
+    width: 66%;
+    bottom: 0;
   }
   .logos-item-img img {
     width: 170px;
@@ -2734,7 +2813,9 @@ footer {
   .register-big-img {
     width: 560px;
   }
-
+  .mat-horizontal-stepper-header-container {
+    margin: 0 auto;
+  }
   .register-content {
     padding-left: 15px;
   }
@@ -2743,7 +2824,9 @@ footer {
     width: 100%;
     padding: 50px;
   }
-
+  .form-elements {
+    justify-content: center;
+  }
   .login-text-1 {
     margin: 0 !important;
     width: 100%;
@@ -2877,8 +2960,27 @@ footer {
   .header-right ul li {
     margin-left: 24px;
   }
+  .old-new-email .profile-btns {
+    flex-direction: column;
+  }
 }
 @media (max-width: 1400px) {
+  .changes-passwords .profile-btns {
+    width: 540px;
+  }
+  .changes-passwords .profile-item {
+    width: 540px;
+  }
+  .old-new-email .profile-btns .profile-item {
+    width: 260px;
+  }
+  .profile-item label {
+    font-size: 23px;
+  }
+  .mat-horizontal-stepper-header-container {
+    width: 368px;
+    margin: 0 auto;
+  }
   .contact-block-1 input {
     width: 310px;
   }
@@ -2906,14 +3008,11 @@ footer {
   .dotes-1, .dotes-2 {
     display: none;
   }
-  .section-block-10 {
-    height: 1125px;
-  }
   .section-block-10-header {
     flex-direction: column;
   }
   .section-block-10-item-2 {
-    bottom: 175px;
+    bottom: 95px;
   }
   .section-block-10-content {
     padding: 0 20px;
@@ -2930,6 +3029,8 @@ footer {
   }
   .profile-item {
     margin-right: 0;
+    width: 365px;
+    justify-content: center;
   }
 
   .register-form {
@@ -3067,8 +3168,14 @@ footer {
     width: 100%;
     height: 60px;
   }
+  .section-block-10-content {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 1200px) {
+  .section-block-10-item-2 {
+    width: 80%;
+  }
   .mat-horizontal-stepper-header-container {
     width: 368px;
     margin: 0 auto;
@@ -3365,6 +3472,9 @@ footer {
   }
 }
 @media (max-width: 992px) {
+  .profile-item label {
+    font-size: 22px;
+  }
   .about-text-left {
     display: none;
   }
@@ -3567,6 +3677,13 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .changes-passwords .profile-item {
+    flex-direction: column;
+  }
+  .old-new-email .profile-item {
+    width: 100%;
+    flex-direction: column;
+  }
   .section-block-10 {
     padding: 0;
   }
@@ -3608,9 +3725,6 @@ footer {
   }
   .mask-text-2 {
     font-size: 46px;
-  }
-  .profile-item {
-    width: 100%;
   }
   .mask-content span {
     font-size: 22px;
@@ -3800,6 +3914,26 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .resume-text-1 {
+    margin: 7px 0 0 0 !important;
+    font-size: 22px;
+  }
+  .resume-items .profile-item {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .resume-change-btn {
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .item-content {
+    padding: 12px 20px;
+  }
+  .profile-text-2 {
+    font-size: 22px;
+    line-height: 23px;
+  }
   .section-block-10-header form {
     width: 95%;
   }
@@ -3836,9 +3970,8 @@ footer {
   .change-email-btn,
   .profile-save-btn,
   .profile-edit-btn,
+  .profile-delete-btn-2,
   .change-email-btn-2 {
-    width: 100%;
-    height: 45px;
     margin-top: 10px;
   }
   .profile-logos-center .logos-item {
@@ -3875,12 +4008,25 @@ footer {
   .profile-edit-btn i {
     font-size: 14px;
   }
-  .profile-save-btn {
+  .profile-save-btn,
+  .profile-delete-btn-2,
+  .profile-edit-profile-btn,
+  .change-email-btn,
+  .change-email-btn-2 {
     font-size: 20px;
   }
+  .change-email-btn,
+  .change-email-btn-2 {
+    width: 234px;
+  }
+  .mask-text-2 {
+    margin-bottom: 0 !important;
+  }
   .profile-item {
-    width: 100%;
-    flex-direction: column;
+    width: 235px;
+  }
+  .mat-horizontal-stepper-header-container {
+    width: 300px;
   }
   .profile-item input {
     width: 100%;
@@ -3911,8 +4057,11 @@ footer {
   .profile-edit-btn {
     font-size: 22px;
   }
-  .change-photo-img {
-    width: 300px;
+  .profile-save-2-btn {
+    height: 50px;
+  }
+  .section-block-10-item-2 {
+    padding-top: 10px;
   }
   .mask-img {
     height: 66px;
