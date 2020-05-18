@@ -25,4 +25,10 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  goToLoginPage() {
+    if (!this.auth.loggedIn()) {
+      this.router.navigate(['auth/login']);
+    }
+  }
+
 }
