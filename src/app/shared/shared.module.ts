@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../core/modules/material.module';
 import { GetAuthUserPipe } from './pipes/get-auth-user.pipe';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { GetAuthUserPipe } from './pipes/get-auth-user.pipe';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CarouselModule
   ],
   providers: [
     GetAuthUserPipe
@@ -19,7 +21,8 @@ import { GetAuthUserPipe } from './pipes/get-auth-user.pipe';
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    CarouselModule
   ]
 })
 export class SharedModule {
