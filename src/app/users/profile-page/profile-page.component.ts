@@ -21,7 +21,7 @@ export class ProfilePageComponent implements OnInit {
   showChangeEmail = false;
   showEditProfileForm = false;
   showAllJobs = false;
-  showProfileImgTextControls = true;
+  showProfileImgTextControls = false;
   authUser;
   profileImage = 'assets/images/profile-page-2.svg';
   coverImage = 'assets/images/profile-page.png';
@@ -72,6 +72,10 @@ export class ProfilePageComponent implements OnInit {
     });
 
     this.getAboutText();
+  }
+
+  stepChanged(e) {
+    this.currentStep = e.selectedIndex + 1;
   }
 
   showChangePassForm() {
