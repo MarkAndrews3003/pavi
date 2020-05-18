@@ -6,6 +6,7 @@ import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {SharedModule} from '../shared/shared.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
+import {CoreModule} from '../core/core.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AboutComponent } from './about/about.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ]
 })
 export class UsersModule {

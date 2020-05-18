@@ -4,8 +4,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UsersService} from '../../core/services/users.service';
 import {GetAuthUserPipe} from '../../shared/pipes/get-auth-user.pipe';
-import {API_URL} from '../../core/constants/general';
+import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../core/constants/general';
 import {ToastrService} from 'ngx-toastr';
+import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-profile-page',
@@ -28,7 +29,8 @@ export class ProfilePageComponent implements OnInit {
   changeEmailForm: FormGroup;
   isLinear = false;
   currentStep = 1;
-  aboutText;
+  aboutText = {profile_desc: ''};
+  owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
 
   constructor(
     public auth: AuthService,

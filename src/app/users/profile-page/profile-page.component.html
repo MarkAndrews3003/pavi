@@ -11,41 +11,8 @@
   </div>
 </header>
 
-<nav class="home-header navbar navbar-expand-lg navbar-light">
-  <div class="header-left">
-    <a class="header-left-logo navbar-brand" (click)="router.navigate(['/'])">
-      <img src="assets/images/logo.png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-  <div class="header-right collapse navbar-collapse nav-menu" id="navbarSupportedContent">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a (click)="router.navigate(['users/about'])">About Us</a></li>
-      <li><a (click)="router.navigate(['users/contact-us'])">Contact Us</a></li>
-      <li><a (click)="router.navigate(['users/find-job'])">Find Job</a></li>
-    </ul>
-    <div class="header-btns">
-      <input placeholder="Search for ...">
-      <a class="search-btn"><i class="fas fa-search"></i></a>
-    </div>
-    <div class="header-small-block">
-      <img class="header-img" src="../../../assets/images/user.png" (click)="router.navigate(['users/profile-page'])">
-      <div class="dropdown language-dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-          En
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">USA</a>
-          <a class="dropdown-item" href="#">Ru</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
+
 
 <section class="section-block-8 cover-image" [style.backgroundImage]="'url('+coverImage+')'">
   <div class="section-block-9"></div>
@@ -302,72 +269,84 @@
 
       </div>
       <div class="logos profile-logos-center">
-        <div class="owl-carousel owl-theme">
-          <div class="item logos-item">
-            <div class="logos-item-img">
-              <img src="../../../assets/images/aven.png">
+
+        <owl-carousel-o [options]="owlOptions">
+          <ng-template carouselSlide>
+            <div class="item logos-item">
+              <div class="logos-item-img">
+                <img src="../../../assets/images/aven.png">
+              </div>
+              <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                  <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                  In Austin, Tx <img src="../../../assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-            <div class="logos-block">
-              <p class="text-5">Interior Designer</p>
-              <p class="text-11">
-                <span>Founders: </span>3 days ago
-              </p>
-              <p class="text-5">Part Time</p>
-              <p class="text-12">
-                In Austin, Tx <img src="../../../assets/images/heart.png">
-              </p>
-              <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item logos-item">
+              <div class="logos-item-img">
+                <img src="../../../assets/images/kanba.png">
+              </div>
+              <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                  <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                  In Austin, Tx <img src="../../../assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-          </div>
-          <div class="item logos-item">
-            <div class="logos-item-img">
-              <img src="../../../assets/images/kanba.png">
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item logos-item">
+              <div class="logos-item-img">
+                <img src="../../../assets/images/treva.png">
+              </div>
+              <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                  <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                  In Austin, Tx <img src="../../../assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-            <div class="logos-block">
-              <p class="text-5">Interior Designer</p>
-              <p class="text-11">
-                <span>Founders: </span>3 days ago
-              </p>
-              <p class="text-5">Part Time</p>
-              <p class="text-12">
-                In Austin, Tx <img src="../../../assets/images/heart.png">
-              </p>
-              <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item logos-item">
+              <div class="logos-item-img">
+                <img src="../../../assets/images/circle.png">
+              </div>
+              <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                  <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                  In Austin, Tx <img src="../../../assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+              </div>
             </div>
-          </div>
-          <div class="item logos-item">
-            <div class="logos-item-img">
-              <img src="../../../assets/images/treva.png">
-            </div>
-            <div class="logos-block">
-              <p class="text-5">Interior Designer</p>
-              <p class="text-11">
-                <span>Founders: </span>3 days ago
-              </p>
-              <p class="text-5">Part Time</p>
-              <p class="text-12">
-                In Austin, Tx <img src="../../../assets/images/heart.png">
-              </p>
-              <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-            </div>
-          </div>
-          <div class="item logos-item">
-            <div class="logos-item-img">
-              <img src="../../../assets/images/circle.png">
-            </div>
-            <div class="logos-block">
-              <p class="text-5">Interior Designer</p>
-              <p class="text-11">
-                <span>Founders: </span>3 days ago
-              </p>
-              <p class="text-5">Part Time</p>
-              <p class="text-12">
-                In Austin, Tx <img src="../../../assets/images/heart.png">
-              </p>
-              <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
+          </ng-template>
+        </owl-carousel-o>
+
+
+        <!--        <div class="owl-carousel owl-theme"></div>-->
         <div class="dotes-1"><img src="../../../assets/images/dotes-1.svg"></div>
         <div class="dotes-2"><img src="../../../assets/images/dotes-2.svg"></div>
       </div>
