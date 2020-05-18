@@ -24,7 +24,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownUserInfo">
           <a class="dropdown-item" href="#" (click)="router.navigate(['users/profile-page'])">Profile Page</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="#" (click)="auth.logOut()" *ngIf="auth.loggedIn()">Logout</a>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="765.683" height="736.154" viewBox="0 0 765.683 736.154">
-  <g id="Group_2063" data-name="Group 2063" transform="translate(-4113.091 794)">
-    <path id="Rectangle_179" data-name="Rectangle 179" d="M0,0H620a60,60,0,0,1,60,60V299a60,60,0,0,1-60,60H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(4482 -794) rotate(90)" fill="#0265c9"/>
-    <g id="Group_1791" data-name="Group 1791" transform="translate(4275.033 -5038.465)">
-      <g id="Group_1545" data-name="Group 1545" transform="translate(146.174 4312.523)">
+<svg xmlns="http://www.w3.org/2000/svg" width="765.683" height="664.732" viewBox="0 0 765.683 664.732">
+  <g id="Group_4098" data-name="Group 4098" transform="translate(-66.091 -71.422)">
+    <rect id="Rectangle_179" data-name="Rectangle 179" width="595" height="359" rx="60" transform="translate(435 77) rotate(90)" fill="#0265c9"/>
+    <g id="Group_1791" data-name="Group 1791" transform="translate(228.033 -4244.465)">
+      <g id="Group_1545" data-name="Group 1545" transform="translate(146.174 4317.523)">
         <g id="Group_1486" data-name="Group 1486" transform="translate(3.405 2.33)">
           <path id="Path_1070" data-name="Path 1070" d="M296.142,4368.383l.309,5.765a4.893,4.893,0,0,1,3.14-1.366,5,5,0,0,1,.534,9.977,4.895,4.895,0,0,1-3.268-1.023l.309,5.78a4.9,4.9,0,0,1,3.14-1.366,5,5,0,0,1,.534,9.977,4.9,4.9,0,0,1-3.268-1.023l.309,5.78a4.889,4.889,0,0,1,3.14-1.365,5,5,0,0,1,.534,9.976,4.9,4.9,0,0,1-3.268-1.024l.309,5.78a4.9,4.9,0,0,1,3.14-1.366,5,5,0,0,1,.534,9.976,4.9,4.9,0,0,1-3.267-1.022l.308,5.779a4.9,4.9,0,0,1,3.141-1.366,5,5,0,0,1,.534,9.976,4.9,4.9,0,0,1-3.268-1.022l.309,5.779a4.9,4.9,0,0,1,3.14-1.365,5,5,0,0,1,.534,9.976,4.9,4.9,0,0,1-3.268-1.023l.192,3.586,153.966-3.692-7.8-89.682Z" transform="translate(-296.142 -4358.784)" fill="#ececec"/>
         </g>
@@ -810,7 +810,7 @@
         </g>
       </g>
     </g>
-    <g id="Group_1792" data-name="Group 1792" transform="translate(4626.753 -334.789)">
+    <g id="Group_1792" data-name="Group 1792" transform="translate(579.753 459.211)">
       <g id="Group_338" data-name="Group 338" transform="translate(0)">
         <rect id="Rectangle_180" data-name="Rectangle 180" width="4.487" height="4.487" fill="#d6d4f6"/>
         <rect id="Rectangle_181" data-name="Rectangle 181" width="4.487" height="4.487" transform="translate(27.504)" fill="#d6d4f6"/>
