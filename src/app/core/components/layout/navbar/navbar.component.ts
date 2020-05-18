@@ -11,6 +11,7 @@ import {AuthService} from "../../../services/auth.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   routerUrl;
   navbarLinks = NAVBAR_LINKS;
 
@@ -21,15 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd)
-      )
-      .subscribe((dt: Data) => {
-        // console.log(dt)
-        this.routerUrl = dt.url;
-        // console.log(this.routerUrl)
-      });
+
   }
 
 }
