@@ -62,14 +62,6 @@ export class UserSignUpComponent implements OnInit {
   getGoogleAuthUrl() {
     return `${API_URL}auth/google`;
   }
-  getFbAuthUrl() {
-    return `${API_URL}auth/facebook`;
-  }
-
-  getTwitterAuthUrl() {
-    return `${API_URL}auth/twitter`;
-  }
-
   /**
    * First name field control getter
    */

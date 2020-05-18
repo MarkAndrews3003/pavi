@@ -297,7 +297,18 @@ header {
   border-radius: 49px;
   position: relative;
 }
-
+.welcome-text-size {
+  font-size: 60px;
+  color: #F15A24;
+  font-family: "Segoe Bold";
+  margin: 0 !important;
+  margin-right: 60px;
+}
+.welcome-text-size span {
+  color: black;
+  font-family: "Segoe Regular";
+  font-size: 40px;
+}
 .system-decor-1 {
   width: 674px;
   height: 60px;
@@ -1597,7 +1608,6 @@ footer {
   left: 0;
   width: 100%;
   height: 460px;
-  /*background: black;*/
   opacity: 0.5;
 }
 .section-block-10 {
@@ -2702,10 +2712,21 @@ footer {
 .header-left-logo:hover {
   cursor: pointer;
 }
-
-
-
-
+.user-dropdown-part .dropdown-toggle::after {
+  display: none;
+}
+.user-dropdown-part a:hover {
+  cursor: pointer;
+}
+.user-dropdown-part .dropdown-menu {
+  top: 40px;
+  left: -52px;
+  margin: 0;
+  padding: 0;
+}
+.user-dropdown-part .dropdown-item {
+  padding: 14px 10px;
+}
 
 
 
@@ -3173,6 +3194,13 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .welcome-text-size {
+    font-size: 45px;
+    margin-right: 40px;
+  }
+  .welcome-text-size span {
+    font-size: 26px;
+  }
   .section-block-10-item-2 {
     width: 80%;
   }
@@ -3442,6 +3470,7 @@ footer {
   .home-header {
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .header-right ul li a {
@@ -3914,6 +3943,13 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .welcome-text-size {
+    font-size: 25px;
+    margin-right: 40px;
+  }
+  .welcome-text-size span {
+    font-size: 20px;
+  }
   .resume-text-1 {
     margin: 7px 0 0 0 !important;
     font-size: 22px;
