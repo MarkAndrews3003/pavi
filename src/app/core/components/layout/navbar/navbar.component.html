@@ -18,7 +18,16 @@
       <a class="search-btn"><i class="fas fa-search"></i></a>
     </div>
     <div class="header-small-block">
-      <img class="header-img" src="assets/images/user.png" (click)="router.navigate(['users/profile-page'])">
+      <div class="dropdown user-dropdown-part">
+        <a class="dropdown-toggle" type="button" id="dropdownUserInfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="header-img" src="assets/images/user.png">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownUserInfo">
+          <a class="dropdown-item" href="#" (click)="router.navigate(['users/profile-page'])">Profile Page</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </div>
+
       <div class="dropdown language-dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">

@@ -2712,10 +2712,21 @@ footer {
 .header-left-logo:hover {
   cursor: pointer;
 }
-
-
-
-
+.user-dropdown-part .dropdown-toggle::after {
+  display: none;
+}
+.user-dropdown-part a:hover {
+  cursor: pointer;
+}
+.user-dropdown-part .dropdown-menu {
+  top: 40px;
+  left: -52px;
+  margin: 0;
+  padding: 0;
+}
+.user-dropdown-part .dropdown-item {
+  padding: 14px 10px;
+}
 
 
 
@@ -3459,6 +3470,7 @@ footer {
   .home-header {
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .header-right ul li a {
