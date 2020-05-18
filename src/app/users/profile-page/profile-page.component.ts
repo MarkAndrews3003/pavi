@@ -28,7 +28,7 @@ export class ProfilePageComponent implements OnInit {
   changeEmailForm: FormGroup;
   isLinear = false;
   currentStep = 1;
-  aboutText;
+  aboutText = {profile_desc: ''};
 
   constructor(
     public auth: AuthService,
