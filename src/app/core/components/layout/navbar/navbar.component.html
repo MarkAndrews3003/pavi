@@ -1,0 +1,34 @@
+<nav class="home-header navbar navbar-expand-lg navbar-light">
+  <div class="header-left">
+    <a class="header-left-logo navbar-brand" (click)="router.navigate(['/'])">
+      <img src="assets/images/logo.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="header-right collapse navbar-collapse nav-menu" id="navbarSupportedContent">
+    <ul>
+      <li *ngFor="let link of navbarLinks">
+        <a [routerLink]="link.route" routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}">{{link.name}}</a></li>
+    </ul>
+    <div class="header-btns">
+      <input placeholder="Search for ...">
+      <a class="search-btn"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="header-small-block">
+      <img class="header-img" src="assets/images/user.png" (click)="router.navigate(['users/profile-page'])">
+      <div class="dropdown language-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          En
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">USA</a>
+          <a class="dropdown-item" href="#">Ru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
