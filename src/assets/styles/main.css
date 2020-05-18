@@ -1180,6 +1180,9 @@ footer {
 .register-checkbox a {
   color: #00AAE0 !important;
 }
+.login-left-side {
+  margin-top: 40px;
+}
 
 .last-login-item {
   height: 48px;
@@ -3679,6 +3682,9 @@ footer {
 
   .header-btns input::placeholder {
     font-size: 16px;
+  }
+  .login-left-side {
+    margin-top: 0;
   }
 }
 @media (max-width: 767px) {
