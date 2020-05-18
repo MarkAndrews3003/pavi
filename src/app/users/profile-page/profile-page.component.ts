@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../core/services/auth.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UsersService} from '../../core/services/users.service';
 import {GetAuthUserPipe} from '../../shared/pipes/get-auth-user.pipe';
@@ -31,6 +31,7 @@ export class ProfilePageComponent implements OnInit {
   currentStep = 1;
   aboutText = {profile_desc: ''};
   owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
+  passwordsMatch = true;
 
   constructor(
     public auth: AuthService,
@@ -40,7 +41,11 @@ export class ProfilePageComponent implements OnInit {
     private getAuthUser: GetAuthUserPipe,
     private toastr: ToastrService
   ) {
-    this.changePasswordForm = this.fb.group({});
+    this.changePasswordForm = this.fb.group({
+      old_pass: ['', Validators.required],
+      confirm_password: ['', Validators.required],
+      new_pass: ['', Validators.required]
+    });
     this.profileForm = this.fb.group({
       country: ['', Validators.required],
       phone: ['', Validators.required],
@@ -168,6 +173,21 @@ export class ProfilePageComponent implements OnInit {
       this.profileImgTextForm.patchValue({about_text: dt.profile_desc});
 
     });
+  }
+
+  comparePasswords() {
+    this.passwordsMatch = this.pass.value === this.confirmPass.value;
+  }
+
+  /**
+   * Password field getter
+   */
+  get pass(): AbstractControl {
+    return this.changePasswordForm.get('new_pass');
+  }
+
+  get confirmPass(): AbstractControl {
+    return this.changePasswordForm.get('confirm_password');
   }
 
 }

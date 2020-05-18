@@ -153,16 +153,17 @@
 
                 <div class="profile-item">
                   <label>Old Password:</label>
-                  <input placeholder="AB********123">
+                  <input placeholder="AB********123" formControlName="old_pass">
                 </div>
                 <div class="profile-item">
                   <label>New password:</label>
-                  <input placeholder="New Password">
+                  <input placeholder="New Password" formControlName="new_pass" (keyup)="comparePasswords()">
                 </div>
                 <div class="profile-item">
                   <label>Confirm New Password:</label>
-                  <input placeholder="Confirm New Password">
+                  <input placeholder="Confirm New Password" (keyup)="comparePasswords()" formControlName="confirm_password">
                 </div>
+                <mat-error *ngIf="!passwordsMatch && !confirmPass.hasError('required')">Passwords doesn't match</mat-error>
                 <div class="profile-btns">
                   <div class="profile-item">
                     <a class="change-email-btn-2" (click)="backToMainForm()">Back</a>
