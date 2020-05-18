@@ -54,7 +54,7 @@
       <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
     </ng-container>
     <ng-container *ngIf="auth.loggedIn()">
-      <p>Welcome! <span class="auth-user-name" (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' '+ authUser.last_name}}</span></p>
+      <p class="welcome-text-size">Welcome! <span class="auth-user-name" (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' '+ authUser.last_name}}</span></p>
     </ng-container>
   </div>
   <div class="section-block-1-right">

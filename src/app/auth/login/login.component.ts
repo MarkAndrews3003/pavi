@@ -46,14 +46,6 @@ export class LoginComponent implements OnInit {
     return `${API_URL}auth/google`;
   }
 
-  getFbAuthUrl() {
-    return `${API_URL}auth/facebook`;
-  }
-
-  getTwitterAuthUrl() {
-    return `${API_URL}auth/twitter`;
-  }
-
   /**
    * E-mail field getter
    */
