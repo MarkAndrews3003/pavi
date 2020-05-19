@@ -214,20 +214,20 @@ li {
   width: 300px;
   height: 60px;
   border-radius: 35px;
-  background: white;
+  background: #0265C9;
   font-family: "Segoe Regular";
   font-size: 22px;
-  color: #0265C9 !important;
   line-height: 40px;
+  color: white !important;
   transition: 0.3s ease-in-out;
-  border: 1px solid #0265C9;
   margin: 0 auto;
 }
 
 .login-btn:hover {
-  background: #0265C9;
-  color: white !important;
+  background: white;
+  color: #0265C9 !important;
   cursor: pointer;
+  border: 1px solid #0265C9;
 }
 
 .register-btn {
@@ -1087,7 +1087,6 @@ footer {
 .register-left-side {
   width: 40%;
   position: relative;
-  margin-top: 40px;
 }
 .logo-back {
   font-size: 30px;
@@ -1187,9 +1186,6 @@ footer {
 .register-checkbox a {
   color: #00AAE0 !important;
 }
-.login-left-side {
-  margin-top: 40px;
-}
 
 .last-login-item {
   height: 48px;
@@ -1233,7 +1229,7 @@ footer {
   justify-content: center;
 }
 
-.left-block-4.active {
+.left-block-4.inactive {
   background: #f1f1f1;
 }
 
@@ -1650,7 +1646,6 @@ footer {
   font-size: 15px;
   color: #757575;
   font-family: "Segoe Regular";
-  overflow: hidden;
 }
 .profile-text-2 {
   font-size: 30px;
@@ -2778,10 +2773,35 @@ footer {
 .about-media-info-right img {
   margin-right: 20px;
 }
-
-
-
-
+.contact-media-info {
+  margin-bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact-media-info-left {
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-radius: 50px;
+  color: #000000;
+  font-size: 17px;
+  font-family: "Arial Bold";
+  line-height: 20px;
+}
+.contact-center {
+  color: #F15A24;
+  font-size: 17px;
+  font-family: "Arial Bold";
+  line-height: 20px;
+  padding-right: 25px;
+}
+.about-content-2 .about-media-info-right {
+  margin: 0 auto;
+}
 
 
 
@@ -3244,6 +3264,13 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .contact-media-info {
+    flex-direction: column;
+  }
+  .contact-media-info-left {
+    width: 100%;
+    margin-top: 20px;
+  }
   .about-media-info {
     padding: 0 70px;
   }
@@ -3292,6 +3319,7 @@ footer {
     font-size: 40px;
     max-width: 330px;
     line-height: 60px;
+    padding-bottom: 137px;
   }
   .find-job-right {
     height: 60px;
@@ -4015,11 +4043,15 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .contact-center {
+    font-size: 14px;
+    padding-right: 20px;
+  }
   .about-media-info-left {
     font-size: 13px;
   }
   .about-media-info-right {
-    width: 100%;
+    width: 96%;
     font-size: 14px;
     border-radius: 0;
   }
@@ -4075,6 +4107,7 @@ footer {
     font-size: 30px;
     max-width: 96%;
     line-height: 40px;
+    padding-bottom: 222px;
   }
   .find-job-text-2 {
     margin-left: 10px !important;
