@@ -62,6 +62,7 @@ export class UserSignUpComponent implements OnInit {
   getGoogleAuthUrl() {
     return `${API_URL}auth/google`;
   }
+
   /**
    * First name field control getter
    */
@@ -96,6 +97,10 @@ export class UserSignUpComponent implements OnInit {
 
   get birthday(): AbstractControl {
     return this.userRegisterForm.get('birthday');
+  }
+
+  async goToPage(url) {
+    await this.router.navigate([url]);
   }
 
 }
