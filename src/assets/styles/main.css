@@ -2729,6 +2729,61 @@ footer {
 .profile-logos .owl-theme .owl-nav {
   margin-top: 40px;
 }
+.about-media-info {
+  margin-bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 270px 0 110px;
+}
+.about-media-info-left {
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  width: 490px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-radius: 50px;
+  color: #000000;
+  font-size: 17px;
+  font-family: "Arial Bold";
+  line-height: 20px;
+}
+.media-left {
+  padding: 10px 20px;
+}
+.media-right {
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  width: 345px;
+  padding: 10px 20px;
+}
+.media-left img {
+  margin-right: 10px;
+}
+.about-media-info-right {
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-radius: 50px;
+  color: #000000;
+  font-size: 17px;
+  font-family: "Arial Bold";
+  line-height: 20px;
+}
+.about-media-info-right img {
+  margin-right: 20px;
+}
+
+
+
+
+
+
+
 
 
 @media (max-width: 1900px) {
@@ -2975,13 +3030,19 @@ footer {
   }
 
   .header-right ul li {
-    margin-left: 24px;
+    margin-left: 19px;
   }
   .old-new-email .profile-btns {
     flex-direction: column;
   }
+  .header-right ul li a {
+    font-size: 16px;
+  }
 }
 @media (max-width: 1400px) {
+  .about-media-info {
+    padding: 0 150px;
+  }
   .changes-passwords .profile-btns {
     width: 540px;
   }
@@ -3182,6 +3243,9 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .about-media-info {
+    padding: 0 70px;
+  }
   .welcome-text-size {
     font-size: 45px;
     margin-right: 40px;
@@ -3484,6 +3548,12 @@ footer {
 
 }
 @media (max-width: 992px) {
+  .about-media-info {
+    flex-direction: column;
+  }
+  .about-media-info-right {
+    margin-top: 20px;
+  }
   .profile-item label {
     font-size: 22px;
   }
@@ -3695,6 +3765,23 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .about-media-info-left {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 0;
+  }
+  .media-right {
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .about-media-info {
+    padding: 0 20px;
+  }
   .changes-passwords .profile-item {
     flex-direction: column;
   }
@@ -3927,6 +4014,17 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .about-media-info-left {
+    font-size: 13px;
+  }
+  .about-media-info-right {
+    width: 100%;
+    font-size: 14px;
+    border-radius: 0;
+  }
+  .media-left {
+    padding: 10px 11px;
+  }
   .welcome-text-size {
     font-size: 25px;
     margin-right: 40px;
