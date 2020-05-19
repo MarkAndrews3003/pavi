@@ -994,6 +994,7 @@ footer {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   margin-top: 20px;
+  height: 200px;
 }
 
 .left-block-2 {
@@ -1226,7 +1227,7 @@ footer {
   justify-content: center;
 }
 
-.left-block-4.active {
+.left-block-4.inactive {
   background: #f1f1f1;
 }
 
