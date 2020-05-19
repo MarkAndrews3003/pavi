@@ -10,7 +10,7 @@ export const NAVBAR_LINKS = [
   {name: 'About us', route: '/users/about'},
   {name: 'Contact us', route: '/users/contact-us'},
   {name: 'Find job', route: '/users/find-job'},
-  {name: 'Find employee', route: '/users/find-employee'},
+  {name: 'Find employee', route: '/companies/find-employees'},
 ];
 
 
