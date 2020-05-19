@@ -3,8 +3,8 @@
     <a class="logo-back" (click)="router.navigate(['/'])">
       <img src="assets/images/logo.png">
     </a>
-    <img class="register-big-img" src="assets/images/login-1.svg" (click)="router.navigate(['/'])">
-    <div class="left-block-4" (click)="router.navigate(['auth/user-registration'])">
+    <img class="register-big-img" src="assets/images/login-1.svg">
+    <div class="left-block-4" (click)="goToPage('auth/user-registration')">
       <div>
         <img src="assets/images/img-30.svg">
         <div class="left-block-5">
@@ -14,7 +14,7 @@
       </div>
       <img src="assets/images/img-31.svg">
     </div>
-    <div class="left-block-4 inactive" (click)="router.navigate(['auth/company-registration'])">
+    <div class="left-block-4 inactive" (click)="goToPage('auth/company-registration')">
       <div>
         <img src="assets/images/img-32.svg">
         <div class="left-block-5">

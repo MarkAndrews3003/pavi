@@ -80,4 +80,7 @@ export class CompanySignUpComponent implements OnInit {
     return `${API_URL}auth/google`;
   }
 
+  async goToPage(url) {
+    await this.router.navigate([url]);
+  }
 }
