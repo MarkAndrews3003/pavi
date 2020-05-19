@@ -31,7 +31,7 @@ export class ProfilePageComponent implements OnInit {
   currentStep = 1;
   aboutText = {profile_desc: ''};
   owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
-  passwordsMatch = true;
+
 
   constructor(
     public auth: AuthService,
@@ -41,11 +41,7 @@ export class ProfilePageComponent implements OnInit {
     private getAuthUser: GetAuthUserPipe,
     private toastr: ToastrService
   ) {
-    this.changePasswordForm = this.fb.group({
-      old_pass: ['', Validators.required],
-      confirm_password: ['', Validators.required],
-      new_pass: ['', Validators.required]
-    });
+
     this.profileForm = this.fb.group({
       country: ['', Validators.required],
       phone: ['', Validators.required],
@@ -73,11 +69,6 @@ export class ProfilePageComponent implements OnInit {
     if (this.authUser.cover) {
       this.coverImage = `${API_URL}uploads/covers/${this.authUser.cover}`;
     }
-
-    this.changeEmailForm = this.fb.group({
-      old_email: [this.authUser.email],
-      new_email: ['']
-    });
 
     this.getAboutText();
   }
@@ -148,24 +139,13 @@ export class ProfilePageComponent implements OnInit {
   }
 
   backToMainForm() {
-    // this.showEditProfileForm = false;
     this.showChangePass = false;
     this.showChangeEmail = false;
   }
 
-  changeEmail() {
-    console.log(this.changeEmailForm.value)
-    this.usersService.changeEmail(this.changeEmailForm.value).subscribe(dt => {
-      this.toastr.success('Email has been changed successfully');
-    });
-  }
 
-  changePassword() {
-    console.log(this.changePasswordForm.value)
-    this.usersService.changePassword(this.changePasswordForm.value).subscribe(dt => {
-      this.toastr.success('Password has been changed successfully');
-    });
-  }
+
+
 
   getAboutText() {
     this.usersService.getAboutText({}).subscribe((dt: any) => {
@@ -176,19 +156,6 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
-  comparePasswords() {
-    this.passwordsMatch = this.pass.value === this.confirmPass.value;
-  }
 
-  /**
-   * Password field getter
-   */
-  get pass(): AbstractControl {
-    return this.changePasswordForm.get('new_pass');
-  }
-
-  get confirmPass(): AbstractControl {
-    return this.changePasswordForm.get('confirm_password');
-  }
 
 }
