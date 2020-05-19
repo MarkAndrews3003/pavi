@@ -43,10 +43,26 @@
 
           <mat-horizontal-stepper [linear]="isLinear" #stepper [selectedIndex]="currentStep-1" labelPosition="bottom">
 
-            <!-- 'Step passed' sign-->
-            <ng-template matStepperIcon="edit">
-              <mat-icon>done</mat-icon>
+
+            <ng-template matStepperIcon="edit" let-index="index">
+              <i class="fas fa-user" *ngIf="index === 0"></i>
+              <i class="fas fa-key" *ngIf="index === 1"></i>
+              <i class="fas fa-phone-alt" *ngIf="index === 2"></i>
             </ng-template>
+
+            <!-- Custom icon with a context variable. -->
+            <ng-template matStepperIcon="number" let-index="index">
+              <i class="fas fa-user" *ngIf="index === 0"></i>
+              <i class="fas fa-key" *ngIf="index === 1"></i>
+              <i class="fas fa-phone-alt" *ngIf="index === 2"></i>
+            </ng-template>
+
+
+
+<!--            &lt;!&ndash; 'Step passed' sign&ndash;&gt;-->
+<!--            <ng-template matStepperIcon="edit">-->
+<!--              <mat-icon>done</mat-icon>-->
+<!--            </ng-template>-->
 
             <!-- Step 1 -->
             <mat-step [stepControl]="companyInfo">
