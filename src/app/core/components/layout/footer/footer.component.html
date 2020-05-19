@@ -25,12 +25,12 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="../../../assets/images/img-29.png">
+        <img src="assets/images/img-29.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Navigation</p>
         <ul class="text-10">
-          <li *ngFor="let link of navbarLinks">
+          <li *ngFor="let link of footerLinks">
             <a [routerLink]="link.route" routerLinkActive="active"
              [routerLinkActiveOptions]="{exact:true}">{{link.name}}</a>
           </li>
@@ -39,7 +39,7 @@
     </div>
     <div class="footer-item">
       <div class="footer-item-left">
-        <img src="../../../assets/images/img-2.png">
+        <img src="assets/images/img-2.png">
       </div>
       <div class="footer-item-right">
         <p class="text-9">Call</p>

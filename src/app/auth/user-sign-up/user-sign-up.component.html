@@ -4,7 +4,7 @@
       <img src="assets/images/logo.png">
     </a>
     <img class="register-big-img" src="assets/images/login-1.svg">
-    <div class="left-block-4" (click)="goToPage('auth/user-registration')">
+    <div class="left-block-4 active" (click)="goToPage('auth/user-registration')">
       <div>
         <img src="assets/images/img-30.svg">
         <div class="left-block-5">
@@ -14,7 +14,7 @@
       </div>
       <img src="assets/images/img-31.svg">
     </div>
-    <div class="left-block-4 inactive" (click)="goToPage('auth/company-registration')">
+    <div class="left-block-4" (click)="goToPage('auth/company-registration')">
       <div>
         <img src="assets/images/img-32.svg">
         <div class="left-block-5">
@@ -45,7 +45,10 @@
           <div class="login-item">
             <label class="logos-item-label">First Name</label>
             <input class="logos-item-input" placeholder="First Name*" formControlName="first_name">
-            <mat-error *ngIf="isSubmitted && firstName.hasError('required')">First name is <strong>required</strong>
+            <mat-error *ngIf="(firstName.touched || isSubmitted) && firstName.hasError('required')">First name is
+              <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="firstName.hasError('patternInvalid')">First name has <strong>incorrect format</strong>
             </mat-error>
           </div>
           <div class="login-item">
@@ -95,7 +98,9 @@
           <div class="login-item">
             <label class="logos-item-label">Last Name</label>
             <input class="logos-item-input" placeholder="Last Name*" formControlName="last_name">
-            <mat-error *ngIf="isSubmitted && lastName.hasError('required')">Last name is <strong>required</strong>
+            <mat-error *ngIf="(lastName.touched||isSubmitted) && lastName.hasError('required')">Last name is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="lastName.hasError('patternInvalid')">Last name has <strong>incorrect format</strong>
             </mat-error>
           </div>
           <div class="login-item">

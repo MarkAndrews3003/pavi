@@ -214,20 +214,20 @@ li {
   width: 300px;
   height: 60px;
   border-radius: 35px;
-  background: #0265C9;
+  background: white;
   font-family: "Segoe Regular";
   font-size: 22px;
+  color: #0265C9 !important;
   line-height: 40px;
-  color: white !important;
   transition: 0.3s ease-in-out;
+  border: 1px solid #0265C9;
   margin: 0 auto;
 }
 
 .login-btn:hover {
-  background: white;
-  color: #0265C9 !important;
+  background: #0265C9;
+  color: white !important;
   cursor: pointer;
-  border: 1px solid #0265C9;
 }
 
 .register-btn {
@@ -1233,7 +1233,7 @@ footer {
   justify-content: center;
 }
 
-.left-block-4.inactive {
+.left-block-4.active {
   background: #f1f1f1;
 }
 
@@ -1650,6 +1650,7 @@ footer {
   font-size: 15px;
   color: #757575;
   font-family: "Segoe Regular";
+  overflow: hidden;
 }
 .profile-text-2 {
   font-size: 30px;

@@ -1,7 +1,10 @@
 <section class="register-content">
   <div class="register-left-side">
+    <a class="logo-back" (click)="router.navigate(['/'])">
+      <img src="assets/images/logo.png">
+    </a>
     <img class="register-big-img" src="assets/images/login-1.svg" (click)="router.navigate(['/'])">
-    <div class="left-block-4 active" (click)="goToPage('auth/user-registration')">
+    <div class="left-block-4" (click)="goToPage('auth/user-registration')">
       <div>
         <img src="assets/images/img-30.svg">
         <div class="left-block-5">
@@ -11,7 +14,7 @@
       </div>
       <img src="assets/images/img-31.svg">
     </div>
-    <div class="left-block-4" (click)="goToPage('auth/company-registration')">
+    <div class="left-block-4 active" (click)="goToPage('auth/company-registration')">
       <div>
         <img src="assets/images/img-32.svg">
         <div class="left-block-5">

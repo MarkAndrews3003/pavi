@@ -7,13 +7,17 @@ import {SharedModule} from '../shared/shared.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
 import {CoreModule} from '../core/core.module';
+import { ChangeEmailFormComponent } from './profile-page/change-email-form/change-email-form.component';
+import { ChangePasswordFormComponent } from './profile-page/change-password-form/change-password-form.component';
 
 
 @NgModule({
   declarations: [
     ProfilePageComponent,
     ContactUsComponent,
-    AboutComponent
+    AboutComponent,
+    ChangeEmailFormComponent,
+    ChangePasswordFormComponent
   ],
   imports: [
     CommonModule,
