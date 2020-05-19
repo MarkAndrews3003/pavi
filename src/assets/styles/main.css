@@ -1650,6 +1650,7 @@ footer {
   font-size: 15px;
   color: #757575;
   font-family: "Segoe Regular";
+  overflow: hidden;
 }
 .profile-text-2 {
   font-size: 30px;

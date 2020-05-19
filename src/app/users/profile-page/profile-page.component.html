@@ -40,7 +40,7 @@
   </div>
   <div class="section-block-10-item-2">
     <div class="section-block-10-header">
-      <p class="mask-text-2">Jessica Alba</p>
+      <p class="mask-text-2">{{authUser.first_name + ' ' + authUser.last_name}}</p>
       <form [formGroup]="coverImgForm">
         <label class="mask-content-2" for="cover-image" *ngIf="showProfileImgTextControls">
 

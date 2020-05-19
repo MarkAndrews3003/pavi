@@ -24,8 +24,8 @@ export class ProfilePageComponent implements OnInit {
   showAllJobs = false;
   showProfileImgTextControls = false;
   authUser;
-  profileImage = 'assets/images/no-profile-image.svg';
-  coverImage = 'assets/images/no-cover-image.svg';
+  profileImage = 'assets/images/no-profile.png';
+  coverImage = 'assets/images/no-cover.png';
   changeEmailForm: FormGroup;
   isLinear = false;
   currentStep = 1;
