@@ -24,8 +24,8 @@ export class ProfilePageComponent implements OnInit {
   showAllJobs = false;
   showProfileImgTextControls = false;
   authUser;
-  profileImage = 'assets/images/profile-page-2.svg';
-  coverImage = 'assets/images/profile-page.png';
+  profileImage = 'assets/images/no-profile-image.svg';
+  coverImage = 'assets/images/no-cover-image.svg';
   changeEmailForm: FormGroup;
   isLinear = false;
   currentStep = 1;
@@ -66,6 +66,7 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
+    console.log(this.authUser)
     if (this.authUser.avatar) {
       this.profileImage = `${API_URL}uploads/avatars/${this.authUser.avatar}`;
     }
