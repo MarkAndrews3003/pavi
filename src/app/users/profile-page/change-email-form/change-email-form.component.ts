@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {GetAuthUserPipe} from '../../../shared/pipes/get-auth-user.pipe';
 import {UsersService} from '../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
+import {patternValidator} from '../../../core/helpers/pattern-validator';
+import {EMAIL_PATTERN} from '../../../core/constants/general';
 
 @Component({
   selector: 'app-change-email-form',
@@ -30,9 +32,9 @@ export class ChangeEmailFormComponent implements OnInit {
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
     this.changeEmailForm = this.fb.group({
-      old_email: [this.authUser.email, Validators.required],
-      new_email: ['', Validators.required],
-      confirm_email: ['', Validators.required]
+      old_email: [this.authUser.email, [Validators.required, patternValidator(EMAIL_PATTERN)]],
+      new_email: ['', [Validators.required, patternValidator(EMAIL_PATTERN)]],
+      confirm_email: ['', [Validators.required, patternValidator(EMAIL_PATTERN)]]
     });
   }
 

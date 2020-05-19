@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
+import {API_URL, EMAIL_PATTERN, TEXT_ONLY_PATTERN} from '../../core/constants/general';
 import {passwordConfirmation} from '../../core/helpers/password-confirmation';
 
 @Component({
@@ -29,8 +29,8 @@ export class UserSignUpComponent implements OnInit {
       password: ['', Validators.required],
       confirm_password: ['', Validators.required],
       birthday: ['', Validators.required],
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      first_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+      last_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
       gender: ['male', Validators.required],
       country: ['', Validators.required],
       agreed: ['', Validators.required],

@@ -3,13 +3,17 @@
     <label>Old Email:</label>
     <input placeholder="hello@name.com" formControlName="old_email" (keyup)="compareNewOldEmails()">
   </div>
-  <mat-error *ngIf="isSubmitted && oldEmail.hasError('required')">Old email is required
+  <mat-error *ngIf="(oldEmail.touched || isSubmitted) && oldEmail.hasError('required')">Old email is required
+  </mat-error>
+  <mat-error *ngIf="oldEmail.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
   </mat-error>
   <div class="profile-item">
     <label>New E-mail Address:</label>
     <input placeholder="New E-mail" formControlName="new_email" (keyup)="compareEmails()">
   </div>
-  <mat-error *ngIf="isSubmitted && newEmail.hasError('required')">New email is required
+  <mat-error *ngIf="newEmail.hasError('patternInvalid') && !newOldEmailsMatch">E-mail is <strong>invalid</strong>
+  </mat-error>
+  <mat-error *ngIf="(newEmail.touched || isSubmitted) && newEmail.hasError('required')">New email is required
   </mat-error>
   <mat-error *ngIf="newOldEmailsMatch">Old and new emails are the same
   </mat-error>
@@ -17,7 +21,9 @@
     <label>Confirm New Email:</label>
     <input placeholder="Confirm New E-mail" formControlName="confirm_email" (keyup)="compareEmails()">
   </div>
-  <mat-error *ngIf="isSubmitted && confirmEmail.hasError('required')">Please confirm the email
+  <mat-error *ngIf="confirmEmail.hasError('patternInvalid')">E-mail is <strong>invalid</strong>
+  </mat-error>
+  <mat-error *ngIf="(confirmEmail.touched || isSubmitted) && confirmEmail.hasError('required')">Please confirm the email
   </mat-error>
   <mat-error *ngIf="!emailsMatch && !confirmEmail.hasError('required')">Emails don't match
   </mat-error>
