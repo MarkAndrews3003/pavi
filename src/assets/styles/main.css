@@ -1646,6 +1646,7 @@ footer {
   font-size: 15px;
   color: #757575;
   font-family: "Segoe Regular";
+  word-break: break-all;
 }
 .profile-text-2 {
   font-size: 30px;
