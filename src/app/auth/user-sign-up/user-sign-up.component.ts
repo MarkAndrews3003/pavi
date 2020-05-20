@@ -16,6 +16,7 @@ export class UserSignUpComponent implements OnInit {
   userRegisterForm: FormGroup;
   isSubmitted = false;
   passwordsMatch = true;
+  maxBirthdayDate = new Date(2009, 11, 31);
 
   constructor(
     public router: Router,
