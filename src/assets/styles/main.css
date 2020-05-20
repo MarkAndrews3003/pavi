@@ -214,20 +214,20 @@ li {
   width: 300px;
   height: 60px;
   border-radius: 35px;
-  background: #0265C9;
   font-family: "Segoe Regular";
   font-size: 22px;
   line-height: 40px;
-  color: white !important;
   transition: 0.3s ease-in-out;
   margin: 0 auto;
+  color: #0265C9 !important;
+  background: white;
+  cursor: pointer;
+  border: 1px solid #0265C9;
 }
 
 .login-btn:hover {
-  background: white;
-  color: #0265C9 !important;
-  cursor: pointer;
-  border: 1px solid #0265C9;
+  background: #0265C9;
+  color: white !important;
 }
 
 .register-btn {
@@ -1229,7 +1229,7 @@ footer {
   justify-content: center;
 }
 
-.left-block-4.inactive {
+.left-block-4.active {
   background: #f1f1f1;
 }
 
