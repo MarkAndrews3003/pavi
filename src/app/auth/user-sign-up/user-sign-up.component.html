@@ -106,9 +106,8 @@
           <div class="login-item">
             <label class="logos-item-label">Country</label>
             <select class="logos-item-input" formControlName="country">
-              <option>Country*</option>
-              <option>USA</option>
-              <option>China</option>
+              <option selected disabled [value]="''">Country*</option>
+              <option *ngFor="let country of countries" [value]="country">{{country}}</option>
             </select>
             <mat-error *ngIf="isSubmitted && userRegisterForm.get('country').hasError('required')">Country is <strong>required</strong>
             </mat-error>

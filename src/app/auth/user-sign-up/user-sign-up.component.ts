@@ -5,6 +5,7 @@ import {AuthService} from '../../core/services/auth.service';
 import {patternValidator} from '../../core/helpers/pattern-validator';
 import {API_URL, EMAIL_PATTERN, TEXT_ONLY_PATTERN} from '../../core/constants/general';
 import {passwordConfirmation} from '../../core/helpers/password-confirmation';
+import {COUNTRY_LIST} from '../../core/constants/countries';
 
 @Component({
   selector: 'app-user-sign-up',
@@ -17,6 +18,7 @@ export class UserSignUpComponent implements OnInit {
   isSubmitted = false;
   passwordsMatch = true;
   maxBirthdayDate = new Date(2009, 11, 31);
+  countries = COUNTRY_LIST;
 
   constructor(
     public router: Router,
