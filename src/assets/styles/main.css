@@ -2805,7 +2805,7 @@ footer {
 }
 .work-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 140px;
   margin-top: 50px;
@@ -2940,7 +2940,6 @@ footer {
   background: #0265C9;
 }
 .work-add-edit {
-  margin: 50px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
