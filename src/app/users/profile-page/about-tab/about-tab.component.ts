@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {API_URL} from '../../../core/constants/general';
+import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../../core/constants/general';
 import {GetAuthUserPipe} from '../../../shared/pipes/get-auth-user.pipe';
 import {UsersService} from '../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
+import {OwlOptions} from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-about-tab',
@@ -21,6 +22,9 @@ export class AboutTabComponent implements OnInit {
   showChangePass = false;
   showChangeEmail = false;
   showEditProfileForm = false;
+
+  owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
+  showAllJobs = false;
 
 
   constructor(
