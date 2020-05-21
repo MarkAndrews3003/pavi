@@ -88,28 +88,10 @@
               Password must be <strong>5-15 characters</strong> long.
             </mat-error>
           </div>
-<<<<<<< HEAD
-=======
-          <div class="login-item register-checkbox">
-            <mat-checkbox formControlName="agreed" (change)="agreeTerms($event)" id="terms">
-              <span class="checkbox-text">
-              Creating an account means you're okay with our
-              </span>
-            </mat-checkbox>
-            <div>
 
-              <a>Terms of
-                Service,
-                Privacy
-                Policy,</a> and our default <a>Notification Settings.</a>
-            </div>
-            <div>
-              <mat-error *ngIf="isSubmitted && userRegisterForm.get('agreed').hasError('required')">Please
-                <strong>agree</strong> to the terms
-              </mat-error>
-            </div>
-          </div>
->>>>>>> eb07d84cf111b2751486b4dcc911e3a70cf4ec6f
+
+
+
         </div>
         <div>
           <div class="login-item">
@@ -159,11 +141,17 @@
       </div>
       <div class="login-item register-checkbox">
         <mat-checkbox formControlName="agreed" (change)="agreeTerms($event)" id="terms">
-          <div class="checkbox-text">
-            Creating an account means you're okay with our
-            <a>Terms of Service, Privacy Policy,</a> and our default <a>Notification Settings.</a>
-          </div>
+              <span class="checkbox-text">
+              Creating an account means you're okay with our
+              </span>
         </mat-checkbox>
+        <div>
+
+          <a>Terms of
+            Service,
+            Privacy
+            Policy,</a> and our default <a>Notification Settings.</a>
+        </div>
         <div>
           <mat-error *ngIf="isSubmitted && userRegisterForm.get('agreed').hasError('required')">Please
             <strong>agree</strong> to the terms
