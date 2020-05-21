@@ -66,6 +66,9 @@
             <mat-error *ngIf="isSubmitted && birthday.hasError('required')">Birth day is <strong>required</strong>
             </mat-error>
 
+            <mat-error *ngIf="birthday.hasError('matDatepickerMax')">The date is <strong>not allowed</strong>
+            </mat-error>
+
 
           </div>
           <div class="login-item">
