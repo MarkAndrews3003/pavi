@@ -7,6 +7,8 @@ import {GetAuthUserPipe} from '../../shared/pipes/get-auth-user.pipe';
 import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../core/constants/general';
 import {ToastrService} from 'ngx-toastr';
 import {OwlOptions} from 'ngx-owl-carousel-o';
+import {MatDialog} from '@angular/material/dialog';
+import {SaveWorkExperienceDialogComponent} from '../../core/components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -31,6 +33,7 @@ export class ProfilePageComponent implements OnInit {
   currentStep = 1;
   aboutText = {profile_desc: ''};
   owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
+  showingEditDeleteBtns = false;
 
 
   constructor(
@@ -39,7 +42,8 @@ export class ProfilePageComponent implements OnInit {
     public router: Router,
     private usersService: UsersService,
     private getAuthUser: GetAuthUserPipe,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private matDialog: MatDialog
   ) {
 
     this.profileForm = this.fb.group({
@@ -143,10 +147,6 @@ export class ProfilePageComponent implements OnInit {
     this.showChangeEmail = false;
   }
 
-
-
-
-
   getAboutText() {
     this.usersService.getAboutText({}).subscribe((dt: any) => {
       this.aboutText = dt;
@@ -156,6 +156,16 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
+
+  addWorkExperience() {
+    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
+
+    });
+  }
+
+  showEditDeleteBtns() {
+    this.showingEditDeleteBtns = true;
+  }
 
 
 }

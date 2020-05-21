@@ -6,10 +6,11 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import {RouterModule} from '@angular/router';
+import { SaveWorkExperienceDialogComponent } from './components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, NavbarComponent, FooterComponent],
+  declarations: [HeaderComponent, NavbarComponent, FooterComponent, SaveWorkExperienceDialogComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -19,7 +20,8 @@ import {RouterModule} from '@angular/router';
   exports: [
     MaterialModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SaveWorkExperienceDialogComponent
   ]
 
 })

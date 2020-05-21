@@ -700,8 +700,8 @@
         </div>
       </div>
       <div class="work-add-edit">
-        <a class="work-add-edit-1">Add +</a>
-        <a class="work-add-edit-2">Edit</a>
+        <a class="work-add-edit-1" (click)="addWorkExperience()">Add +</a>
+        <a class="work-add-edit-2" (click)="showEditDeleteBtns()">Edit</a>
       </div>
     </div>
     <div class="work-content-item">
@@ -720,7 +720,7 @@
                 <p class="work-text-4">Bachelor Degree</p>
                 <p class="work-text-5">Designer</p>
               </div>
-              <div class="work-delete-edit">
+              <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">
                 <a>
                   <img src="../../../assets/images/edit-work.svg">
                 </a>
