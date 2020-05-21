@@ -58,7 +58,6 @@ export class RequestInterceptor implements HttpInterceptor {
         } else {
 
           this.common.companyNameExists = err.error.hasOwnProperty('company_name_exists');
-          console.log(this.common.companyNameExists)
 
           if (err.error.hasOwnProperty('msg')) {
             this.toastr.error('', err.error.msg);

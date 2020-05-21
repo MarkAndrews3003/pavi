@@ -29,11 +29,11 @@ export class UserSignUpComponent implements OnInit {
       email: new FormControl(null, {
         validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
       }),
-      password: ['', Validators.required],
-      confirm_password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
+      confirm_password: ['', [Validators.required]],
       birthday: ['', Validators.required],
-      first_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
-      last_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+      first_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
+      last_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
       gender: ['male', Validators.required],
       country: ['', Validators.required],
       agreed: ['', Validators.required],
@@ -55,7 +55,8 @@ export class UserSignUpComponent implements OnInit {
   }
 
   agreeTerms(e) {
-    this.userRegisterForm.patchValue({agreed: e.checked});
+    const agreed = e.checked ? 'yes' : '';
+    this.userRegisterForm.patchValue({agreed});
   }
 
   comparePasswords() {
