@@ -7,8 +7,12 @@ import {SharedModule} from '../shared/shared.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
 import {CoreModule} from '../core/core.module';
-import { ChangeEmailFormComponent } from './profile-page/change-email-form/change-email-form.component';
-import { ChangePasswordFormComponent } from './profile-page/change-password-form/change-password-form.component';
+import { ChangeEmailFormComponent } from './profile-page/about-tab/change-email-form/change-email-form.component';
+import { ChangePasswordFormComponent } from './profile-page/about-tab/change-password-form/change-password-form.component';
+import { AboutTabComponent } from './profile-page/about-tab/about-tab.component';
+import { CvPortfolioTabComponent } from './profile-page/cv-portfolio-tab/cv-portfolio-tab.component';
+import { SocialMediasTabComponent } from './profile-page/social-medias-tab/social-medias-tab.component';
+import { SettingsTabComponent } from './profile-page/settings-tab/settings-tab.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { ChangePasswordFormComponent } from './profile-page/change-password-form
     ContactUsComponent,
     AboutComponent,
     ChangeEmailFormComponent,
-    ChangePasswordFormComponent
+    ChangePasswordFormComponent,
+    AboutTabComponent,
+    CvPortfolioTabComponent,
+    SocialMediasTabComponent,
+    SettingsTabComponent
   ],
   imports: [
     CommonModule,

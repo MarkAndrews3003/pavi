@@ -16,22 +16,22 @@ import {SaveWorkExperienceDialogComponent} from '../../core/components/dialogs/s
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit {
-  changePasswordForm: FormGroup;
-  profileImgTextForm: FormGroup;
-  coverImgForm: FormGroup;
-  profileForm: FormGroup;
-  showChangePass = false;
-  showChangeEmail = false;
-  showEditProfileForm = false;
-  showAllJobs = false;
+
+
+
   showProfileImgTextControls = false;
-  authUser;
   profileImage = 'assets/images/no-profile.png';
   coverImage = 'assets/images/no-cover.png';
-  changeEmailForm: FormGroup;
+  profileImgTextForm: FormGroup;
+  coverImgForm: FormGroup;
+  aboutText = {profile_desc: ''};
+
+
+  showAllJobs = false;
+  authUser;
   isLinear = false;
   currentStep = 1;
-  aboutText = {profile_desc: ''};
+
   owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
   showingEditDeleteBtns = false;
 
@@ -46,14 +46,6 @@ export class ProfilePageComponent implements OnInit {
     private matDialog: MatDialog
   ) {
 
-    this.profileForm = this.fb.group({
-      country: ['', Validators.required],
-      phone: ['', Validators.required],
-      // gender: ['', Validators.required],
-      // password: ['', Validators.required],
-      // email: ['', Validators.required],
-
-    });
     this.profileImgTextForm = this.fb.group({
       // avatar: [''],
       about_text: ['']
@@ -61,12 +53,11 @@ export class ProfilePageComponent implements OnInit {
     this.coverImgForm = this.fb.group({
       cover: ['']
     });
-
   }
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
-    console.log(this.authUser)
+
     if (this.authUser.avatar) {
       this.profileImage = `${API_URL}uploads/avatars/${this.authUser.avatar}`;
     }
@@ -81,16 +72,15 @@ export class ProfilePageComponent implements OnInit {
     this.currentStep = e.selectedIndex + 1;
   }
 
-  showChangePassForm() {
-    this.showChangePass = !this.showChangePass;
+
+  addWorkExperience() {
+    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
+
+    });
   }
 
-  showChangeEmailForm() {
-    this.showChangeEmail = !this.showChangeEmail;
-  }
-
-  toggleProfileImgText() {
-    this.showProfileImgTextControls = !this.showProfileImgTextControls;
+  showEditDeleteBtns() {
+    this.showingEditDeleteBtns = true;
   }
 
 
@@ -127,24 +117,12 @@ export class ProfilePageComponent implements OnInit {
     }
   }
 
-  saveProfileDetails() {
-    console.log(this.profileForm.value)
-    this.usersService.updateProfileInfo(this.profileForm.value).subscribe(dt => {
-
-    });
-  }
 
   saveAboutText() {
-    console.log(this.profileImgTextForm.value)
     this.usersService.changeAboutText(this.profileImgTextForm.value).subscribe(dt => {
       this.toastr.success('About text has been changed successfully');
       this.showProfileImgTextControls = false;
     });
-  }
-
-  backToMainForm() {
-    this.showChangePass = false;
-    this.showChangeEmail = false;
   }
 
   getAboutText() {
@@ -156,16 +134,7 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
-
-  addWorkExperience() {
-    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
-
-    });
+  toggleProfileImgText() {
+    this.showProfileImgTextControls = !this.showProfileImgTextControls;
   }
-
-  showEditDeleteBtns() {
-    this.showingEditDeleteBtns = true;
-  }
-
-
 }

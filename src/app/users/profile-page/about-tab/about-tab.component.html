@@ -1,0 +1,49 @@
+<div class="section-block-10-info">
+  <p class="profile-text-3">Contact Information</p>
+  <a class="profile-delete-btn-2">Delete Profile</a>
+  <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
+  <a class="profile-edit-profile-btn" *ngIf="!showChangeEmail && !showChangePass && !showEditProfileForm"
+     (click)="showEditProfileForm = true">Edit Profile</a>
+</div>
+<div class="section-block-10-form">
+  <form [formGroup]="profileForm" *ngIf="!showChangeEmail && !showChangePass">
+    <div class="form-elements">
+      <div class="profile-item">
+        <label>Phone:</label>
+        <input placeholder="+1 123 455 7890" formControlName="phone">
+      </div>
+      <div class="profile-item">
+        <label>Age:</label>
+        <input placeholder="25" disabled>
+      </div>
+      <div class="profile-item">
+        <label>Country:</label>
+        <input placeholder="Usa" formControlName="country">
+      </div>
+      <div class="profile-item">
+        <label>Gender:</label>
+        <input placeholder="Female" disabled>
+      </div>
+      <div class="profile-item">
+        <label>Email:</label>
+        <input placeholder="hello@name.com" disabled>
+      </div>
+      <div class="profile-item">
+        <label>Password:</label>
+        <input placeholder="AB********123" disabled>
+      </div>
+    </div>
+    <div class="profile-item">
+      <a class="change-email-btn" (click)="showChangeEmailForm()">Change E-mail</a>
+    </div>
+    <div class="profile-item">
+      <a class="change-email-btn-2" (click)="showChangePassForm()">Change Password</a>
+    </div>
+  </form>
+  <div class="old-new-email" *ngIf="showChangeEmail">
+    <app-change-email-form (back)="backToMainForm()"></app-change-email-form>
+  </div>
+  <div class="changes-passwords" *ngIf="showChangePass">
+    <app-change-password-form (back)="backToMainForm()"></app-change-password-form>
+  </div>
+</div>
