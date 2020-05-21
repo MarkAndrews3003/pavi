@@ -2882,7 +2882,7 @@ footer {
   width: 80px;
   transition: 0.3s ease-in-out;
   height: 40px;
-  display: none;
+  /*display: none;*/
 }
 .work-delete-edit a {
   width: 40px;

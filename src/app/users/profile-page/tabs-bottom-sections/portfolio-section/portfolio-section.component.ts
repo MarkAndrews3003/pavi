@@ -10,20 +10,12 @@ import {MatDialog} from '@angular/material/dialog';
 export class PortfolioSectionComponent implements OnInit {
   showingEditDeleteBtns = false;
   constructor(
-    private matDialog: MatDialog
+
   ) { }
 
   ngOnInit(): void {
   }
 
 
-  addWorkExperience() {
-    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
 
-    });
-  }
-
-  showEditDeleteBtns() {
-    this.showingEditDeleteBtns = true;
-  }
 }
