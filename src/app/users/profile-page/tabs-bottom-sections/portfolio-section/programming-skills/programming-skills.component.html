@@ -11,9 +11,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -26,9 +26,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -41,9 +41,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -56,9 +56,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -71,9 +71,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -86,9 +86,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -101,9 +101,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -116,9 +116,9 @@
         <div>
           <p class="work-text-6">80%</p>
         </div>
-        <div class="work-delete-edit">
+        <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
           <a>
-            <img src="../../../assets/images/edit-work.svg">
+            <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
           </a>
           <a>
             <img src="../../../assets/images/delete-work.svg">
@@ -129,6 +129,6 @@
   </div>
 </div>
 <div class="work-add-edit">
-  <a class="work-add-edit-1">Add +</a>
-  <a class="work-add-edit-2">Edit</a>
+  <a class="work-add-edit-1" (click)="addProgrammingSkills()">Add +</a>
+  <a class="work-add-edit-2" (click)="showEditDeleteBtns()">Edit</a>
 </div>
