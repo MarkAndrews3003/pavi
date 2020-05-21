@@ -16,8 +16,9 @@ import { SettingsTabComponent } from './profile-page/tabs/settings-tab/settings-
 import { JobsSectionComponent } from './profile-page/tabs-bottom-sections/jobs-section/jobs-section.component';
 import { PortfolioSectionComponent } from './profile-page/tabs-bottom-sections/portfolio-section/portfolio-section.component';
 import { WorkExperienceComponent } from './profile-page/tabs-bottom-sections/portfolio-section/work-experience/work-experience.component';
-import { EducationCertificationComponent } from './profile-page/tabs-bottom-sections/portfolio-section/education-certification/education-certification.component';
+import { CertificationComponent } from './profile-page/tabs-bottom-sections/portfolio-section/certification/certification.component';
 import { ProgrammingSkillsComponent } from './profile-page/tabs-bottom-sections/portfolio-section/programming-skills/programming-skills.component';
+import { EducationComponent } from './profile-page/tabs-bottom-sections/portfolio-section/education/education.component';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { ProgrammingSkillsComponent } from './profile-page/tabs-bottom-sections/
     JobsSectionComponent,
     PortfolioSectionComponent,
     WorkExperienceComponent,
-    EducationCertificationComponent,
-    ProgrammingSkillsComponent
+    CertificationComponent,
+    ProgrammingSkillsComponent,
+    EducationComponent
   ],
   imports: [
     CommonModule,

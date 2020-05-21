@@ -4,11 +4,11 @@ import {MatDialog} from '@angular/material/dialog';
 import {SaveEducationCertificationInfoDialogComponent} from '../../../../../core/components/dialogs/save-education-certification-info-dialog/save-education-certification-info-dialog.component';
 
 @Component({
-  selector: 'app-education-certification',
-  templateUrl: './education-certification.component.html',
-  styleUrls: ['./education-certification.component.css']
+  selector: 'app-certification',
+  templateUrl: './certification.component.html',
+  styleUrls: ['./certification.component.css']
 })
-export class EducationCertificationComponent implements OnInit {
+export class CertificationComponent implements OnInit {
   showingEditDeleteBtns = false;
 
   constructor(
