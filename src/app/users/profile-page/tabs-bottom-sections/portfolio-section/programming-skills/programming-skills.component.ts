@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {SaveEducationCertificationInfoDialogComponent} from '../../../../../core/components/dialogs/save-education-certification-info-dialog/save-education-certification-info-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import {SaveProgrammingSkillsDialogComponent} from '../../../../../core/components/dialogs/save-programming-skills-dialog/save-programming-skills-dialog.component';
 
