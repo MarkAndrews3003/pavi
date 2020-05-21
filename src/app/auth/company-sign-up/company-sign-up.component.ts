@@ -4,7 +4,7 @@ import {CompaniesService} from '../../core/services/companies.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {API_URL, EMAIL_PATTERN} from '../../core/constants/general';
+import {ADDRESS_PATTERN, API_URL, EMAIL_PATTERN} from '../../core/constants/general';
 import {MatStepper} from '@angular/material/stepper';
 
 @Component({
@@ -14,7 +14,7 @@ import {MatStepper} from '@angular/material/stepper';
 })
 export class CompanySignUpComponent implements OnInit {
   companyRegistrationForm: FormGroup;
-  currentStep = 1;
+  currentStep = 3;
   isSubmitted = false;
   isLinear = true;
   companyInfo: FormGroup;
@@ -51,7 +51,7 @@ export class CompanySignUpComponent implements OnInit {
       email: new FormControl(null, {
         validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
       }),
-      address: ['', Validators.required],
+      address: ['', [Validators.required, patternValidator(ADDRESS_PATTERN)]],
     });
 
     this.companyRegistrationForm = this.fb.group({
