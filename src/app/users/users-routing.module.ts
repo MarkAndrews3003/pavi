@@ -4,12 +4,14 @@ import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {FindJobComponent} from './find-job/find-job.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {AboutComponent} from './about/about.component';
+import {AuthGuard} from '../core/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: 'profile-page',
-    component: ProfilePageComponent
+    component: ProfilePageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'find-job',

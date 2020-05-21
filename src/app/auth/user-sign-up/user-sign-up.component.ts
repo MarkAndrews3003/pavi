@@ -29,11 +29,11 @@ export class UserSignUpComponent implements OnInit {
       email: new FormControl(null, {
         validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
       }),
-      password: ['', Validators.required],
-      confirm_password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      confirm_password: ['', [Validators.required, Validators.minLength(5)]],
       birthday: ['', Validators.required],
-      first_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
-      last_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+      first_name: ['', [Validators.required, Validators.minLength(5), patternValidator(TEXT_ONLY_PATTERN)]],
+      last_name: ['', [Validators.required, Validators.minLength(5), patternValidator(TEXT_ONLY_PATTERN)]],
       gender: ['male', Validators.required],
       country: ['', Validators.required],
       agreed: ['', Validators.required],
