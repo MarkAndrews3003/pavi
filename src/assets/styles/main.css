@@ -2981,10 +2981,9 @@ footer {
 .work-add-edit-2:hover {
   cursor: pointer;
 }
-
-
-
-
+.mat-dialog-container {
+  border-radius: 60px !important;
+}
 
 
 
@@ -3994,6 +3993,9 @@ footer {
     margin-right:0;
     width: 400px;
   }
+  .resume-change-btn {
+    height: 50px;
+  }
   .back-to-the-settings {
     width: 400px;
     font-size: 20px;
@@ -4250,6 +4252,9 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .mat-dialog-container {
+    border-radius: 20px !important;
+  }
   .back-to-the-settings {
     width: 98%;
     height: 50px;
