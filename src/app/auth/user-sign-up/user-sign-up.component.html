@@ -46,7 +46,7 @@
             <label class="logos-item-label">First Name</label>
             <input class="logos-item-input" placeholder="First Name*" formControlName="first_name">
             <mat-error *ngIf="firstName.errors?.minlength || firstName.errors?.maxlength">
-              First name must be <strong>5-15 characters</strong> long.
+              First name must be <strong>2-15 characters</strong> long.
             </mat-error>
             <mat-error *ngIf="(firstName.touched || isSubmitted) && firstName.hasError('required')">First name is
               <strong>required</strong>
@@ -107,7 +107,7 @@
             <mat-error *ngIf="(lastName.touched||isSubmitted) && lastName.hasError('required')">Last name is <strong>required</strong>
             </mat-error>
             <mat-error *ngIf="lastName.errors?.minlength || lastName.errors?.maxlength">
-              Last name must be <strong>5-15 characters</strong>  long.
+              Last name must be <strong>2-15 characters</strong>  long.
             </mat-error>
             <mat-error *ngIf="lastName.hasError('patternInvalid')">Last name has <strong>incorrect format</strong>
             </mat-error>
