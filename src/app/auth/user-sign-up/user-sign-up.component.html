@@ -45,8 +45,8 @@
           <div class="login-item">
             <label class="logos-item-label">First Name</label>
             <input class="logos-item-input" placeholder="First Name*" formControlName="first_name">
-            <mat-error *ngIf="firstName.errors?.minlength">
-              First name must be <strong>at least 5 characters</strong> long.
+            <mat-error *ngIf="firstName.errors?.minlength || firstName.errors?.maxlength">
+              First name must be <strong>5-15 characters</strong> long.
             </mat-error>
             <mat-error *ngIf="(firstName.touched || isSubmitted) && firstName.hasError('required')">First name is
               <strong>required</strong>
@@ -80,8 +80,8 @@
             <input class="logos-item-input" placeholder="Password*" type="password" formControlName="password">
             <mat-error *ngIf="isSubmitted && pass.hasError('required')">Password is <strong>required</strong>
             </mat-error>
-            <mat-error *ngIf="pass.errors?.minlength">
-              Password must be <strong>at least 5 characters</strong> long.
+            <mat-error *ngIf="pass.errors?.minlength || pass.errors?.maxlength">
+              Password must be <strong>5-15 characters</strong>  long.
             </mat-error>
           </div>
           <div class="login-item register-checkbox">
@@ -106,8 +106,8 @@
             <input class="logos-item-input" placeholder="Last Name*" formControlName="last_name">
             <mat-error *ngIf="(lastName.touched||isSubmitted) && lastName.hasError('required')">Last name is <strong>required</strong>
             </mat-error>
-            <mat-error *ngIf="lastName.errors?.minlength">
-              First name must be <strong>at least 5 characters</strong> long.
+            <mat-error *ngIf="lastName.errors?.minlength || lastName.errors?.maxlength">
+              Last name must be <strong>5-15 characters</strong>  long.
             </mat-error>
             <mat-error *ngIf="lastName.hasError('patternInvalid')">Last name has <strong>incorrect format</strong>
             </mat-error>
