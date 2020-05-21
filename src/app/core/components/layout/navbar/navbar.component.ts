@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
 
     if (this.auth.loggedIn()) {
       this.navbarLinks = this.getNavbarLinks.transform(NAVBAR_LINKS, this.authUser);
-
     }
   }
 

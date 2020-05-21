@@ -58,7 +58,8 @@
             <label class="logos-item-label">Date Of Birth</label>
             <div class="date-age">
 
-              <input matInput [matDatepicker]="picker" class="logos-small-input" formControlName="birthday" [max]="maxBirthdayDate">
+              <input matInput [matDatepicker]="picker" class="logos-small-input" formControlName="birthday"
+                     [max]="maxBirthdayDate">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </div>
@@ -81,9 +82,31 @@
             <mat-error *ngIf="isSubmitted && pass.hasError('required')">Password is <strong>required</strong>
             </mat-error>
             <mat-error *ngIf="pass.errors?.minlength || pass.errors?.maxlength">
-              Password must be <strong>5-15 characters</strong>  long.
+              Password must be <strong>5-15 characters</strong> long.
             </mat-error>
           </div>
+<<<<<<< HEAD
+=======
+          <div class="login-item register-checkbox">
+            <mat-checkbox formControlName="agreed" (change)="agreeTerms($event)" id="terms">
+              <span class="checkbox-text">
+              Creating an account means you're okay with our
+              </span>
+            </mat-checkbox>
+            <div>
+
+              <a>Terms of
+                Service,
+                Privacy
+                Policy,</a> and our default <a>Notification Settings.</a>
+            </div>
+            <div>
+              <mat-error *ngIf="isSubmitted && userRegisterForm.get('agreed').hasError('required')">Please
+                <strong>agree</strong> to the terms
+              </mat-error>
+            </div>
+          </div>
+>>>>>>> eb07d84cf111b2751486b4dcc911e3a70cf4ec6f
         </div>
         <div>
           <div class="login-item">
@@ -92,7 +115,7 @@
             <mat-error *ngIf="(lastName.touched||isSubmitted) && lastName.hasError('required')">Last name is <strong>required</strong>
             </mat-error>
             <mat-error *ngIf="lastName.errors?.minlength || lastName.errors?.maxlength">
-              Last name must be <strong>2-15 characters</strong>  long.
+              Last name must be <strong>2-15 characters</strong> long.
             </mat-error>
             <mat-error *ngIf="lastName.hasError('patternInvalid')">Last name has <strong>incorrect format</strong>
             </mat-error>

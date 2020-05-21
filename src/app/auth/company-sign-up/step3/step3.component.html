@@ -19,6 +19,7 @@
         <label class="logos-item-label">Address</label>
         <input formControlName="address" placeholder="Address*" class="logos-item-input">
         <mat-error *ngIf="isSubmitted && address.hasError('required')">Address is <strong>required</strong></mat-error>
+        <mat-error *ngIf="address.hasError('patternInvalid')">Address is <strong>not valid</strong></mat-error>
       </div>
     </div>
   </div>
