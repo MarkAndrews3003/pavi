@@ -84,21 +84,6 @@
               Password must be <strong>5-15 characters</strong>  long.
             </mat-error>
           </div>
-          <div class="login-item register-checkbox">
-            <mat-checkbox formControlName="agreed" (change)="agreeTerms($event)" id="terms">
-              <span class="checkbox-text">
-              Creating an account means you're okay with our <a>Terms of
-              Service,
-              Privacy
-              Policy,</a> and our default <a>Notification Settings.</a>
-              </span>
-            </mat-checkbox>
-            <div>
-              <mat-error *ngIf="isSubmitted && userRegisterForm.get('agreed').hasError('required')">Please
-                <strong>agree</strong> to the terms
-              </mat-error>
-            </div>
-          </div>
         </div>
         <div>
           <div class="login-item">
@@ -144,6 +129,19 @@
             </mat-error>
             <mat-error *ngIf="!passwordsMatch && !confirmPass.hasError('required')">Passwords doesn't match</mat-error>
           </div>
+        </div>
+      </div>
+      <div class="login-item register-checkbox">
+        <mat-checkbox formControlName="agreed" (change)="agreeTerms($event)" id="terms">
+          <div class="checkbox-text">
+            Creating an account means you're okay with our
+            <a>Terms of Service, Privacy Policy,</a> and our default <a>Notification Settings.</a>
+          </div>
+        </mat-checkbox>
+        <div>
+          <mat-error *ngIf="isSubmitted && userRegisterForm.get('agreed').hasError('required')">Please
+            <strong>agree</strong> to the terms
+          </mat-error>
         </div>
       </div>
       <div class="last-block-form">

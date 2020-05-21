@@ -952,6 +952,9 @@ footer {
   color: #707070;
   font-size: 13px;
   font-family: "Segoe Regular";
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .reset-btn {
