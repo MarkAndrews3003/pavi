@@ -33,7 +33,7 @@ export class ProfilePageComponent implements OnInit {
   isLinear = false;
   currentStep = 1;
 
-  showingEditDeleteBtns = false;
+
 
 
   constructor(
@@ -43,7 +43,7 @@ export class ProfilePageComponent implements OnInit {
     private usersService: UsersService,
     private getAuthUser: GetAuthUserPipe,
     private toastr: ToastrService,
-    private matDialog: MatDialog
+
   ) {
 
     this.profileImgTextForm = this.fb.group({
@@ -73,15 +73,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
 
-  addWorkExperience() {
-    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
 
-    });
-  }
-
-  showEditDeleteBtns() {
-    this.showingEditDeleteBtns = true;
-  }
 
 
   changeProfileImage(event) {

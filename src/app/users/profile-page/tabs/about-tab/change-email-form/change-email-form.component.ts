@@ -1,10 +1,10 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
-import {UsersService} from '../../../../core/services/users.service';
+import {GetAuthUserPipe} from '../../../../../shared/pipes/get-auth-user.pipe';
+import {UsersService} from '../../../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
-import {patternValidator} from '../../../../core/helpers/pattern-validator';
-import {EMAIL_PATTERN} from '../../../../core/constants/general';
+import {patternValidator} from '../../../../../core/helpers/pattern-validator';
+import {EMAIL_PATTERN} from '../../../../../core/constants/general';
 
 @Component({
   selector: 'app-change-email-form',

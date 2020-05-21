@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../../core/constants/general';
-import {GetAuthUserPipe} from '../../../shared/pipes/get-auth-user.pipe';
-import {UsersService} from '../../../core/services/users.service';
+import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../../../core/constants/general';
+import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
+import {UsersService} from '../../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 

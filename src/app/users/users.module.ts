@@ -7,12 +7,14 @@ import {SharedModule} from '../shared/shared.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutComponent } from './about/about.component';
 import {CoreModule} from '../core/core.module';
-import { ChangeEmailFormComponent } from './profile-page/about-tab/change-email-form/change-email-form.component';
-import { ChangePasswordFormComponent } from './profile-page/about-tab/change-password-form/change-password-form.component';
-import { AboutTabComponent } from './profile-page/about-tab/about-tab.component';
-import { CvPortfolioTabComponent } from './profile-page/cv-portfolio-tab/cv-portfolio-tab.component';
-import { SocialMediasTabComponent } from './profile-page/social-medias-tab/social-medias-tab.component';
-import { SettingsTabComponent } from './profile-page/settings-tab/settings-tab.component';
+import { ChangeEmailFormComponent } from './profile-page/tabs/about-tab/change-email-form/change-email-form.component';
+import { ChangePasswordFormComponent } from './profile-page/tabs/about-tab/change-password-form/change-password-form.component';
+import { AboutTabComponent } from './profile-page/tabs/about-tab/about-tab.component';
+import { CvPortfolioTabComponent } from './profile-page/tabs/cv-portfolio-tab/cv-portfolio-tab.component';
+import { SocialMediasTabComponent } from './profile-page/tabs/social-medias-tab/social-medias-tab.component';
+import { SettingsTabComponent } from './profile-page/tabs/settings-tab/settings-tab.component';
+import { JobsSectionComponent } from './profile-page/tabs-bottom-sections/jobs-section/jobs-section.component';
+import { PortfolioSectionComponent } from './profile-page/tabs-bottom-sections/portfolio-section/portfolio-section.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SettingsTabComponent } from './profile-page/settings-tab/settings-tab.c
     AboutTabComponent,
     CvPortfolioTabComponent,
     SocialMediasTabComponent,
-    SettingsTabComponent
+    SettingsTabComponent,
+    JobsSectionComponent,
+    PortfolioSectionComponent
   ],
   imports: [
     CommonModule,

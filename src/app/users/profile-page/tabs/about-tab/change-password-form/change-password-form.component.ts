@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
-import {UsersService} from '../../../../core/services/users.service';
+import {GetAuthUserPipe} from '../../../../../shared/pipes/get-auth-user.pipe';
+import {UsersService} from '../../../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
