@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {API_URL, EMAIL_PATTERN, TEXT_ONLY_PATTERN} from '../../core/constants/general';
+import {API_URL, DATE_ONLY_PATTERN, EMAIL_PATTERN, TEXT_ONLY_PATTERN} from '../../core/constants/general';
 import {passwordConfirmation} from '../../core/helpers/password-confirmation';
 import {COUNTRY_LIST} from '../../core/constants/countries';
 
@@ -31,7 +31,7 @@ export class UserSignUpComponent implements OnInit {
       }),
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
       confirm_password: ['', [Validators.required]],
-      birthday: ['', Validators.required],
+      birthday: ['', [Validators.required, patternValidator(DATE_ONLY_PATTERN)]],
       first_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
       last_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
       gender: ['male', Validators.required],

@@ -16,7 +16,7 @@
           </div>
           <div class="work-delete-edit">
             <a>
-              <img src="../../../assets/images/edit-work.svg">
+              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
             </a>
             <a>
               <img src="../../../assets/images/delete-work.svg">
@@ -33,7 +33,7 @@
           </div>
           <div class="work-delete-edit">
             <a>
-              <img src="../../../assets/images/edit-work.svg">
+              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
             </a>
             <a>
               <img src="../../../assets/images/delete-work.svg">
@@ -50,7 +50,7 @@
           </div>
           <div class="work-delete-edit">
             <a>
-              <img src="../../../assets/images/edit-work.svg">
+              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
             </a>
             <a>
               <img src="../../../assets/images/delete-work.svg">
@@ -60,8 +60,8 @@
       </ul>
     </div>
     <div class="work-add-edit">
-      <a class="work-add-edit-1">Add +</a>
-      <a class="work-add-edit-2">Edit</a>
+      <a class="work-add-edit-1" (click)="addEducationInfo()">Add +</a>
+      <a class="work-add-edit-2" (click)="showEditDeleteBtns()">Edit</a>
     </div>
   </div>
 </div>

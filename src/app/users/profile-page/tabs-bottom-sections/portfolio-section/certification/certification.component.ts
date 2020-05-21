@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {SaveWorkExperienceDialogComponent} from '../../../../../core/components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
-import {SaveEducationCertificationInfoDialogComponent} from '../../../../../core/components/dialogs/save-education-certification-info-dialog/save-education-certification-info-dialog.component';
+import {SaveCertificationDialogComponent} from '../../../../../core/components/dialogs/save-certification-dialog/save-certification-dialog.component';
 
 @Component({
   selector: 'app-certification',
@@ -19,8 +18,8 @@ export class CertificationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addEducationCertificationInfo() {
-    this.matDialog.open(SaveEducationCertificationInfoDialogComponent).afterClosed().subscribe(dt => {
+  addCertificationInfo() {
+    this.matDialog.open(SaveCertificationDialogComponent).afterClosed().subscribe(dt => {
 
     });
   }
@@ -30,7 +29,7 @@ export class CertificationComponent implements OnInit {
   }
 
   showEditDialog() {
-    this.matDialog.open(SaveEducationCertificationInfoDialogComponent).afterClosed().subscribe(dt => {
+    this.matDialog.open(SaveCertificationDialogComponent).afterClosed().subscribe(dt => {
 
     });
   }
