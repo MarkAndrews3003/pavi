@@ -9,12 +9,16 @@
       <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
     </ng-container>
     <ng-container *ngIf="auth.loggedIn()">
-      <p class="welcome-text-size">Welcome! <span class="auth-user-name" (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' '+ authUser.last_name}}</span></p>
+      <p class="welcome-text-size">Welcome! <span class="auth-user-name"
+                                                  (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' ' + authUser.last_name}}</span>
+      </p>
     </ng-container>
   </div>
   <div class="section-block-1-right">
-    <img src="assets/images/big.svg">
-    <a class="dream-job-btn" (click)="router.navigate(['users/find-job'])">Find Your Dream Job<i class="fas fa-angle-right"></i></a>
+    <img src="assets/images/big.svg" *ngIf="(authUser && authUser.gender === 'female') || !auth.loggedIn()">
+    <img src="assets/images/login-1.svg" *ngIf="(authUser && authUser.gender === 'male') || !auth.loggedIn()">
+    <a class="dream-job-btn" (click)="router.navigate(['users/find-job'])">Find Your Dream Job<i
+      class="fas fa-angle-right"></i></a>
   </div>
 </section>
 <section class="section-block-2">

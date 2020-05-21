@@ -4,6 +4,7 @@ import {filter} from 'rxjs/operators';
 import {NAVBAR_LINKS} from '../../../constants/general';
 import {AuthService} from "../../../services/auth.service";
 import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
+import {GetNavbarLinksBasedOnUserRolePipe} from '../../../../shared/pipes/get-navbar-links-based-on-user-role.pipe';
 
 
 @Component({
@@ -14,29 +15,24 @@ import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
 export class NavbarComponent implements OnInit {
 
   routerUrl;
-  navbarLinks = NAVBAR_LINKS;
+  navbarLinks;
   authUser;
 
   constructor(
     public router: Router,
     public auth: AuthService,
-    private getAuthUser: GetAuthUserPipe
+    private getAuthUser: GetAuthUserPipe,
+    private getNavbarLinks: GetNavbarLinksBasedOnUserRolePipe
   ) {
 
   }
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
-    console.log('OK')
 
     if (this.auth.loggedIn()) {
+      this.navbarLinks = this.getNavbarLinks.transform(NAVBAR_LINKS, this.authUser);
 
-      // Removing unnecessary links for each user role
-      if (this.authUser.roles.includes('company_user')) {
-        this.navbarLinks = this.navbarLinks.filter(n => n.name !== 'Find job');
-      } else {
-        this.navbarLinks = this.navbarLinks.filter(n => n.name !== 'Find employee');
-      }
     }
   }
 

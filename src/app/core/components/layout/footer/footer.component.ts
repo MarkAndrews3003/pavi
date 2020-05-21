@@ -4,6 +4,7 @@ import {filter} from 'rxjs/operators';
 import {NAVBAR_LINKS} from '../../../constants/general';
 import {AuthService} from "../../../services/auth.service";
 import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
+import {GetNavbarLinksBasedOnUserRolePipe} from '../../../../shared/pipes/get-navbar-links-based-on-user-role.pipe';
 
 
 @Component({
@@ -14,13 +15,14 @@ import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
 export class FooterComponent implements OnInit {
 
   routerUrl;
-  footerLinks = NAVBAR_LINKS;
+  footerLinks
   authUser;
 
   constructor(
     public router: Router,
     public auth: AuthService,
-    private getAuthUser: GetAuthUserPipe
+    private getAuthUser: GetAuthUserPipe,
+    private getNavbarLinks: GetNavbarLinksBasedOnUserRolePipe
   ) {
   }
 
@@ -28,13 +30,7 @@ export class FooterComponent implements OnInit {
     this.authUser = this.getAuthUser.transform();
 
     if (this.auth.loggedIn()) {
-
-      // Removing unnecessary links for each user role
-      if (this.authUser.roles.includes('company_user')) {
-        this.footerLinks = this.footerLinks.filter(n => n.name !== 'Find job');
-      } else {
-        this.footerLinks = this.footerLinks.filter(n => n.name !== 'Find employee');
-      }
+      this.footerLinks = this.getNavbarLinks.transform(NAVBAR_LINKS, this.authUser);
     }
   }
 
