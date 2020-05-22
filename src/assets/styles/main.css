@@ -3565,6 +3565,13 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .find-job-right-icon {
+    right: 28px;
+    top: 24px;
+  }
+  .find-job-right {
+    font-size: 24px;
+  }
   .work-content {
     padding: 0 50px;
   }
@@ -4361,6 +4368,9 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .find-work-item-left img {
+      width: 100%;
+  }
   .mat-dialog-container {
     border-radius: 20px !important;
   }
