@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {InvitationDialogComponent} from '../../core/components/dialogs/invitation-dialog/invitation-dialog.component';
 
 @Component({
   selector: 'app-find-employees',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindEmployeesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private matDialog: MatDialog
+  ) {
+  }
 
   ngOnInit(): void {
+  }
+
+  openInvitationDialog() {
+    this.matDialog.open(InvitationDialogComponent).afterClosed().subscribe(dt => {
+
+    });
   }
 
 }
