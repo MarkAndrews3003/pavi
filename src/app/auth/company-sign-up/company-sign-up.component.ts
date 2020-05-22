@@ -14,7 +14,7 @@ import {MatStepper} from '@angular/material/stepper';
 })
 export class CompanySignUpComponent implements OnInit {
   companyRegistrationForm: FormGroup;
-  currentStep = 3;
+  currentStep = 1;
   isSubmitted = false;
   isLinear = true;
   companyInfo: FormGroup;
