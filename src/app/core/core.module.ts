@@ -12,6 +12,7 @@ import {SaveEducationDialogComponent} from './components/dialogs/save-education-
 import {SaveCertificationDialogComponent} from './components/dialogs/save-certification-dialog/save-certification-dialog.component';
 import {UploadPdfDialogComponent} from './components/dialogs/upload-pdf-dialog/upload-pdf-dialog.component';
 import {AddSocialLinksDialogComponent} from './components/dialogs/add-social-links-dialog/add-social-links-dialog.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import {AddSocialLinksDialogComponent} from './components/dialogs/add-social-lin
     CommonModule,
     MaterialModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MaterialModule,
