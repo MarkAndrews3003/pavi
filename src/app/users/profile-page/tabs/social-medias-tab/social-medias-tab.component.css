@@ -33,6 +33,9 @@
   align-items: center;
   margin-right: 30px;
 }
+.social-step-3:hover {
+  cursor: pointer;
+}
 .add-step-3 {
   width: 130px;
   margin-left: 32px;
@@ -52,4 +55,37 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 140px;
+}
+.add-step-3:hover {
+  cursor: pointer;
+}
+
+
+@media (max-width: 1700px) {
+  .step-3-social {
+    justify-content: center;
+  }
+  .social-medias {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .social-medias .profile-item {
+    justify-content: center;
+    margin-right: 0;
+  }
+  .social-medias .profile-item label {
+    margin-right: 0;
+    justify-content: center;
+  }
+  .step-3-social {
+    flex-wrap: wrap;
+  }
+  .social-step-3 {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .step-3-pdf {
+    width: 100%;
+  }
 }

@@ -60,7 +60,6 @@
           <i class="fa fa-user" *ngIf="index === 0"></i>
           <i class="far fa-file-user" *ngIf="index === 1"></i>
           <i class="fas fa-file-pdf" *ngIf="index === 2"></i>
-          <i class="fas fa-cog"  *ngIf="index === 3"></i>
         </ng-template>
 
         <!-- Custom icon with a context variable. -->
@@ -68,7 +67,6 @@
           <i class="fa fa-user" *ngIf="index === 0"></i>
           <i class="far fa-file-user" *ngIf="index === 1"></i>
           <i class="fas fa-file-pdf" *ngIf="index === 2"></i>
-          <i class="fas fa-cog"  *ngIf="index === 3"></i>
         </ng-template>
 
         <!-- Step 1 -->
@@ -87,12 +85,6 @@
         <mat-step label="Step 3">
           <ng-template matStepLabel>Social Medias<br> PDF</ng-template>
           <app-social-medias-tab></app-social-medias-tab>
-        </mat-step>
-
-        <!-- Step 4 -->
-        <mat-step label="Step 4">
-          <ng-template matStepLabel>Settings</ng-template>
-          <app-settings-tab></app-settings-tab>
         </mat-step>
 
       </mat-horizontal-stepper>
