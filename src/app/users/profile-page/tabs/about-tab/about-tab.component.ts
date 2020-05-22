@@ -40,16 +40,19 @@ export class AboutTabComponent implements OnInit {
       // gender: ['', Validators.required],
       // password: ['', Validators.required],
       // email: ['', Validators.required],
+      gender: [{value: '', disabled: true}, Validators.required],
+      birthday: [{value: '', disabled: true}, Validators.required],
+      email: [{value: '', disabled: true}, Validators.required],
 
     });
-
 
 
   }
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
-
+    this.profileForm.patchValue(this.authUser)
+    console.log(this.authUser)
 
   }
 
@@ -62,10 +65,6 @@ export class AboutTabComponent implements OnInit {
   }
 
 
-
-
-
-
   saveProfileDetails() {
     console.log(this.profileForm.value)
     this.usersService.updateProfileInfo(this.profileForm.value).subscribe(dt => {
@@ -74,13 +73,10 @@ export class AboutTabComponent implements OnInit {
   }
 
 
-
   backToMainForm() {
     this.showChangePass = false;
     this.showChangeEmail = false;
   }
-
-
 
 
 }

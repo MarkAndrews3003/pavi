@@ -1,6 +1,6 @@
 <div class="section-block-10-info">
   <p class="profile-text-3">Contact Information</p>
-  <a class="profile-delete-btn-2">Delete Profile</a>
+<!--  <a class="profile-delete-btn-2">Delete Profile</a>-->
   <a class="profile-save-btn" *ngIf="showEditProfileForm" (click)="saveProfileDetails()">Save</a>
   <a class="profile-edit-profile-btn" *ngIf="!showChangeEmail && !showChangePass && !showEditProfileForm"
      (click)="showEditProfileForm = true">Edit Profile</a>
@@ -18,19 +18,19 @@
       </div>
       <div class="profile-item">
         <label>Country:</label>
-        <input placeholder="Usa" formControlName="country">
+        <input formControlName="country">
       </div>
       <div class="profile-item">
         <label>Gender:</label>
-        <input placeholder="Female" disabled>
+        <input formControlName="gender">
       </div>
       <div class="profile-item">
         <label>Email:</label>
-        <input placeholder="hello@name.com" disabled>
+        <input placeholder="hello@name.com" formControlName="email">
       </div>
       <div class="profile-item">
-        <label>Password:</label>
-        <input placeholder="AB********123" disabled>
+        <label>Birthday:</label>
+        <input placeholder="Birthday date" formControlName="birthday">
       </div>
     </div>
     <div class="profile-item">
