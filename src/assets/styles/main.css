@@ -443,7 +443,22 @@ li {
 }
 
 .logos-block {
-   padding: 0 60px;
+   padding: 0 50px;
+}
+.find-work-item-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  box-shadow: 0px 15px 10px #D8D8D829;
+  border-radius: 50px;
+  height: 120px;
+}
+.find-work-item-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
 }
 
 .text-6 {
@@ -1902,7 +1917,10 @@ footer {
 }
 .find-job-right-icon {
   position: absolute;
-  right: 20px;
+  right: 28px;
+  top: 36px;
+  color: white;
+  font-size: 18px;
 }
 .find-job-right::placeholder {
   color: white;
@@ -2274,6 +2292,7 @@ footer {
   background: #0265C9;
   color: white !important;
   border: 50px;
+  padding-left: 22px;
   display: flex;
   border-radius: 50px;
   justify-content: center;
@@ -2317,25 +2336,61 @@ footer {
   align-items: center;
   margin-bottom: 18px;
 }
+.find-work-search-block {
+  position: relative;
+  padding: 30px 0;
+}
+.blue-circle {
+  width: 8px;
+  height: 8px;
+  background: #0265C9;
+  border-radius: 50px;
+  margin-right: 7px;
+  display: inline-block;
+}
+.find-work-search {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  color: #707070 !important;
+  border: 50px;
+  padding-left: 22px;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  box-shadow: 0px 0px 6px #ABABAB29;
+  font-family: "Segoe Regular";
+}
+.find-work-search-icon {
+  position: absolute;
+  right: 28px;
+  top: 43px;
+  color: #707070;
+  font-size: 18px;
+}
 .card-body {
   padding: 0;
-  overflow-y: auto;
-  height: 200px;
 }
-.card-body::-webkit-scrollbar-track {
+.card-body-scroll {
+  overflow-y: auto;
+  height: 400px;
+}
+.card-body-scroll::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 10px;
   background-color: #F5F5F5;
 }
 
-.card-body::-webkit-scrollbar{
-  width: 12px;
+.card-body-scroll::-webkit-scrollbar{
+  width: 6px;
   background-color: #F5F5F5;
 }
-.card-body::-webkit-scrollbar-thumb {
+.card-body-scroll::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #555;
+  background-color: #0265C9;
 }
 .accordion a:hover {
   cursor: pointer;
