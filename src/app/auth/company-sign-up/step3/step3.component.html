@@ -4,7 +4,11 @@
       <div class="login-item">
         <label class="logos-item-label">Mobile Phone</label>
         <input formControlName="phone" placeholder="Mobile Phone*" class="logos-item-input">
+
         <mat-error *ngIf="isSubmitted && phone.hasError('required')">Phone is <strong>required</strong></mat-error>
+        <mat-error *ngIf="phone.hasError('patternInvalid')">Phone number is <strong>invalid</strong>. Only numbers
+          please.
+        </mat-error>
       </div>
       <div class="login-item">
         <label class="logos-item-label">Email</label>

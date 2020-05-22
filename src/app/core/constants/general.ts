@@ -5,9 +5,10 @@ export const API_URL = environment.apiUrl;
 
 export const EMAIL_PATTERN = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const TEXT_ONLY_PATTERN = /^[a-zA-Z ]*$/;
-export const ADDRESS_PATTERN = /^[^,#$%_*<>()/|~`!?{}\[\]\\.,;:\s@"]+[a-zA-Z0-9, ]*$/;
+export const ADDRESS_PATTERN = /^[^,#$%_*<>()/|~`!?{}0-9\[\]\\.,;:\s@"]+[a-zA-Z0-9, ]*$/;
 export const DATE_ONLY_PATTERN = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
 export const NO_SPACE_PATTERN = /^\S*$/;
+export const NUMBERS_ONLY_PATTERN = /^[0-9]*$/;
 export const NAVBAR_LINKS = [
   {name: 'Home', route: '/'},
   {name: 'About us', route: '/users/about'},
