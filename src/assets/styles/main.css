@@ -1857,6 +1857,21 @@ footer {
   align-items: center;
   flex-wrap: wrap;
 }
+.dialogs-close-btn {
+  position: absolute;
+  right: 12px;
+  top: 11px;
+  font-size: 22px;
+}
+.dialogs-close-btn:hover {
+  cursor: pointer;
+}
+.save-work-experience {
+  position: relative;
+}
+.step-3-dialog {
+  position: relative;
+}
 .profile-edit-btn {
   width: 234px;
   height: 60px;
