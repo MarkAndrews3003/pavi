@@ -37,7 +37,7 @@ export class UserSignUpComponent implements OnInit {
         }),
         password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), patternValidator(NO_SPACE_PATTERN)]],
         confirm_password: ['', Validators.required],
-        birthday: ['', [Validators.required, patternValidator(DATE_ONLY_PATTERN)]],
+        birthday: ['', [Validators.required]], // patternValidator(DATE_ONLY_PATTERN)
         first_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
         last_name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15), patternValidator(TEXT_ONLY_PATTERN)]],
         gender: ['male', Validators.required],
@@ -53,6 +53,8 @@ export class UserSignUpComponent implements OnInit {
 
   register() {
     this.isSubmitted = true;
+    // console.log(this.userRegisterForm.value)
+    // console.log(this.userRegisterForm.valid)
     if (this.userRegisterForm.valid) {
       this.auth.register(this.userRegisterForm.value).subscribe((dt: any) => {
         this.router.navigate(['/']);
