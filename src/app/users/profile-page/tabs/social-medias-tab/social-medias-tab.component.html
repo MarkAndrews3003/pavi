@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="profile-item">
-      <a class="resume-change-btn">Change</a>
+      <a class="resume-change-btn" (click)="showUploadPdfDialog()">Change</a>
     </div>
     <div class="profile-item mt-4">
       <label class="resume-label"><img src="../../../../../assets/images/tools-and-utensils.svg">Links:</label>
@@ -34,7 +34,7 @@
     <div class="social-step-3">
       <img src="../../../../../assets/images/ww.png">
     </div>
-    <div class="add-step-3">
+    <div class="add-step-3" (click)="showAddSocialLinksDialog()">
       Add +
     </div>
   </div>

@@ -8,8 +8,10 @@ import {FooterComponent} from './components/layout/footer/footer.component';
 import {RouterModule} from '@angular/router';
 import {SaveWorkExperienceDialogComponent} from './components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 import {SaveProgrammingSkillsDialogComponent} from './components/dialogs/save-programming-skills-dialog/save-programming-skills-dialog.component';
-import { SaveEducationDialogComponent } from './components/dialogs/save-education-dialog/save-education-dialog.component';
-import { SaveCertificationDialogComponent } from './components/dialogs/save-certification-dialog/save-certification-dialog.component';
+import {SaveEducationDialogComponent} from './components/dialogs/save-education-dialog/save-education-dialog.component';
+import {SaveCertificationDialogComponent} from './components/dialogs/save-certification-dialog/save-certification-dialog.component';
+import {UploadPdfDialogComponent} from './components/dialogs/upload-pdf-dialog/upload-pdf-dialog.component';
+import {AddSocialLinksDialogComponent} from './components/dialogs/add-social-links-dialog/add-social-links-dialog.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SaveCertificationDialogComponent } from './components/dialogs/save-cert
     SaveWorkExperienceDialogComponent,
     SaveProgrammingSkillsDialogComponent,
     SaveEducationDialogComponent,
-    SaveCertificationDialogComponent
+    SaveCertificationDialogComponent,
+    UploadPdfDialogComponent,
+    AddSocialLinksDialogComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,9 @@ import { SaveCertificationDialogComponent } from './components/dialogs/save-cert
     SaveWorkExperienceDialogComponent,
     SaveProgrammingSkillsDialogComponent,
     SaveEducationDialogComponent,
-    SaveCertificationDialogComponent
+    SaveCertificationDialogComponent,
+    UploadPdfDialogComponent,
+    AddSocialLinksDialogComponent
   ]
 
 })
