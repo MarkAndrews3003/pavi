@@ -59,7 +59,7 @@
             <div class="date-age" (click)="picker.open()">
 
               <input matInput [matDatepicker]="picker" class="logos-small-input" formControlName="birthday"
-                     [max]="maxBirthdayDate" >
+                     [max]="maxBirthdayDate">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </div>
@@ -84,14 +84,12 @@
             <input class="logos-item-input" placeholder="Password*" type="password" formControlName="password">
             <mat-error *ngIf="isSubmitted && pass.hasError('required')">Password is <strong>required</strong>
             </mat-error>
+            <mat-error *ngIf="pass.hasError('patternInvalid')">Password should not contain <strong>spaces</strong>
+            </mat-error>
             <mat-error *ngIf="pass.errors?.minlength || pass.errors?.maxlength">
               Password must be <strong>5-15 characters</strong> long.
             </mat-error>
           </div>
-
-
-
-
         </div>
         <div>
           <div class="login-item">
@@ -130,13 +128,12 @@
           <div class="login-item">
             <label class="logos-item-label">Confirm Password</label>
             <input class="logos-item-input" placeholder="Confirm Password*" type="password"
-                   formControlName="confirm_password"
-                   (keyup)="comparePasswords()">
-            <mat-error *ngIf="isSubmitted && confirmPass.hasError('required')">Password is
-              <strong>required</strong>
-            </mat-error>
-            <mat-error *ngIf="!passwordsMatch && !confirmPass.hasError('required')">Passwords doesn't match</mat-error>
+                   formControlName="confirm_password" (keyup)="comparePasswords()">
           </div>
+          <mat-error *ngIf="isSubmitted && confirmPass.hasError('required')">Password confirmation is
+            <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="!passwordsMatch && !confirmPass.hasError('required')">Passwords doesn't match</mat-error>
         </div>
       </div>
       <div class="login-item register-checkbox">

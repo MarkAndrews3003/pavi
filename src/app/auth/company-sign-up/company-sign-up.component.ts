@@ -4,7 +4,7 @@ import {CompaniesService} from '../../core/services/companies.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {ADDRESS_PATTERN, API_URL, EMAIL_PATTERN} from '../../core/constants/general';
+import {ADDRESS_PATTERN, API_URL, EMAIL_PATTERN, NUMBERS_ONLY_PATTERN} from '../../core/constants/general';
 import {MatStepper} from '@angular/material/stepper';
 
 @Component({
@@ -47,7 +47,7 @@ export class CompanySignUpComponent implements OnInit {
     });
 
     this.contactDetails = this.fb.group({
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required, patternValidator(NUMBERS_ONLY_PATTERN)]],
       email: new FormControl(null, {
         validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
       }),
