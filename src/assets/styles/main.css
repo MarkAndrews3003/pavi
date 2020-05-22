@@ -3093,6 +3093,13 @@ footer {
 .mat-dialog-container {
   border-radius: 60px !important;
 }
+.clear-all-filters {
+  font-size: 15px;
+  color: #F15A24 !important;
+  margin-bottom: 20px;
+  font-family: "Segoe Bold";
+  display: block;
+}
 
 
 
@@ -4368,8 +4375,11 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .clear-all-filters {
+    text-align: center;
+  }
   .find-work-item-left img {
-      width: 100%;
+      width: 100% !important;
   }
   .mat-dialog-container {
     border-radius: 20px !important;
