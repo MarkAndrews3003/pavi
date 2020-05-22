@@ -1994,6 +1994,9 @@ footer {
 .company-registration-form .mat-step-header {
   pointer-events: none;
 }
+.mat-step-label {
+  min-width: 90px !important;
+}
 .change-email-btn,
 .change-email-btn-2 {
   width: 260px;
