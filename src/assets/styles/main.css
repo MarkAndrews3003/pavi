@@ -103,8 +103,19 @@ li {
   color: white;
 }
 
-.header-img {
+.header-img-block {
   margin-right: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-dropdown-part.show .header-img-block i {
+  transform: rotate(180deg);
+}
+.header-img-block i {
+  color: #0265c9;
+  font-size: 20px;
+  margin-left: 8px;
 }
 
 .search-btn {
