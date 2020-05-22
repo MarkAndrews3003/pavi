@@ -88,4 +88,18 @@
   .step-3-pdf {
     width: 100%;
   }
+  .social-medias .profile-item label {
+    margin-right: 0;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .add-step-3 {
+    margin-left: 0;
+  }
+  .step-3-social {
+    margin-bottom: 40px;
+  }
+  .social-medias .profile-item {
+    width: 100%;
+  }
 }
