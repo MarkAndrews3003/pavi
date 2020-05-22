@@ -56,10 +56,10 @@
           </div>
           <div class="login-item">
             <label class="logos-item-label">Date Of Birth</label>
-            <div class="date-age">
+            <div class="date-age" (click)="picker.open()">
 
               <input matInput [matDatepicker]="picker" class="logos-small-input" formControlName="birthday"
-                     [max]="maxBirthdayDate">
+                     [max]="maxBirthdayDate" >
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </div>
