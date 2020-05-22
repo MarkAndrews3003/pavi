@@ -1061,6 +1061,7 @@ footer {
 
 .login-big-img {
   width: 700px;
+  cursor: pointer;
 }
 
 .login-text-7 {
