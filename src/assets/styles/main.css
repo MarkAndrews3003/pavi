@@ -2338,7 +2338,7 @@ footer {
 }
 .find-work-search-block {
   position: relative;
-  padding: 30px 0;
+  padding: 15px 0 30px;
 }
 .blue-circle {
   width: 8px;
@@ -2366,7 +2366,7 @@ footer {
 .find-work-search-icon {
   position: absolute;
   right: 28px;
-  top: 43px;
+  top: 28px;
   color: #707070;
   font-size: 18px;
 }
