@@ -69,12 +69,12 @@ li {
 }
 
 .header-right ul li a.active {
-  font-family: "Segoe Bold";
+  color: #0b3d6f !important;
 }
 
 .header-right ul li a:hover {
-  font-family: "Segoe Bold";
   cursor: pointer;
+  color: #0b3d6f !important;
 }
 
 .header-btns {
