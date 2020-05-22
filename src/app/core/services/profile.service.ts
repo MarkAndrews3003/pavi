@@ -14,4 +14,8 @@ export class ProfileService {
   addWorkExperience(params) {
     return this.httpClient.post(`${API_URL}cv/work`, params);
   }
+
+  addEducation(params) {
+    return this.httpClient.post(`${API_URL}cv/education`, params);
+  }
 }

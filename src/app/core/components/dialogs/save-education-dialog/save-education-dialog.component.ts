@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ProfileService} from '../../../services/profile.service';
 
 @Component({
   selector: 'app-save-education-dialog',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaveEducationDialogComponent implements OnInit {
 
-  constructor() { }
+  educationForm: FormArray;
+
+  constructor(
+    private fb: FormBuilder,
+    private profileService: ProfileService
+  ) {
+    this.educationForm = this.fb.array([{
+      college: ['', Validators.required],
+      degree: ['', Validators.required],
+      speciality: ['', Validators.required],
+      start_year: ['', Validators.required],
+      end_year: ['', Validators.required]
+    }]);
+  }
 
   ngOnInit(): void {
+  }
+
+  saveEducation() {
+    this.profileService.addEducation(this.educationForm.value).subscribe(dt => {
+
+    });
   }
 
 }
