@@ -32,6 +32,9 @@ export class FooterComponent implements OnInit {
     if (this.auth.loggedIn()) {
       this.footerLinks = this.getNavbarLinks.transform(NAVBAR_LINKS, this.authUser);
     }
+    else {
+      this.footerLinks = NAVBAR_LINKS;
+    }
   }
 
   goToLoginPage() {

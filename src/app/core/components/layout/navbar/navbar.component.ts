@@ -29,9 +29,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.authUser = this.getAuthUser.transform();
-
     if (this.auth.loggedIn()) {
       this.navbarLinks = this.getNavbarLinks.transform(NAVBAR_LINKS, this.authUser);
+    } else {
+      this.navbarLinks = NAVBAR_LINKS;
     }
   }
 
