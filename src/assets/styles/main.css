@@ -1830,7 +1830,7 @@ footer {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  color: #CCCCCC;
+  color: #757575b8;
   border: 0;
   font-size: 25px;
   padding-left: 20px;
@@ -1838,7 +1838,7 @@ footer {
   font-family: "Segoe Regular";
 }
 .profile-item input::placeholder {
-  color: #CCCCCC;
+  color: #757575b8;
   font-size: 22px;
   font-family: "Segoe Regular";
 }
