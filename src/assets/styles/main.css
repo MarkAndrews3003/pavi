@@ -1928,7 +1928,7 @@ footer {
 .find-job-right-icon {
   position: absolute;
   right: 28px;
-  top: 36px;
+  top: 39px;
   color: white;
   font-size: 18px;
 }
@@ -2289,6 +2289,165 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.top-jobs-text {
+  color: #000000;
+  font-size: 20px;
+  font-family: "Segoe Bold";
+  line-height: 27px;
+  margin-bottom: 40px !important;
+  display: flex;
+}
+.top-jobs-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 43px;
+}
+.dream-job-content-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dream-job-text-1 {
+  color: #0265C9;
+  font-size: 50px;
+  margin: 70px 0 !important;
+  line-height: 67px;
+  font-family: "Segoe UI Semibold";
+}
+.dream-job-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 36px;
+}
+.dream-job-text-4 {
+  color: #757575;
+  font-size: 20px;
+  line-height: 15px;
+  margin: 0 0 15px 0 !important;
+  font-family: "Segoe Regular";
+}
+.dream-job-block-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 70px;
+}
+.dream-job-block-3 {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.dream-job-block-4 {
+  width: 100%;
+  height: 60px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  border-radius: 35px;
+}
+.find-job-general {
+  width: 100%;
+}
+.dream-job-text-5 {
+  color: #000;
+  font-size: 30px;
+  line-height: 15px;
+  font-family: "Segoe UI Semibold";
+}
+.dream-job-text-6 {
+  color: black;
+  font-size: 45px;
+  line-height: 15px;
+  margin: 0 0 35px 0 !important;
+}
+.dream-job-text-7 {
+  color: #757575;
+  line-height: 50px;
+  font-size: 35px;
+  margin: 0 0 50px 0 !important;
+}
+.dream-job-text-2 {
+  font-size: 30px;
+  color: #000000;
+  font-family: "Segoe UI Semibold";
+}
+.dream-job-text-2 span {
+  color: #757575;
+  font-family: "Segoe Regular";
+}
+.dream-job-text-3 {
+  color: #757575;
+  font-size: 20px;
+  font-family: "Segoe Regular";
+}
+.dream-job-text-3 span {
+  font-size: 20px;
+  color: #F15A24;
+}
+.go-back-to-job-btn {
+  color: #0265C9 !important;
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  background: white;
+  width: 320px;
+  height: 60px;
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-family: "Segoe UI Semibold";
+}
+.go-back-to-job-btn i {
+  margin: 0 10px;
+}
+.top-job-header-abs {
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #97979729;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 244px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-jobs-item-left {
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #97979729;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 27px;
+}
+.top-text-1 {
+  color: #000000;
+  font-size: 15px;
+  font-family: "Segoe Bold";
+  margin-bottom: 6px;
+}
+.top-text-2 {
+  color: #000000;
+  font-size: 13px;
+  font-family: "Segoe Bold";
+}
+.top-text-2 span {
+  color: #757575;
+}
+.top-jobs-item-right {
+
+}
 .find-job-text-2 {
   color: black;
   margin-left: 37px !important;
@@ -2302,13 +2461,14 @@ footer {
   background: #0265C9;
   color: white !important;
   border: 50px;
-  padding-left: 22px;
+  padding-left: 35px;
   display: flex;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "Segoe Regular";
+  padding-right: 54px;
 }
 .find-job-right i {
   margin-left: 20px;
@@ -3110,6 +3270,64 @@ footer {
   font-family: "Segoe Bold";
   display: block;
 }
+.dream-job-block-3 .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font-family: "Segoe Regular";
+  cursor: pointer;
+  color: #000;
+  font-size: 22px;
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 25px;
+}
+.dream-job-block-3 .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.dream-job-block-3 .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 4px;
+  border: 1px solid #CCCCCC;
+}
+.dream-job-block-3 .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.dream-job-block-3 .container input:checked ~ .checkmark {
+  border: 1px solid #0265C9;
+}
+.dream-job-block-3 .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.dream-job-block-3 .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.dream-job-block-3 .container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #0265C9;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
 
 
@@ -3137,6 +3355,25 @@ footer {
   }
 }
 @media (max-width: 1700px) {
+  .dream-job-block-4 {
+    padding: 0;
+  }
+  .dream-job-text-6 {
+    font-size: 30px;
+  }
+  .dream-job-text-7 {
+    line-height: 30px;
+    font-size: 25px;
+  }
+  .dream-job-text-2 {
+    font-size: 24px;
+  }
+  .dream-job-text-1 {
+    font-size: 38px;
+  }
+  .top-job-header-abs {
+    position: static;
+  }
   .work-content {
     justify-content: center;
   }
@@ -3379,6 +3616,23 @@ footer {
   }
 }
 @media (max-width: 1400px) {
+  .dream-job-block-4 {
+    padding: 0;
+    flex-direction: column;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+  }
+  .dream-job-block-4 .go-back-to-job-btn {
+    margin: 20px 0;
+  }
+  .go-back-to-job-btn {
+    width: 200px;
+    font-size: 14px;
+  }
+  .top-job-header-abs {
+    height: 110px;
+  }
   .about-media-info {
     padding: 0 150px;
   }
@@ -3582,6 +3836,37 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .dream-job-text-6 {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+  }
+  .dream-job-text-7 {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+  }
+  .dream-job-block-2 {
+    flex-wrap: wrap;
+  }
+  .dream-job-text-5 {
+    font-size: 23px;
+  }
+  .dream-job-block {
+    flex-direction: column;
+  }
+  .dream-job-text-1 {
+    font-size: 23px;
+    margin: 24px 0 !important;
+    width: 100%;
+    text-align: center;
+  }
+  .dream-job-content-2 {
+    flex-direction: column;
+  }
+  .go-back-to-job-btn {
+    margin: 20px 0;
+  }
   .find-job-right-icon {
     right: 28px;
     top: 24px;
@@ -3906,6 +4191,27 @@ footer {
 
 }
 @media (max-width: 992px) {
+  .dream-job-text-1 {
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    line-height: 27px;
+  }
+  .find-job-text-1 {
+    padding-bottom: 70px;
+  }
+  .top-jobs-text {
+    justify-content: center;
+  }
+  .dream-job-left-block {
+    width: 100%;
+  }
+  .dream-job-left {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+  }
   .about-media-info {
     flex-direction: column;
   }
@@ -4123,6 +4429,26 @@ footer {
   }
 }
 @media (max-width: 767px) {
+  .dream-job-block-3 .container {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .dream-job-text-6 {
+    font-size: 20px;
+  }
+  .dream-job-text-7 {
+    font-size: 18px;
+  }
+  .dream-job-block-2 {
+    justify-content: center;
+  }
+  .dream-job-text-4 {
+    text-align: center;
+    width: 100%;
+  }
+  .dream-job-block-2 > div {
+    margin: 10px;
+  }
   .resume-items .profile-item {
     margin-right:0;
     width: 400px;
@@ -4386,6 +4712,15 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .dream-job-text-2 {
+    font-size: 22px;
+    text-align: center;
+    line-height: 25px;
+  }
+  .dream-job-text-3 {
+    text-align: center;
+    line-height: 25px;
+  }
   .clear-all-filters {
     text-align: center;
   }
@@ -4503,7 +4838,7 @@ footer {
     font-size: 30px;
     max-width: 96%;
     line-height: 40px;
-    padding-bottom: 222px;
+    padding-bottom: 80px;
   }
   .find-job-text-2 {
     margin-left: 10px !important;
