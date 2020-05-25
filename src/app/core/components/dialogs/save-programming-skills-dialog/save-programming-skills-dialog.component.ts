@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-save-programming-skills-dialog',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaveProgrammingSkillsDialogComponent implements OnInit {
 
-  constructor() { }
+  skillsForm;
+
+  constructor(
+    private fb: FormBuilder
+  ) {
+    this.skillsForm = this.fb.group({
+      name: ''
+    });
+  }
 
   ngOnInit(): void {
   }

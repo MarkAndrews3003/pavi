@@ -1,4 +1,4 @@
-<form [formGroup]="educationForm">
+<form [formGroup]="$any(educationForm)">
   <ng-container *ngFor="let c of educationItems;let ind = index">
     <ng-container [formGroupName]="ind.toString()">
       <div class="save-work-experience">
@@ -35,7 +35,7 @@
 
 
         <div class="work-buttons">
-          <a class="work-add-edit-2">Cancel</a>
+          <a class="work-add-edit-2" mat-dialog-close>Cancel</a>
           <a class="work-add-edit-1" (click)="saveEducation()">Save</a>
         </div>
       </div>
