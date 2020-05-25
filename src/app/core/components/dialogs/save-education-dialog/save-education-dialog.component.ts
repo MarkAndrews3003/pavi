@@ -15,13 +15,15 @@ export class SaveEducationDialogComponent implements OnInit {
     private fb: FormBuilder,
     private profileService: ProfileService
   ) {
-    this.educationForm = this.fb.array([{
-      college: ['', Validators.required],
-      degree: ['', Validators.required],
-      speciality: ['', Validators.required],
-      start_year: ['', Validators.required],
-      end_year: ['', Validators.required]
-    }]);
+    this.educationForm = this.fb.array([
+      this.fb.group({
+        college: ['', Validators.required],
+        degree: ['', Validators.required],
+        speciality: ['', Validators.required],
+        start_year: ['', Validators.required],
+        end_year: ['', Validators.required]
+      })
+    ]);
   }
 
   ngOnInit(): void {
@@ -31,6 +33,10 @@ export class SaveEducationDialogComponent implements OnInit {
     this.profileService.addEducation(this.educationForm.value).subscribe(dt => {
 
     });
+  }
+
+  get educationItems() {
+    return this.educationForm.controls;
   }
 
 }

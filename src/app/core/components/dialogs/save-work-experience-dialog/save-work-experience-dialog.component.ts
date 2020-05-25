@@ -36,7 +36,7 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
   }
 
   get experienceItems() {
-    return this.workExperienceForm;
+    return this.workExperienceForm.controls;
   }
 
 }

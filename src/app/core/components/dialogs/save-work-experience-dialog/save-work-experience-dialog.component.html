@@ -1,5 +1,5 @@
-<form [formGroup]="workExperienceForm">
-  <ng-container *ngFor="let c of experienceItems.controls;let ind = index">
+<form [formGroup]="$any(workExperienceForm)">
+  <ng-container *ngFor="let c of experienceItems;let ind = index">
     <ng-container [formGroupName]="ind.toString()">
       <div class="save-work-experience">
         <i class="fas fa-times dialogs-close-btn" mat-dialog-close></i>
