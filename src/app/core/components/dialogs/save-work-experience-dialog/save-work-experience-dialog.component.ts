@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-save-work-experience-dialog',
@@ -17,6 +17,7 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private profileService: ProfileService,
+    private dialog: MatDialogRef<SaveWorkExperienceDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.workExperienceForm = this.fb.array([
@@ -28,8 +29,11 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
       })]);
 
     this.edit = !!data;
-    this.editData = data;
-    this.experienceItems[0].patchValue(data);
+
+    if (data) {
+      this.editData = data;
+      this.experienceItems[0].patchValue(data);
+    }
   }
 
   ngOnInit(): void {
@@ -44,8 +48,10 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
 
     } else {
       formValue[0].index = this.editData.index;
-      console.log(formValue[0])
-      this.profileService.updateWorkExperience(formValue[0]).subscribe();
+      this.profileService.updateWorkExperience(formValue[0]).subscribe(() => {
+        this.dialog.close();
+      });
+
     }
   }
 

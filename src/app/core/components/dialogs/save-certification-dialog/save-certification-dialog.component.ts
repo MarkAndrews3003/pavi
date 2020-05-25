@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-save-certification-dialog',
@@ -9,10 +10,14 @@ import {ProfileService} from '../../../services/profile.service';
 })
 export class SaveCertificationDialogComponent implements OnInit {
   certificationForm: FormArray;
+  editData;
+  edit;
+  certifications = [];
 
   constructor(
     private fb: FormBuilder,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.certificationForm = this.fb.array([
       this.fb.group({
@@ -23,16 +28,27 @@ export class SaveCertificationDialogComponent implements OnInit {
         end_year: ['', Validators.required]
       })
     ]);
+
+    this.editData = data;
+    this.edit = !!data;
   }
 
   ngOnInit(): void {
+    this.getCertifications();
+  }
 
+  getCertifications() {
+    this.profileService.getCertifications({}).subscribe((dt: any) => {
+      this.certifications = dt;
+    });
   }
 
   saveCertification() {
-    this.profileService.addEducation(this.certificationForm.value).subscribe(dt => {
+    if (!this.edit) {
+      this.profileService.addEducation(this.certificationForm.value).subscribe();
+    } else {
 
-    });
+    }
   }
 
   get certificationItems() {
