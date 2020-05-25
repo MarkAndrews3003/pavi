@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="skillsForm">
   <ng-container *ngFor="let c of skills;let ind = index">
     <ng-container [formGroupName]="ind.toString()">
       <div class="save-work-experience">

@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {Component, Inject, OnInit} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-save-programming-skills-dialog',
@@ -11,12 +12,16 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
   skillsForm;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.skillsForm = this.fb.group({
-      name: '',
-      rating: ''
-    });
+
+
+    this.skillsForm = this.fb.array([
+      this.fb.group({
+        name: ['', Validators.required],
+        rating: ['', Validators.required],
+      })]);
   }
 
   ngOnInit(): void {
