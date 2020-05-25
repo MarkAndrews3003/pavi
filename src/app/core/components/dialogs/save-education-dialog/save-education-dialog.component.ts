@@ -22,7 +22,7 @@ export class SaveEducationDialogComponent implements OnInit {
   ) {
     this.educationForm = this.fb.array([
       this.fb.group({
-        college: ['', Validators.required],
+        institution: ['', Validators.required],
         degree: ['', Validators.required],
         speciality: ['', Validators.required],
         start_year: ['', Validators.required],
