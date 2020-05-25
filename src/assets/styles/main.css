@@ -43,7 +43,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 140px;
+  padding: 0 90git statupx;
 }
 
 .header-left {
@@ -69,12 +69,12 @@ li {
 }
 
 .header-right ul li a.active {
-  font-family: "Segoe Bold";
+  color: #0b3d6f !important;
 }
 
 .header-right ul li a:hover {
-  font-family: "Segoe Bold";
   cursor: pointer;
+  color: #0b3d6f !important;
 }
 
 .header-btns {
@@ -103,8 +103,19 @@ li {
   color: white;
 }
 
-.header-img {
+.header-img-block {
   margin-right: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-dropdown-part.show .header-img-block i {
+  transform: rotate(180deg);
+}
+.header-img-block i {
+  color: #0265c9;
+  font-size: 20px;
+  margin-left: 8px;
 }
 
 .search-btn {
@@ -1110,7 +1121,6 @@ footer {
 .logo-back {
   font-size: 30px;
   margin-left: 40px;
-  margin-top: 20px;
   font-family: "Segoe Bold";
   display: flex;
 }
@@ -3595,6 +3605,7 @@ footer {
   .welcome-text-size {
     font-size: 45px;
     margin-right: 40px;
+    line-height: 30px;
   }
   .welcome-text-size span {
     font-size: 26px;
