@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
 
 @Component({
@@ -9,27 +9,34 @@ import {ProfileService} from '../../../services/profile.service';
 })
 export class SaveWorkExperienceDialogComponent implements OnInit {
 
-  workExperienceForm: FormGroup;
+  workExperienceForm: FormArray;
 
   constructor(
     private fb: FormBuilder,
     private profileService: ProfileService
   ) {
-    this.workExperienceForm = this.fb.group({
-      company_name: ['', Validators.required],
-      speciality: ['', Validators.required],
-      start_year: ['', Validators.required],
-      end_year: ['', Validators.required]
-    });
+    this.workExperienceForm = this.fb.array([
+      this.fb.group({
+        company_name: ['', Validators.required],
+        speciality: ['', Validators.required],
+        start_year: ['', Validators.required],
+        end_year: ['', Validators.required]
+      })]);
   }
 
   ngOnInit(): void {
+    console.log(this.workExperienceForm)
   }
 
   addExperience() {
+    console.log(this.workExperienceForm.value)
     this.profileService.addWorkExperience(this.workExperienceForm.value).subscribe(dt => {
 
     });
+  }
+
+  get experienceItems() {
+    return this.workExperienceForm;
   }
 
 }

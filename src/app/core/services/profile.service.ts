@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {API_URL} from '../constants/general';
 
@@ -9,13 +9,20 @@ export class ProfileService {
 
   constructor(
     private httpClient: HttpClient
-  ) { }
+  ) {
+  }
 
   addWorkExperience(params) {
     return this.httpClient.post(`${API_URL}cv/work`, params);
   }
 
+  getWorkExperience(params) {
+    return this.httpClient.get(`${API_URL}cv/work_get`, {params});
+  }
+
   addEducation(params) {
     return this.httpClient.post(`${API_URL}cv/education`, params);
   }
+
+
 }

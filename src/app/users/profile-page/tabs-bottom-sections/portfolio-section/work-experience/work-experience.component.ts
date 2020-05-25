@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SaveWorkExperienceDialogComponent} from '../../../../../core/components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import {ProfileService} from '../../../../../core/services/profile.service';
 
 @Component({
   selector: 'app-work-experience',
@@ -10,10 +11,20 @@ import {MatDialog} from '@angular/material/dialog';
 export class WorkExperienceComponent implements OnInit {
   showingEditDeleteBtns = false;
 
-  constructor(private matDialog: MatDialog) {
+  constructor(
+    private matDialog: MatDialog,
+    private profileService: ProfileService
+  ) {
   }
 
   ngOnInit(): void {
+    this.getWorkExperience();
+  }
+
+  getWorkExperience() {
+    this.profileService.getWorkExperience({}).subscribe(dt => {
+
+    });
   }
 
 
