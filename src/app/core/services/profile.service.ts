@@ -20,6 +20,10 @@ export class ProfileService {
     return this.httpClient.get(`${API_URL}cv/work_get`, {params});
   }
 
+  removeWorkExperience(params) {
+    return this.httpClient.delete(`${API_URL}cv/work_delete`, {params});
+  }
+
   addEducation(params) {
     return this.httpClient.post(`${API_URL}cv/education`, params);
   }

@@ -6,102 +6,122 @@
     </div>
     <div class="work-list">
       <ul>
-        <li>
+
+        <li *ngFor="let experience of workExperience">
           <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">BSA LifeStructures</p>
+          <p class="work-text-2">{{experience.company_name}}</p>
           <div>
-            <p class="work-text-3">2015</p>
-            <p class="work-text-4">Interior Designer</p>
+            <p
+              class="work-text-3">{{!experience.end_year ? experience.start_year : (experience.start_year + '-' + experience.end_year) }}</p>
+            <p class="work-text-4">{{experience.speciality}}</p>
           </div>
           <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
             <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
+              <img src="assets/images/edit-work.svg" (click)="showEditDialog(experience)">
             </a>
             <a>
-              <img src="../../../assets/images/delete-work.svg">
+              <img src="assets/images/delete-work.svg" (click)="removeExperience(experience)">
             </a>
           </div>
         </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">BSA LifeStructures</p>
-          <div>
-            <p class="work-text-3">2015</p>
-            <p class="work-text-4">Interior Designer</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg" (click)="showEditDialog()">
-          <p class="work-text-2">CBRE / Heery</p>
-          <div>
-            <p class="work-text-3">2015-2016</p>
-            <p class="work-text-4">Graphic Designer</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Corgan</p>
-          <div>
-            <p class="work-text-3">2017-2020</p>
-            <p class="work-text-4">Interior Designer</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="assets/images/circle-check.svg">
-          <p class="work-text-2">BSA LifeStructures</p>
-          <div>
-            <p class="work-text-3">2015</p>
-            <p class="work-text-4">Interior Designer</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">BSA LifeStructures</p>
-          <div>
-            <p class="work-text-3">2015</p>
-            <p class="work-text-4">Interior Designer</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
+
+
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">BSA LifeStructures</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2015</p>-->
+        <!--            <p class="work-text-4">Interior Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">BSA LifeStructures</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2015</p>-->
+        <!--            <p class="work-text-4">Interior Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg" (click)="showEditDialog()">-->
+        <!--          <p class="work-text-2">CBRE / Heery</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2015-2016</p>-->
+        <!--            <p class="work-text-4">Graphic Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">Corgan</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2017-2020</p>-->
+        <!--            <p class="work-text-4">Interior Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">BSA LifeStructures</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2015</p>-->
+        <!--            <p class="work-text-4">Interior Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">BSA LifeStructures</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2015</p>-->
+        <!--            <p class="work-text-4">Interior Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
       </ul>
     </div>
   </div>

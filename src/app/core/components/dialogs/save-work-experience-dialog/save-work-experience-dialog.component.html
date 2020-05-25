@@ -18,13 +18,13 @@
         <div class="work-experience-input">
           <label>Years Of Work</label>
           <div class="work-date-input">
-            <input placeholder="2012" formControlName="start_year">
-            <input placeholder="2016" formControlName="end_year">
+            <input placeholder="Start year" formControlName="start_year">
+            <input placeholder="End year" formControlName="end_year">
           </div>
         </div>
         <div class="work-buttons">
           <a class="work-add-edit-2" mat-dialog-close>Cancel</a>
-          <a class="work-add-edit-1" (click)="addExperience()">Save</a>
+          <a class="work-add-edit-1" (click)="saveExperience()">Save</a>
         </div>
       </div>
     </ng-container>
