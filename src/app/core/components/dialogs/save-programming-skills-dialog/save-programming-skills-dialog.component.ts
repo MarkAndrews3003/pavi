@@ -14,11 +14,16 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.skillsForm = this.fb.group({
-      name: ''
+      name: '',
+      rating: ''
     });
   }
 
   ngOnInit(): void {
+  }
+
+  get skills() {
+    return this.skillsForm.controls;
   }
 
 }

@@ -9,7 +9,8 @@ import {ProfileService} from '../../../../../core/services/profile.service';
   styleUrls: ['./work-experience.component.css']
 })
 export class WorkExperienceComponent implements OnInit {
-  showingEditDeleteBtns = false;
+  showingEditDeleteBtns = true;
+  workExperience = [];
 
   constructor(
     private matDialog: MatDialog,
@@ -22,15 +23,15 @@ export class WorkExperienceComponent implements OnInit {
   }
 
   getWorkExperience() {
-    this.profileService.getWorkExperience({}).subscribe(dt => {
-
+    this.profileService.getWorkExperience({}).subscribe((dt: any) => {
+      this.workExperience = dt;
     });
   }
 
 
   addWorkExperience() {
     this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
-
+      this.getWorkExperience();
     });
   }
 
@@ -38,9 +39,15 @@ export class WorkExperienceComponent implements OnInit {
     this.showingEditDeleteBtns = !this.showingEditDeleteBtns;
   }
 
-  showEditDialog() {
-    this.matDialog.open(SaveWorkExperienceDialogComponent).afterClosed().subscribe(dt => {
+  showEditDialog(data) {
+    this.matDialog.open(SaveWorkExperienceDialogComponent, {data}).afterClosed().subscribe(dt => {
+      this.getWorkExperience();
+    });
+  }
 
+  removeExperience(experience) {
+    this.profileService.removeWorkExperience({index: experience.index}).subscribe((dt: any) => {
+      this.getWorkExperience();
     });
   }
 

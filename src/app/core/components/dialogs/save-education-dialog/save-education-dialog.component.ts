@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-save-education-dialog',
@@ -10,10 +11,14 @@ import {ProfileService} from '../../../services/profile.service';
 export class SaveEducationDialogComponent implements OnInit {
 
   educationForm: FormArray;
+  editData;
+  edit;
 
   constructor(
     private fb: FormBuilder,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    private dialog: MatDialogRef<SaveEducationDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.educationForm = this.fb.array([
       this.fb.group({
@@ -24,16 +29,30 @@ export class SaveEducationDialogComponent implements OnInit {
         end_year: ['', Validators.required]
       })
     ]);
+
+    this.edit = !!data;
+    if (data) {
+
+      this.editData = data;
+      this.educationItems[0].patchValue(data);
+    }
   }
 
   ngOnInit(): void {
   }
 
   saveEducation() {
-    this.profileService.addEducation(this.educationForm.value).subscribe(dt => {
-
-    });
+    const formValue = this.educationForm.value
+    if (!this.edit) {
+      this.profileService.addEducation(formValue).subscribe();
+    } else {
+      formValue[0].index = this.editData.index;
+      this.profileService.updateEducationInfo(formValue[0]).subscribe(() => {
+        this.dialog.close();
+      });
+    }
   }
+
 
   get educationItems() {
     return this.educationForm.controls;
