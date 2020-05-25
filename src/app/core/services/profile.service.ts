@@ -16,6 +16,10 @@ export class ProfileService {
     return this.httpClient.post(`${API_URL}cv/work`, params);
   }
 
+  updateWorkExperience(params) {
+    return this.httpClient.put(`${API_URL}cv/work_update`, params);
+  }
+
   getWorkExperience(params) {
     return this.httpClient.get(`${API_URL}cv/work_get`, {params});
   }

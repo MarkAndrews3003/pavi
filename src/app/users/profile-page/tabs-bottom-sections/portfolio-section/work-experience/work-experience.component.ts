@@ -41,7 +41,7 @@ export class WorkExperienceComponent implements OnInit {
 
   showEditDialog(data) {
     this.matDialog.open(SaveWorkExperienceDialogComponent, {data}).afterClosed().subscribe(dt => {
-
+      this.getWorkExperience();
     });
   }
 

@@ -11,6 +11,8 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class SaveWorkExperienceDialogComponent implements OnInit {
 
   workExperienceForm: FormArray;
+  edit;
+  editData;
 
   constructor(
     private fb: FormBuilder,
@@ -25,6 +27,8 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
         end_year: ['', Validators.required]
       })]);
 
+    this.edit = !!data;
+    this.editData = data;
     this.experienceItems[0].patchValue(data);
   }
 
@@ -32,9 +36,17 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
   }
 
   saveExperience() {
-    this.profileService.addWorkExperience(this.workExperienceForm.value).subscribe(dt => {
+    const formValue = this.workExperienceForm.value;
 
-    });
+    if (!this.edit) {
+
+      this.profileService.addWorkExperience(formValue).subscribe();
+
+    } else {
+      formValue[0].index = this.editData.index;
+      console.log(formValue[0])
+      this.profileService.updateWorkExperience(formValue[0]).subscribe();
+    }
   }
 
   get experienceItems() {
