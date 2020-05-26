@@ -24,8 +24,8 @@
           <i class="fas fa-chevron-down"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownUserInfo" *ngIf="auth.loggedIn()">
-          <a class="dropdown-item"  (click)="router.navigate(['users/profile-page'])">Profile Page</a>
-          <a class="dropdown-item" *ngIf="auth.loggedIn()" (click)="auth.logOut()">Logout</a>
+          <a class="dropdown-item"  (click)="router.navigate(['users/profile-page'])"> <img class="header-img" src="assets/images/social-media-profile.png">My Profile</a>
+          <a class="dropdown-item" *ngIf="auth.loggedIn()" (click)="auth.logOut()"><img class="header-img" src="assets/images/logout-profile.png">Logout</a>
         </div>
       </div>
 

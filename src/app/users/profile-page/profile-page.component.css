@@ -5,6 +5,8 @@ input[type="file"] {
 
 .change-photo-img {
   width: 500px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .profile-image {
