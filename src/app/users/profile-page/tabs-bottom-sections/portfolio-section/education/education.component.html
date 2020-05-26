@@ -8,58 +8,58 @@
       <ul>
         <li *ngFor="let education of educationInfo">
           <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Georgia Institute Of Technology</p>
+          <p class="work-text-2">{{education.institution}}</p>
           <div>
-            <p class="work-text-3">2012-2016</p>
-            <p class="work-text-4">Master Degree</p>
-            <p class="work-text-5">Designer</p>
+            <p
+              class="work-text-3">{{!education.end_year ? education.start_year : (education.start_year + '-' + education.end_year) }}</p>
+            <p class="work-text-4">{{education.degree}}</p>
+            <p class="work-text-5">{{education.speciality}}</p>
           </div>
           <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">
             <a>
               <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog(education)">
             </a>
             <a>
-              <img src="../../../assets/images/delete-work.svg" (click)="removeEducationInfo()">
+              <img src="../../../assets/images/delete-work.svg" (click)="removeEducationInfo(education)">
             </a>
           </div>
         </li>
 
 
-
-<!--        <li>-->
-<!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
-<!--          <p class="work-text-2">Hong Kong Polytechnic University</p>-->
-<!--          <div>-->
-<!--            <p class="work-text-3">2012-2016</p>-->
-<!--            <p class="work-text-4">Bachelor Degree</p>-->
-<!--            <p class="work-text-5">Designer</p>-->
-<!--          </div>-->
-<!--          <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">-->
-<!--            <a>-->
-<!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
-<!--            </a>-->
-<!--            <a>-->
-<!--              <img src="../../../assets/images/delete-work.svg">-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </li>       -->
-<!--        <li>-->
-<!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
-<!--          <p class="work-text-2">Hong Kong Polytechnic University</p>-->
-<!--          <div>-->
-<!--            <p class="work-text-3">2012-2016</p>-->
-<!--            <p class="work-text-4">Bachelor Degree</p>-->
-<!--            <p class="work-text-5">Designer</p>-->
-<!--          </div>-->
-<!--          <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">-->
-<!--            <a>-->
-<!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
-<!--            </a>-->
-<!--            <a>-->
-<!--              <img src="../../../assets/images/delete-work.svg">-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </li>-->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">Hong Kong Polytechnic University</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2012-2016</p>-->
+        <!--            <p class="work-text-4">Bachelor Degree</p>-->
+        <!--            <p class="work-text-5">Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>       -->
+        <!--        <li>-->
+        <!--          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">-->
+        <!--          <p class="work-text-2">Hong Kong Polytechnic University</p>-->
+        <!--          <div>-->
+        <!--            <p class="work-text-3">2012-2016</p>-->
+        <!--            <p class="work-text-4">Bachelor Degree</p>-->
+        <!--            <p class="work-text-5">Designer</p>-->
+        <!--          </div>-->
+        <!--          <div class="work-delete-edit" *ngIf="showingEditDeleteBtns">-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">-->
+        <!--            </a>-->
+        <!--            <a>-->
+        <!--              <img src="../../../assets/images/delete-work.svg">-->
+        <!--            </a>-->
+        <!--          </div>-->
+        <!--        </li>-->
       </ul>
     </div>
     <div class="work-add-edit">

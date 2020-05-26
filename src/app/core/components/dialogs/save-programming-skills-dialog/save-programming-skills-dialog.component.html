@@ -17,7 +17,7 @@
             <input placeholder="0%" formControlName="rating">
           </div>
         </div>
-        <div class="add-programming-skills">
+        <div class="add-programming-skills" [hidden]="true">
           <div class="add-plus"><img src="../../../assets/images/plus.svg"></div>
           <div class="add-text">Add One More <span>Skill.</span></div>
         </div>
@@ -25,7 +25,7 @@
 
         <div class="work-buttons">
           <a class="work-add-edit-2">Cancel</a>
-          <a class="work-add-edit-1">Save</a>
+          <a class="work-add-edit-1" (click)="saveSkill()">Save</a>
         </div>
       </div>
     </ng-container>

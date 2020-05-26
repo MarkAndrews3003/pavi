@@ -5,124 +5,19 @@
       <p class="work-text-1">Programing Skills</p>
     </div>
     <div class="work-list">
-      <ul>
-        <li>
+      <ul *ngIf="skillsInfo.length > 0">
+        <li *ngFor="let skill of skillsInfo">
           <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Autodesk 3d Max</p>
+          <p class="work-text-2">{{skill.name}}</p>
           <div>
-            <p class="work-text-6">80%</p>
+            <p class="work-text-6">{{skill.rating}}%</p>
           </div>
           <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
             <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
+              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog(skill)">
             </a>
             <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Autodesk Autocad</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Vray</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Autodesk 3d Max</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Autodesk 3d Max</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Vray</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Vray</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
-            </a>
-          </div>
-        </li>
-        <li>
-          <img class="work-list-sqr" src="../../../assets/images/circle-check.svg">
-          <p class="work-text-2">Photoshop</p>
-          <div>
-            <p class="work-text-6">80%</p>
-          </div>
-          <div class="work-delete-edit" [hidden]="!showingEditDeleteBtns">
-            <a>
-              <img src="../../../assets/images/edit-work.svg" (click)="showEditDialog()">
-            </a>
-            <a>
-              <img src="../../../assets/images/delete-work.svg">
+              <img src="../../../assets/images/delete-work.svg" (click)="removeSkill(skill)">
             </a>
           </div>
         </li>

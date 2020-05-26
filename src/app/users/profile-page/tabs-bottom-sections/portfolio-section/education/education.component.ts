@@ -24,7 +24,7 @@ export class EducationComponent implements OnInit {
 
   addEducationInfo() {
     this.matDialog.open(SaveEducationDialogComponent).afterClosed().subscribe(dt => {
-
+      this.getEducationInfo();
     });
   }
 
@@ -40,12 +40,14 @@ export class EducationComponent implements OnInit {
 
   showEditDialog(data) {
     this.matDialog.open(SaveEducationDialogComponent, {data}).afterClosed().subscribe(dt => {
-
+      this.getEducationInfo();
     });
   }
 
-  removeEducationInfo() {
-    this.profileService.removeEducationInfo({}).subscribe();
+  removeEducationInfo(education) {
+    this.profileService.removeEducationInfo({index: education.index}).subscribe(() => {
+      this.getEducationInfo();
+    });
   }
 
 }
