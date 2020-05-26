@@ -3043,7 +3043,36 @@ footer {
 .user-dropdown-part .dropdown-item :first-child{
   border-bottom: 1px solid #CCCCCC;
 }
-
+.reference-block .dropdown-menu {
+  top: 16px !important;
+  left: -9px !important;
+  margin: 0;
+  border-radius: 9px;
+  border: 0;
+  box-shadow: 0px 0px 10px #94949429;
+  padding: 0;
+  color: #CCCCCC !important;
+}
+.reference-block  .dropdown-menu:after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 15px 15px 0px 15px;
+  border-color: #fff transparent transparent transparent;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: -13px;
+  left: -98px;
+  transform: rotate(180deg);
+  right: 0;
+  margin: 0 auto;
+}
+.reference-block a:hover {
+  background: transparent;
+  color: black !important;
+}
 .profile-logos .owl-theme .owl-nav {
   margin-top: 40px;
 }
@@ -3368,7 +3397,9 @@ footer {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
+.reference-block .dropdown.show i {
+  transform: rotate(180deg);
+}
 
 
 
@@ -4753,6 +4784,9 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .reference-block .dropdown-menu {
+    left: -56px !important;
+  }
   .dream-job-text-2 {
     font-size: 22px;
     text-align: center;
