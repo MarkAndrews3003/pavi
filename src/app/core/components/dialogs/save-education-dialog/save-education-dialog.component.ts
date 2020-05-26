@@ -42,7 +42,7 @@ export class SaveEducationDialogComponent implements OnInit {
   }
 
   saveEducation() {
-    const formValue = this.educationForm.value
+    const formValue = this.educationForm.value;
     if (!this.edit) {
       this.profileService.addEducation(formValue).subscribe(() => {
         this.dialog.close();
