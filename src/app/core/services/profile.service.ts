@@ -37,11 +37,11 @@ export class ProfileService {
   }
 
   updateEducationInfo(params) {
-    return this.httpClient.post(`${API_URL}cv/education_update`, params);
+    return this.httpClient.put(`${API_URL}cv/education_update`, params);
   }
 
   removeEducationInfo(params) {
-    return this.httpClient.post(`${API_URL}cv/education_delete`, params);
+    return this.httpClient.delete(`${API_URL}cv/education_delete`, {params});
   }
 
   getCertifications(params) {

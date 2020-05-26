@@ -44,7 +44,9 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
 
     if (!this.edit) {
 
-      this.profileService.addWorkExperience(formValue).subscribe();
+      this.profileService.addWorkExperience(formValue).subscribe(() => {
+        this.dialog.close();
+      });
 
     } else {
       formValue[0].index = this.editData.index;
