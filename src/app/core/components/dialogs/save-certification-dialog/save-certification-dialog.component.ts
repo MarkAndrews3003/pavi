@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-save-certification-dialog',
@@ -17,20 +17,24 @@ export class SaveCertificationDialogComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private profileService: ProfileService,
+    private dialog: MatDialogRef<SaveCertificationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.certificationForm = this.fb.array([
       this.fb.group({
-        college: ['', Validators.required],
-        degree: ['', Validators.required],
-        speciality: ['', Validators.required],
+        name: ['', Validators.required],
+        description: ['', Validators.required],
+        issued_by: ['', Validators.required],
         start_year: ['', Validators.required],
         end_year: ['', Validators.required]
       })
     ]);
 
-    this.editData = data;
     this.edit = !!data;
+    if (data) {
+      this.editData = data;
+      this.certificationItems[0].patchValue(data);
+    }
   }
 
   ngOnInit(): void {
@@ -44,10 +48,16 @@ export class SaveCertificationDialogComponent implements OnInit {
   }
 
   saveCertification() {
+    const formValue = this.certificationForm.value;
     if (!this.edit) {
-      this.profileService.addEducation(this.certificationForm.value).subscribe();
+      this.profileService.addCertification(formValue).subscribe(() => {
+        this.dialog.close();
+      });
     } else {
-
+      formValue[0].index = this.editData.index;
+      this.profileService.updateCertifications(formValue[0]).subscribe(() => {
+        this.dialog.close();
+      });
     }
   }
 
