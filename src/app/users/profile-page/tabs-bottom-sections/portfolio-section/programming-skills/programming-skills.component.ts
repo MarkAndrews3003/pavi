@@ -25,7 +25,6 @@ export class ProgrammingSkillsComponent implements OnInit {
   getSkillsInfo() {
     this.profileService.getSkillsInfo({}).subscribe((dt: any) => {
       this.skillsInfo = dt;
-      console.log(this.skillsInfo)
     });
   }
 

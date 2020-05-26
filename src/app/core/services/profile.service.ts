@@ -61,13 +61,21 @@ export class ProfileService {
     return this.httpClient.delete(`${API_URL}cv/skill_delete`, {params});
   }
 
+  addCertification(params) {
+    return this.httpClient.post(`${API_URL}cv/certification`, params);
+  }
+
 
   getCertifications(params) {
-    return this.httpClient.get(`${API_URL}cv/work_get`, {params});
+    return this.httpClient.get(`${API_URL}cv/certification_get`, {params});
   }
 
   updateCertifications(params) {
     return this.httpClient.put(`${API_URL}cv/certification_update`, params);
+  }
+
+  removeCertification(params) {
+    return this.httpClient.delete(`${API_URL}cv/certification_delete`, {params});
   }
 
 
