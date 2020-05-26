@@ -9,6 +9,7 @@
         <mat-error *ngIf="isSubmitted && companyCtrl.hasError('required')">Company name is <strong>required</strong>
         </mat-error>
         <mat-error *ngIf="common.companyNameExists">Company with such name <strong>exists</strong></mat-error>
+        <mat-error *ngIf="companyCtrl.hasError('patternInvalid')">Company name is <strong>invalid</strong></mat-error>
       </div>
       <label for="industry" class="logos-item-label">Industry</label>
       <select id="industry" class="logos-item-input" (change)="changeIndustry($event)" formControlName="industry">

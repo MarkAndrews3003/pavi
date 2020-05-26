@@ -4,8 +4,12 @@ import {CompaniesService} from '../../core/services/companies.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
-import {ADDRESS_PATTERN, API_URL, EMAIL_PATTERN, NUMBERS_ONLY_PATTERN} from '../../core/constants/general';
-import {MatStepper} from '@angular/material/stepper';
+import {
+  API_URL,
+  EMAIL_PATTERN, NUMBER_AFTER_TEXT_PATTERN,
+  NUMBERS_ONLY_PATTERN,
+  TEXT_ONLY_PATTERN
+} from '../../core/constants/general';
 
 @Component({
   selector: 'app-company-sign-up',
@@ -35,13 +39,13 @@ export class CompanySignUpComponent implements OnInit {
 
   initForm() {
     this.companyInfo = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, patternValidator(NUMBER_AFTER_TEXT_PATTERN)]],
       industry: ['', Validators.required],
       country: ['', Validators.required],
     });
     this.accountInfo = this.fb.group({
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      first_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+      last_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
       password: ['', Validators.required],
       gender: ['', Validators.required],
     });
@@ -51,7 +55,7 @@ export class CompanySignUpComponent implements OnInit {
       email: new FormControl(null, {
         validators: [Validators.required, patternValidator(EMAIL_PATTERN)]
       }),
-      address: ['', [Validators.required, patternValidator(ADDRESS_PATTERN)]],
+      address: ['', [Validators.required, patternValidator(NUMBER_AFTER_TEXT_PATTERN)]],
     });
 
     this.companyRegistrationForm = this.fb.group({

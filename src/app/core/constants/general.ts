@@ -7,6 +7,7 @@ export const EMAIL_PATTERN = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+
 export const TEXT_ONLY_PATTERN = /^[a-zA-Z ]*$/;
 // export const ADDRESS_PATTERN = /^[^,#$%_*<>()/|~`!?{}0-9\[\]\\.,;:\s@"]+[a-zA-Z0-9, ]*$/;
 export const ADDRESS_PATTERN = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+export const NUMBER_AFTER_TEXT_PATTERN = /^[a-zA-Z ]/;
 export const DATE_ONLY_PATTERN = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
 export const NO_SPACE_PATTERN = /^\S*$/;
 export const NUMBERS_ONLY_PATTERN = /^[0-9]*$/;
@@ -17,7 +18,6 @@ export const NAVBAR_LINKS = [
   {name: 'Find job', route: '/users/find-job'},
   {name: 'Find employee', route: '/companies/find-employees'},
 ];
-
 
 export const OWL_CAROUSEL_OPTIONS: OwlOptions = {
   loop: false,
