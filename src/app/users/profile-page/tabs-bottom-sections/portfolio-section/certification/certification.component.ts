@@ -38,14 +38,14 @@ export class CertificationComponent implements OnInit {
     this.showingEditDeleteBtns = !this.showingEditDeleteBtns;
   }
 
-  showEditDialog() {
-    this.matDialog.open(SaveCertificationDialogComponent).afterClosed().subscribe(dt => {
+  showEditDialog(data) {
+    this.matDialog.open(SaveCertificationDialogComponent, {data}).afterClosed().subscribe(dt => {
       this.getCertificationInfo();
     });
   }
 
-  removeCertification() {
-    this.profileService.removeCertification({}).subscribe(dt => {
+  removeCertification(data) {
+    this.profileService.removeCertification({index: data.index}).subscribe(dt => {
       this.getCertificationInfo();
     });
   }

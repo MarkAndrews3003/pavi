@@ -32,7 +32,6 @@ export class SaveCertificationDialogComponent implements OnInit {
 
     this.edit = !!data;
     if (data) {
-
       this.editData = data;
       this.certificationItems[0].patchValue(data);
     }
