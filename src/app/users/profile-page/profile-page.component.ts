@@ -31,7 +31,7 @@ export class ProfilePageComponent implements OnInit {
   showAllJobs = false;
   authUser;
   isLinear = false;
-  currentStep = 2;
+  currentStep = 1;
 
 
 

@@ -22,7 +22,6 @@ export class AboutTabComponent implements OnInit {
     showEditProfileForm = false;
 
 
-
     constructor(
         private fb: FormBuilder,
         private getAuthUser: GetAuthUserPipe,
@@ -62,6 +61,7 @@ export class AboutTabComponent implements OnInit {
         this.usersService.updateProfileInfo({
             ...this.profileForm.value, ...{user_id: this.authUser._id}
         }).subscribe((dt: any) => {
+            this.toastr.success('The profile changes has been saved successfully');
             localStorage.setItem('token', dt.token);
             this.authUser = this.getAuthUser.transform();
         });
