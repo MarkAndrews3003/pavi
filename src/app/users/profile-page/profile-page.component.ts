@@ -27,8 +27,6 @@ export class ProfilePageComponent implements OnInit {
   aboutText = {profile_desc: ''};
 
 
-  owlOptions: OwlOptions = OWL_CAROUSEL_OPTIONS;
-  showAllJobs = false;
   authUser;
   isLinear = false;
   currentStep = 1;

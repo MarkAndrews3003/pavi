@@ -13,6 +13,9 @@
                 <label>Phone:</label>
                 <input formControlName="phone">
             </div>
+            <mat-error *ngIf="phone.hasError('patternInvalid')">Phone number is <strong>invalid</strong>. Only numbers
+                please.
+            </mat-error>
             <div class="profile-item">
                 <label>Age:</label>
                 <input placeholder="25" disabled>
@@ -21,6 +24,8 @@
                 <label>Country:</label>
                 <input formControlName="country">
             </div>
+            <mat-error *ngIf="country.hasError('patternInvalid')">Country format is <strong>invalid</strong>.
+            </mat-error>
             <div class="profile-item">
                 <label>Gender:</label>
                 <input formControlName="gender">

@@ -1,10 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../../../core/constants/general';
+import {
+    API_URL,
+    NUMBERS_ONLY_PATTERN,
+    OWL_CAROUSEL_OPTIONS,
+    TEXT_ONLY_PATTERN
+} from '../../../../core/constants/general';
 import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
 import {UsersService} from '../../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
 import {OwlOptions} from 'ngx-owl-carousel-o';
+import {patternValidator} from "../../../../core/helpers/pattern-validator";
 
 @Component({
     selector: 'app-about-tab',
@@ -30,8 +36,11 @@ export class AboutTabComponent implements OnInit {
     ) {
 
         this.profileForm = this.fb.group({
-            country: [{value: '', disabled: !this.showEditProfileForm}, Validators.required],
-            phone: [{value: 'n/a', disabled: !this.showEditProfileForm}, Validators.required],
+            country: [{value: '', disabled: !this.showEditProfileForm}, [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+            phone: [{
+                value: 'n/a',
+                disabled: !this.showEditProfileForm
+            }, [Validators.required, patternValidator(NUMBERS_ONLY_PATTERN)]],
             gender: [{value: '', disabled: true}, Validators.required],
             birthday: [{value: 'n/a', disabled: true}, Validators.required],
             email: [{value: '', disabled: true}, Validators.required],
@@ -69,8 +78,8 @@ export class AboutTabComponent implements OnInit {
 
     editProfileForm() {
         this.showEditProfileForm = true;
-        this.profileForm.get('country').enable();
-        this.profileForm.get('phone').enable();
+        this.country.enable();
+        this.phone.enable();
     }
 
 
@@ -79,6 +88,14 @@ export class AboutTabComponent implements OnInit {
         this.showChangeEmail = false;
         this.authUser = this.getAuthUser.transform();
         this.profileForm.patchValue(this.authUser);
+    }
+
+    get phone() {
+        return this.profileForm.get('phone');
+    }
+
+    get country() {
+        return this.profileForm.get('country');
     }
 
 
