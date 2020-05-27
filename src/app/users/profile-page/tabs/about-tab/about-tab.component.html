@@ -18,7 +18,7 @@
             </mat-error>
             <div class="profile-item">
                 <label>Age:</label>
-                <input placeholder="25" disabled>
+                <input formControlName="age">
             </div>
             <div class="profile-item">
                 <label>Country:</label>
@@ -36,7 +36,21 @@
             </div>
             <div class="profile-item">
                 <label>Birthday:</label>
-                <input formControlName="birthday">
+                <ng-container *ngIf="showEditProfileForm">
+
+                    <div class="date-age" (click)="picker.open()">
+
+                        <input matInput [matDatepicker]="picker" class="logos-small-input" formControlName="birthday"
+                               [max]="maxBirthdayDate" (dateChange)="dateChanged($event)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div>
+                    <!--                <mat-error *ngIf="birthday.hasError('required')">Birth day is <strong>required</strong>-->
+                    <!--                </mat-error>-->
+                    <mat-error *ngIf="birthday.hasError('matDatepickerMax')">The date is <strong>not allowed</strong>
+                    </mat-error>
+                </ng-container>
+                <input formControlName="birthday" *ngIf="!showEditProfileForm">
             </div>
         </div>
         <div class="profile-item">
