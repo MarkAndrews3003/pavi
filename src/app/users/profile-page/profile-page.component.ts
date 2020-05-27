@@ -112,7 +112,7 @@ export class ProfilePageComponent implements OnInit {
 
   saveAboutText() {
     this.usersService.changeAboutText(this.profileImgTextForm.value).subscribe(dt => {
-      this.toastr.success('About text has been changed successfully');
+      this.toastr.success('Profile description has been changed successfully');
       this.aboutText.profile_desc = this.profileImgTextForm.value.about_text;
       this.showProfileImgTextControls = false;
     });
