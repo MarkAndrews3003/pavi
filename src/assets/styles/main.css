@@ -359,6 +359,8 @@ li {
   font-family: "Segoe Bold";
   margin-bottom: 13px !important;
   text-align: center;
+  max-width: 336px;
+  line-height: 31px;
 }
 
 .text-4 {
@@ -2240,6 +2242,50 @@ footer {
   height: 194px;
   margin-bottom: 46px;
 }
+.process-to-apply-content {
+  width: 100%;
+  padding: 0 140px;
+  margin-bottom: 80px;
+}
+.process-to-apply {
+  width: 100%;
+  background: url("../../assets/images/process-to-apply.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 194px;
+  margin-bottom: 46px;
+}
+.back-next-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  border: 1px solid #F5F5F5;
+  border-radius: 35px;
+}
+.back-next-btns a {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 10px #AAAAAA29;
+  width: 360px;
+  height: 60px;
+  border-radius: 35px;
+  transition: 0.3s ease-in-out;
+  background: white;
+  color: #0265C9 !important;
+  font-family: "Segoe UI Semibold";
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-next-btns a:hover {
+  background: #0265C9;
+  cursor: pointer;
+  color: white !important;
+}
+.back-next-btns i {
+  margin: 0 10px;
+}
 .about-content-2 {
   width: 100%;
   background: url("../../assets/images/show-contact.svg");
@@ -2266,7 +2312,7 @@ footer {
   padding: 0 270px 0 110px;
 }
 .find-job-text-1 {
-  max-width: 545px;
+  max-width: 566px;
   margin: 0 auto !important;
   text-align: center;
   line-height: 94px;
@@ -3416,9 +3462,9 @@ footer {
   .profile-btns .profile-item {
     margin-right: 40px;
   }
-  }
   .profile-btns {
     width: 83%;
+  }
   .section-block-10 {
     padding: 0 90px;
   }
@@ -3908,6 +3954,9 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  .process-to-apply-content {
+    padding: 0 40px;
+  }
   .dream-job-text-6 {
     font-size: 25px;
     text-align: center;
@@ -4263,6 +4312,17 @@ footer {
 
 }
 @media (max-width: 992px) {
+  .back-next-btns {
+    flex-direction: column;
+  }
+  .back-next-btns a {
+    margin-bottom: 20px;
+  }
+  .back-next-btns {
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+  }
   .dream-job-text-1 {
     font-size: 25px;
     width: 100%;
@@ -4784,6 +4844,10 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .back-next-btns a {
+    width: 100%;
+    font-size: 17px;
+  }
   .reference-block .dropdown-menu {
     left: -56px !important;
   }
