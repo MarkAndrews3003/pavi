@@ -1,0 +1,12 @@
+.dashboard {
+  background: #F1F2F7;
+}
+.dashboard-header {
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dashboard-logo {
+  padding-left: 48px;
+}
