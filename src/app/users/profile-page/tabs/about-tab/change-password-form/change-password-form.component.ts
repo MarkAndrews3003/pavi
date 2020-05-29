@@ -3,6 +3,8 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {GetAuthUserPipe} from '../../../../../shared/pipes/get-auth-user.pipe';
 import {UsersService} from '../../../../../core/services/users.service';
 import {ToastrService} from 'ngx-toastr';
+import {patternValidator} from "../../../../../core/helpers/pattern-validator";
+import {NO_SPACE_PATTERN} from "../../../../../core/constants/general";
 
 @Component({
     selector: 'app-change-password-form',
@@ -25,9 +27,9 @@ export class ChangePasswordFormComponent implements OnInit {
         private toastr: ToastrService
     ) {
         this.changePasswordForm = this.fb.group({
-            old_pass: ['', Validators.required],
-            confirm_password: ['', Validators.required],
-            new_pass: ['', Validators.required]
+            old_pass: ['', [Validators.required, patternValidator(NO_SPACE_PATTERN)]],
+            new_pass: ['', [Validators.required, patternValidator(NO_SPACE_PATTERN)]],
+            confirm_password: ['', Validators.required]
         });
     }
 
