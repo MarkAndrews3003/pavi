@@ -45,3 +45,33 @@ export const OWL_CAROUSEL_OPTIONS: OwlOptions = {
     }
   },
 };
+
+export const HOMEPAGE_OWL_CAROUSEL_OPTIONS: OwlOptions = {
+  loop: false,
+  mouseDrag: false,
+  touchDrag: false,
+  pullDrag: false,
+  dots: false,
+  // nav: true,
+  navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+  navSpeed: 700,
+  margin: 20,
+  startPosition: 8,
+  responsive: {
+    0: {
+      items: 1
+    },
+    400: {
+      items: 2
+    },
+    740: {
+      items: 2
+    },
+    940: {
+      items: 2
+    }
+  },
+};
+
+
+

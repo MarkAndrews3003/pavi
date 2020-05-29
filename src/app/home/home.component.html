@@ -1,260 +1,278 @@
 <app-navbar></app-navbar>
 
 <section class="section-block-1">
-  <div class="section-block-1-left">
-    <p class="text-1">In This Together</p>
-    <p class="text-2">Keeping You Securely Connected wherever You are</p>
-    <ng-container *ngIf="!auth.loggedIn()">
-      <a class="login-btn" (click)="router.navigate(['auth/login'])">Sign In</a>
-      <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
-    </ng-container>
-    <ng-container *ngIf="auth.loggedIn()">
-      <p class="welcome-text-size">Welcome! <span class="auth-user-name"
-                                                  (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' ' + authUser.last_name}}</span>
-      </p>
-    </ng-container>
-  </div>
-  <div class="section-block-1-right">
-    <img src="assets/images/big.svg" *ngIf="(authUser && authUser.gender === 'female') || !auth.loggedIn()">
-    <img src="assets/images/login-1.svg" *ngIf="authUser && authUser.gender === 'male'">
-    <a class="dream-job-btn" (click)="router.navigate(['users/find-job'])">Find Your Dream Job<i
-      class="fas fa-angle-right"></i></a>
-  </div>
+    <div class="section-block-1-left">
+        <p class="text-1">In This Together</p>
+        <p class="text-2">Keeping You Securely Connected wherever You are</p>
+        <ng-container *ngIf="!auth.loggedIn()">
+            <a class="login-btn" (click)="router.navigate(['auth/login'])">Sign In</a>
+            <a class="register-btn" (click)="router.navigate(['auth/user-registration'])">Sign Up</a>
+        </ng-container>
+        <ng-container *ngIf="auth.loggedIn()">
+            <p class="welcome-text-size">Welcome! <span class="auth-user-name"
+                                                        (click)="router.navigate(['users/profile-page'])">{{authUser.first_name + ' ' + authUser.last_name}}</span>
+            </p>
+        </ng-container>
+    </div>
+    <div class="section-block-1-right">
+        <img src="assets/images/big.svg" *ngIf="(authUser && authUser.gender === 'female') || !auth.loggedIn()">
+        <img src="assets/images/login-1.svg" *ngIf="authUser && authUser.gender === 'male'">
+        <a class="dream-job-btn" (click)="router.navigate(['users/find-job'])">Find Your Dream Job<i
+                class="fas fa-angle-right"></i></a>
+    </div>
 </section>
 <section class="section-block-2">
-  <div class="system-decor">
-    <div class="system-decor-1">Process Of using this system.</div>
-    <span class="system-circle-1"></span>
-    <span class="system-circle-2"></span>
-  </div>
+    <div class="system-decor">
+        <div class="system-decor-1">Process Of using this system.</div>
+        <span class="system-circle-1"></span>
+        <span class="system-circle-2"></span>
+    </div>
 </section>
 <section class="section-block-3">
-  <div class="section-block-3-item">
-    <img src="assets/images/img-5.png">
-    <p class="text-3">Search your Job!</p>
-    <p class="text-4">Online Meetings. Training & Technical Support.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-6.png">
-    <p class="text-3">Find Your Company!</p>
-    <p class="text-4">Online Meetings. Training & Technical Support.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-7.png">
-    <p class="text-3">Pass Interview!</p>
-    <p class="text-4">Online Meetings. Training & Technical Support.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-8.png">
-    <p class="text-3">Answer The Questions!</p>
-    <p class="text-4">Online Meetings. Training & Technical Support.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-9.png">
-    <p class="text-3">Get your Work!</p>
-    <p class="text-4">Online Meetings. Training & Technical Support.</p>
-  </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-5.png">
+        <p class="text-3">Search your Job!</p>
+        <p class="text-4">Online Meetings. Training & Technical Support.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-6.png">
+        <p class="text-3">Find Your Company!</p>
+        <p class="text-4">Online Meetings. Training & Technical Support.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-7.png">
+        <p class="text-3">Pass Interview!</p>
+        <p class="text-4">Online Meetings. Training & Technical Support.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-8.png">
+        <p class="text-3">Answer The Questions!</p>
+        <p class="text-4">Online Meetings. Training & Technical Support.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-9.png">
+        <p class="text-3">Get your Work!</p>
+        <p class="text-4">Online Meetings. Training & Technical Support.</p>
+    </div>
 </section>
 <section class="section-block-4">
-  <div class="system-decor">
-    <div class="system-decor-1">Top Of Jobs By Company.</div>
-    <span class="system-circle-1"></span>
-    <span class="system-circle-2"></span>
-  </div>
-  <div class="logos">
-    <div class="active logos-item">
-      <div class="logos-item-img">
-        <img src="assets/images/aven.png">
-      </div>
-      <div class="logos-block">
-        <p class="text-5">Interior Designer</p>
-        <p class="text-11">
-          <span>Founders: </span>3 days ago
-        </p>
-        <p class="text-5">Part Time</p>
-        <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
-        </p>
-        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-      </div>
+    <div class="system-decor">
+        <div class="system-decor-1">Top Of Jobs By Company.</div>
+        <span class="system-circle-1"></span>
+        <span class="system-circle-2"></span>
     </div>
-    <div class="logos-item">
-      <div class="logos-item-img">
-        <img src="assets/images/kanba.png">
-      </div>
-      <div class="logos-block">
-        <p class="text-5">Interior Designer</p>
-        <p class="text-11">
-          <span>Founders: </span>3 days ago
-        </p>
-        <p class="text-5">Part Time</p>
-        <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
-        </p>
-        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-      </div>
+    <div class="logos">
+        <div class="active logos-item">
+            <div class="logos-item-img">
+                <img src="assets/images/aven.png">
+            </div>
+            <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                    <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                    In Austin, Tx <img src="assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="logos-item">
+            <div class="logos-item-img">
+                <img src="assets/images/kanba.png">
+            </div>
+            <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                    <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                    In Austin, Tx <img src="assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="logos-item">
+            <div class="logos-item-img">
+                <img src="assets/images/treva.png">
+            </div>
+            <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                    <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                    In Austin, Tx <img src="assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+        <div class="logos-item">
+            <div class="logos-item-img">
+                <img src="assets/images/circle.png">
+            </div>
+            <div class="logos-block">
+                <p class="text-5">Interior Designer</p>
+                <p class="text-11">
+                    <span>Founders: </span>3 days ago
+                </p>
+                <p class="text-5">Part Time</p>
+                <p class="text-12">
+                    In Austin, Tx <img src="assets/images/heart.png">
+                </p>
+                <a class="text-6">More<i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="logos-item">
-      <div class="logos-item-img">
-        <img src="assets/images/treva.png">
-      </div>
-      <div class="logos-block">
-        <p class="text-5">Interior Designer</p>
-        <p class="text-11">
-          <span>Founders: </span>3 days ago
-        </p>
-        <p class="text-5">Part Time</p>
-        <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
-        </p>
-        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
-    <div class="logos-item">
-      <div class="logos-item-img">
-        <img src="assets/images/circle.png">
-      </div>
-      <div class="logos-block">
-        <p class="text-5">Interior Designer</p>
-        <p class="text-11">
-          <span>Founders: </span>3 days ago
-        </p>
-        <p class="text-5">Part Time</p>
-        <p class="text-12">
-          In Austin, Tx <img src="assets/images/heart.png">
-        </p>
-        <a class="text-6">More<i class="fas fa-angle-right"></i></a>
-      </div>
-    </div>
-  </div>
 </section>
 <section class="section-block-2">
-  <div class="system-decor">
-    <div class="system-decor-1">Why Join Us?</div>
-    <span class="system-circle-1"></span>
-    <span class="system-circle-2"></span>
-  </div>
+    <div class="system-decor">
+        <div class="system-decor-1">Why Join Us?</div>
+        <span class="system-circle-1"></span>
+        <span class="system-circle-2"></span>
+    </div>
 </section>
 <section class="section-block-3">
-  <div class="section-block-3-item">
-    <img src="assets/images/img-14.png">
-    <p class="text-3">It's easy.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-15.png">
-    <p class="text-3">It's safe.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-16.png">
-    <p class="text-3">It's Fast.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-17.png">
-    <p class="text-3">It's Comfortable.</p>
-  </div>
-  <div class="section-block-3-item">
-    <img src="assets/images/img-18.png">
-    <p class="text-3">It's Effective.</p>
-  </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-14.png">
+        <p class="text-3">It's easy.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-15.png">
+        <p class="text-3">It's safe.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-16.png">
+        <p class="text-3">It's Fast.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-17.png">
+        <p class="text-3">It's Comfortable.</p>
+    </div>
+    <div class="section-block-3-item">
+        <img src="assets/images/img-18.png">
+        <p class="text-3">It's Effective.</p>
+    </div>
 </section>
 <section class="section-block-5">
-  <main class="main">
-    <div class="glider-contain">
-      <div class="glider">
-        <div class="card-image">
-          <iframe width="100%" height="500" src="https://www.youtube.com/embed/yKhh4k4_seA">
-          </iframe>
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?nature" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?mountain" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?sport" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?human" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?building" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?food" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-        <div class="card-image">
-          <img src="https://source.unsplash.com/1280x720/?beach" alt="Slider Image">
-          <span class="abs-elem-1"></span>
-          <span class="abs-elem-2"></span>
-          <span class="abs-elem-3"></span>
-        </div>
-      </div>
-      <span role="button" aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></span>
-      <span role="button" aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></span>
-      <span role="tablist" class="dots"></span>
-    </div>
-  </main>
+<!--    <main class="main">-->
+        <!--    <div class="glider-contain">-->
+        <!--      <div class="glider">-->
+        <owl-carousel-o [options]="owlOptions">
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/yKhh4k4_seA">
+                    </iframe>
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?nature" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?mountain" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?sport" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?human" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?building" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?food" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="card-image">
+                    <img src="https://source.unsplash.com/1280x720/?beach" alt="Slider Image">
+                    <span class="abs-elem-1"></span>
+                    <span class="abs-elem-2"></span>
+                    <span class="abs-elem-3"></span>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+        <!--      </div>-->
+        <!--      <span role="button" aria-label="Previous" class="glider-prev"><i class="fas fa-chevron-left"></i></span>-->
+        <!--      <span role="button" aria-label="Next" class="glider-next"><i class="fas fa-chevron-right"></i></span>-->
+        <!--      <span role="tablist" class="dots"></span>-->
+        <!--    </div>-->
+<!--    </main>-->
 </section>
 <section class="section-block-6">
-  <div class="system-decor">
-    <div class="system-decor-1">Process Of using this system.</div>
-    <span class="system-circle-1"></span>
-    <span class="system-circle-2"></span>
-  </div>
+    <div class="system-decor">
+        <div class="system-decor-1">Process Of using this system.</div>
+        <span class="system-circle-1"></span>
+        <span class="system-circle-2"></span>
+    </div>
 </section>
 <section class="section-block-7">
-  <div class="section-block-7-item">
-    <img src="assets/images/img-20.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-19.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-21.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-22.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-23.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-24.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-25.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-26.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-27.png">
-  </div>
-  <div class="section-block-7-item">
-    <img src="assets/images/img-28.png">
-  </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-20.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-19.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-21.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-22.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-23.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-24.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-25.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-26.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-27.png">
+    </div>
+    <div class="section-block-7-item">
+        <img src="assets/images/img-28.png">
+    </div>
 </section>
 <app-footer></app-footer>
 <div class="footer-content">@ 2020 PICANTE BY 00000 000000 ALL RIGHTS RESERVED</div>
