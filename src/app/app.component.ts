@@ -41,11 +41,12 @@ export class AppComponent implements OnInit {
                 const token = data.queryParams.token;
                 if (token) {
                     localStorage.setItem('token', token);
+                    if (this.jwtHelper.isTokenExpired()) {
+                        this.toastr.error('The session has been expired.', 'Please log in again.');
+                    }
                 }
 
-                if (this.jwtHelper.isTokenExpired()) {
-                    this.toastr.error('The session has been expired.', 'Please log in again.');
-                }
+
             }
         });
     }
