@@ -4,7 +4,7 @@ import {AuthService} from '../core/services/auth.service';
 import {GetAuthUserPipe} from '../shared/pipes/get-auth-user.pipe';
 import {HOMEPAGE_OWL_CAROUSEL_OPTIONS} from '../core/constants/general';
 import {OwlOptions} from 'ngx-owl-carousel-o';
-import {JwtHelperService} from "@auth0/angular-jwt";
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Component({
     selector: 'app-home',

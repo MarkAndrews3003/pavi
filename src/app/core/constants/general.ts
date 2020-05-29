@@ -52,7 +52,7 @@ export const HOMEPAGE_OWL_CAROUSEL_OPTIONS: OwlOptions = {
   touchDrag: false,
   pullDrag: false,
   dots: false,
-  // nav: true,
+  nav: true,
   navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
   navSpeed: 700,
   margin: 20,
