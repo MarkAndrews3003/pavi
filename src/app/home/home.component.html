@@ -16,7 +16,7 @@
     </div>
     <div class="section-block-1-right">
         <img src="assets/images/big.svg" *ngIf="(authUser && authUser.gender === 'female') || !auth.loggedIn()">
-        <img src="assets/images/login-1.svg" *ngIf="authUser && authUser.gender === 'male'">
+        <img src="assets/images/login-1.svg" *ngIf="authUser && authUser.gender === 'male' && isTokenExpired()">
         <a class="dream-job-btn" (click)="router.navigate(['users/find-job'])">Find Your Dream Job<i
                 class="fas fa-angle-right"></i></a>
     </div>
