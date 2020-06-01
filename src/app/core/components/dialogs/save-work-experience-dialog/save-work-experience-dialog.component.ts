@@ -32,8 +32,8 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
         speciality: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
         start_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]],
         end_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]]
-      }
-        // {validator: compareDates('start_year', 'end_year')}
+      },
+        {validator: compareDates('start_year', 'end_year')}
         )]);
 
     this.edit = !!data;
