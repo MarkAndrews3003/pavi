@@ -2,6 +2,9 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {ProfileService} from '../../../services/profile.service';
+import {patternValidator} from "../../../helpers/pattern-validator";
+import {NUMBERS_ONLY_PATTERN} from "../../../constants/general";
+import {checkSkillRating} from "../../../helpers/check-skill-rating";
 
 @Component({
   selector: 'app-save-programming-skills-dialog',
@@ -13,6 +16,7 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
   skillsForm;
   editData;
   edit;
+  isSubmitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -24,8 +28,8 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
 
     this.skillsForm = this.fb.array([
       this.fb.group({
-        name: ['', Validators.required],
-        rating: ['', Validators.required],
+        name: ['', [Validators.required]],
+        rating: ['', [Validators.required, patternValidator(NUMBERS_ONLY_PATTERN), checkSkillRating()]],
       })]);
 
     this.edit = !!data;
@@ -45,15 +49,19 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
 
   saveSkill() {
     const formValue = this.skillsForm.value;
-    if (!this.edit) {
-      this.profileService.addSkills(formValue).subscribe(() => {
-        this.dialog.close();
-      });
-    } else {
-      formValue[0].index = this.editData.index;
-      this.profileService.updateSkillsInfo(formValue[0]).subscribe(() => {
-        this.dialog.close();
-      });
+    this.isSubmitted = true;
+    if (this.skillsForm.valid) {
+
+      if (!this.edit) {
+        this.profileService.addSkills(formValue).subscribe(() => {
+          this.dialog.close();
+        });
+      } else {
+        formValue[0].index = this.editData.index;
+        this.profileService.updateSkillsInfo(formValue[0]).subscribe(() => {
+          this.dialog.close();
+        });
+      }
     }
   }
 

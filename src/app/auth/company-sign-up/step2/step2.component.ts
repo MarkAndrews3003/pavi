@@ -47,9 +47,4 @@ export class Step2Component implements OnInit {
     return this.accountInfo.get('gender');
   }
 
-  submit() {
-    this.isSubmitted = true
-    console.log(this.accountInfo.value);
-  }
-
 }
