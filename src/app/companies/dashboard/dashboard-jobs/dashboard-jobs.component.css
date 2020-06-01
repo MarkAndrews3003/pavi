@@ -276,6 +276,10 @@ main {
   justify-content: center;
   align-items: center;
 }
+.last-jobs-confirm:hover {
+  background: silver;
+  cursor: pointer;
+}
 .last-jobs-confirm img {
   width: 27px;
   height: 27px;

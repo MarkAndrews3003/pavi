@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {ShowConfirmDialogComponent} from "../../../core/components/dialogs/show-confirm-dialog/show-confirm-dialog.component";
 
 @Component({
   selector: 'app-dashboard-jobs',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardJobsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private matDialog: MatDialog
+  ) {
+  }
+
   ngOnInit(): void {
   }
 
+  showConfirmDialog() {
+    this.matDialog.open(ShowConfirmDialogComponent).afterClosed().subscribe(dt => {
+    });
+  }
 
 }
