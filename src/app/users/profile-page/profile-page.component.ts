@@ -29,7 +29,7 @@ export class ProfilePageComponent implements OnInit {
 
   authUser;
   isLinear = false;
-  currentStep = 1;
+  currentStep = 2;
 
 
 

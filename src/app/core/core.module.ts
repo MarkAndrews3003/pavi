@@ -14,6 +14,7 @@ import {UploadPdfDialogComponent} from './components/dialogs/upload-pdf-dialog/u
 import {AddSocialLinksDialogComponent} from './components/dialogs/add-social-links-dialog/add-social-links-dialog.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { InvitationDialogComponent } from './components/dialogs/invitation-dialog/invitation-dialog.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { InvitationDialogComponent } from './components/dialogs/invitation-dialo
     HttpClientModule,
     RouterModule,
     FormsModule,
+    CarouselModule,
     ReactiveFormsModule
   ],
   exports: [

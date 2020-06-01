@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/styles/main.css';
-/*@import '~@glidejs/glide/src/assets/sass/glide.core.scss';*/
-/*@import '~@glidejs/glide/src/assets/sass/glide.theme.scss';*/
 
 
 owl-carousel-o {
@@ -14,13 +12,6 @@ owl-carousel-o {
 
 .owl-nav button {
     color: #FFF!important;
-    font-size: 35px!important;
-    margin: 5px!important;
-    padding: 8px!important;
-    background: #D6D6D6!important;
-    display: inline-block!important;
-    cursor: pointer!important;
-    border-radius: 3px!important;
 }
 
 html, body {
