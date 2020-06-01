@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Data, NavigationEnd, Router} from '@angular/router';
 import {filter} from 'rxjs/operators';
 import {NAVBAR_LINKS} from '../../../constants/general';
-import {AuthService} from "../../../services/auth.service";
+import {AuthService} from '../../../services/auth.service';
 import {GetAuthUserPipe} from '../../../../shared/pipes/get-auth-user.pipe';
 import {GetNavbarLinksBasedOnUserRolePipe} from '../../../../shared/pipes/get-navbar-links-based-on-user-role.pipe';
 
@@ -18,13 +18,19 @@ export class NavbarComponent implements OnInit {
   navbarLinks;
   authUser;
 
+  @Output() toggleSidebar = new EventEmitter();
+
   constructor(
     public router: Router,
     public auth: AuthService,
     private getAuthUser: GetAuthUserPipe,
     private getNavbarLinks: GetNavbarLinksBasedOnUserRolePipe
   ) {
-
+    router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+    ).subscribe((params: NavigationEnd) => {
+      this.routerUrl = params.url;
+    });
   }
 
   ngOnInit(): void {
@@ -34,6 +40,16 @@ export class NavbarComponent implements OnInit {
     } else {
       this.navbarLinks = NAVBAR_LINKS;
     }
+
+
+  }
+
+  openAside() {
+    this.toggleSidebar.emit();
+  }
+
+  checkIfDashboardPage() {
+    return /admin|companies/.test(this.routerUrl);
   }
 
   goToLoginPage() {
