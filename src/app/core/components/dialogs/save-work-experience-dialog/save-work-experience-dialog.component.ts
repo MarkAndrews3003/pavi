@@ -3,9 +3,10 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {patternValidator} from '../../../helpers/pattern-validator';
-import {NUMBERS_ONLY_PATTERN, TEXT_ONLY_PATTERN, YEAR_ONLY_PATTERN} from '../../../constants/general';
-
-import {isYearValid} from "../../../helpers/is-year-valid";
+import {TEXT_ONLY_PATTERN, YEAR_ONLY_PATTERN} from '../../../constants/general';
+import * as moment from 'moment';
+import {isYearValid} from '../../../helpers/is-year-valid';
+import {compareDates} from '../../../helpers/compare-dates';
 
 @Component({
   selector: 'app-save-work-experience-dialog',
@@ -31,7 +32,9 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
         speciality: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
         start_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]],
         end_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]]
-      })]);
+      }
+        // {validator: compareDates('start_year', 'end_year')}
+        )]);
 
     this.edit = !!data;
 
@@ -49,6 +52,7 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
     const formValue = this.workExperienceForm.value;
     this.isSubmitted = true;
     console.log(formValue)
+    console.log(this.workExperienceForm.valid)
     if (this.workExperienceForm.valid) {
       if (!this.edit) {
 
@@ -68,14 +72,6 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
 
   get experienceItems() {
     return this.workExperienceForm.controls;
-  }
-
-  isYearValid(year) {
-    // let y = moment(year.value);
-    // if (y > moment()) {
-    //   console.log('invalid year')
-    // }
-    return 'OK';
   }
 
 

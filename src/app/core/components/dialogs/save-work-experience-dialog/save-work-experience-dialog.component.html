@@ -38,6 +38,9 @@
               Start year format is
               <strong>invalid</strong>
             </mat-error>
+            <mat-error *ngIf="c.get('start_year').hasError('startDateGreater')">
+              Start date is greater that end date
+            </mat-error>
             <div class="year-input">
               <input placeholder="End year" formControlName="end_year">
               <mat-error
