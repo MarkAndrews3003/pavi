@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardJobsComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
+  openAside() {
+
+  }
 }
