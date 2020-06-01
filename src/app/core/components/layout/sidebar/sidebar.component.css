@@ -70,3 +70,6 @@ aside ul li a:hover .aside-img-blue {
 aside ul li a:hover .aside-img-gray {
   display: none;
 }
+@media (max-width: 992px) {
+
+}

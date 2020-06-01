@@ -361,7 +361,7 @@ main {
 }
 .jobs-form-inputs input,
 .jobs-form-inputs select {
-  width: 330px;
+  width: 270px;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -388,10 +388,12 @@ main {
 .jobs-form-inputs select {
   -moz-appearance: none;
   -webkit-appearance: none;
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat 95% #fff;
 }
-.jobs-form-item .dropdown-toggle {
-  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat 95% #fff;
+.select-webkit {
+  position: absolute;
+  right: 15px;
+  top: 55px;
+  font-size: 24px;
 }
 .jobs-form-inputs select::-ms-expand {
   display: none;
@@ -423,13 +425,30 @@ main {
 .jobs-form-item .dropdown-menu {
   border-radius: 0px 0px 29px 29px;
   width: 100%;
-  border-top: none;
+  position: relative;
+  border-top: 0;
 }
-.jobs-form-item-drop {
-  border: 1px solid silver;
+.jobs-form-item.dropdown.show .select-webkit {
+  transform: rotate(180deg);
 }
-
-
+.jobs-form-item .dropdown-menu::before {
+  content: '';
+  width: 1px;
+  height: 31px;
+  background: #d9d9d9;
+  position: absolute;
+  left: -1px;
+  top: -24px;
+}
+.jobs-form-item .dropdown-menu::after {
+  content: '';
+  width: 1px;
+  height: 31px;
+  background: #d9d9d9;
+  position: absolute;
+  right: -1px;
+  top: -24px;
+}
 
 
 
@@ -438,6 +457,19 @@ main {
 
 
 @media (max-width:1700px) {
+  .jobs-form-inputs {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .last-jobs .logos-item {
+    margin-bottom: 30px;
+  }
+  .last-jobs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .dashboard-logo {
     padding-left: 48px;
     padding-right: 70px;
@@ -450,6 +482,9 @@ main {
   }
 }
 @media (max-width:1400px) {
+  .text-19 {
+    font-size: 13px;
+  }
   .dashboard-logo {
     padding-left: 25px;
     padding-right: 25px;
@@ -471,6 +506,15 @@ main {
   }
 }
 @media (max-width:1200px) {
+  .dashboard-create-job > div {
+    width: 80%;
+  }
+  .dashboard-create-job {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .dashboard-text-6 {
     font-size: 14px;
     width: 230px;
@@ -489,6 +533,9 @@ main {
   }
 }
 @media (max-width:992px) {
+  .all-applied {
+    justify-content: center;
+  }
   .dashboard-text-2 {
     display: none;
   }
@@ -496,14 +543,26 @@ main {
     padding-left: 36px;
     padding-right: 36px;
   }
-  aside {
-    display: none;
-  }
   .toggle-menu  {
     display: flex;
   }
 }
 @media (max-width:767px) {
+  .dashboard-create-job > div {
+    width: 100%;
+  }
+  .jobs-form-inputs {
+    padding: 0;
+  }
+  .last-jobs-pdf-2 {
+    height: auto;
+    flex-wrap: wrap;
+  }
+  .jobs-form-content-header {
+    box-shadow: 0px 0px 10px #87878729;
+    border-radius: 25px;
+    font-size: 15px;
+  }
   aside {
     padding: 30px 0;
     border-radius: 0;
