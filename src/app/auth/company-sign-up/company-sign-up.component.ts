@@ -6,7 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import {patternValidator} from '../../core/helpers/pattern-validator';
 import {
   API_URL,
-  EMAIL_PATTERN, NUMBER_AFTER_TEXT_PATTERN,
+  EMAIL_PATTERN, NO_SPACE_PATTERN, NUMBER_AFTER_TEXT_PATTERN,
   NUMBERS_ONLY_PATTERN,
   TEXT_ONLY_PATTERN
 } from '../../core/constants/general';
@@ -46,7 +46,7 @@ export class CompanySignUpComponent implements OnInit {
     this.accountInfo = this.fb.group({
       first_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
       last_name: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, patternValidator(NO_SPACE_PATTERN)]],
       gender: ['', Validators.required],
     });
 
