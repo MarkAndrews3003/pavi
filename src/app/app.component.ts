@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {map} from 'rxjs/operators';
 import jwtDecode from 'jwt-decode';
-import {JwtHelperService} from "@auth0/angular-jwt";
-import {ToastrService} from "ngx-toastr";
+import {JwtHelperService} from '@auth0/angular-jwt';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',

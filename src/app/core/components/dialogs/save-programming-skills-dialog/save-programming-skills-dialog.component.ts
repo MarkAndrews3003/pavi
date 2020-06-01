@@ -50,7 +50,6 @@ export class SaveProgrammingSkillsDialogComponent implements OnInit {
   saveSkill() {
     const formValue = this.skillsForm.value;
     this.isSubmitted = true;
-    console.log(this.skillsForm.valid)
     if (this.skillsForm.valid) {
 
       if (!this.edit) {
