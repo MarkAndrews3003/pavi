@@ -11,7 +11,5 @@ export class DashboardJobsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openAside() {
 
-  }
 }

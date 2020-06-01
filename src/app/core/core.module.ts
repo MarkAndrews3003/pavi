@@ -13,8 +13,9 @@ import {SaveCertificationDialogComponent} from './components/dialogs/save-certif
 import {UploadPdfDialogComponent} from './components/dialogs/upload-pdf-dialog/upload-pdf-dialog.component';
 import {AddSocialLinksDialogComponent} from './components/dialogs/add-social-links-dialog/add-social-links-dialog.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { InvitationDialogComponent } from './components/dialogs/invitation-dialog/invitation-dialog.component';
+import {InvitationDialogComponent} from './components/dialogs/invitation-dialog/invitation-dialog.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
+import {SidebarComponent} from './components/layout/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
     SaveCertificationDialogComponent,
     UploadPdfDialogComponent,
     AddSocialLinksDialogComponent,
-    InvitationDialogComponent
+    InvitationDialogComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
   exports: [
     MaterialModule,
     NavbarComponent,
+    SidebarComponent,
     FooterComponent,
     SaveWorkExperienceDialogComponent,
     SaveProgrammingSkillsDialogComponent,
