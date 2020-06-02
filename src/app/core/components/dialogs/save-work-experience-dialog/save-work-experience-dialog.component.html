@@ -13,6 +13,9 @@
           <mat-error *ngIf="isSubmitted && c.get('company_name').hasError('required')">Company name is
             <strong>required</strong>
           </mat-error>
+          <mat-error *ngIf="c.get('company_name').hasError('patternInvalid')">Company name is
+            <strong>invalid</strong>
+          </mat-error>
         </div>
         <div class="work-experience-input">
           <label>Speciality</label>
