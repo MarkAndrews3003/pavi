@@ -105,8 +105,8 @@
 .dashboard-text-6 {
   width: 280px;
   height: 100px;
-  background: #272C32;
-  color: white;
+  background: #FFFFFF;
+  /*color: white;*/
   font-size: 20px;
   font-family: "Segoe Regular";
   display: flex;
@@ -121,7 +121,7 @@
   display: none;
 }
 .dashboard-text-6 i {
-  color: white;
+  /*color: white;*/
 }
 .dropdown.dashboard-text-6.show i {
   transform: rotate(180deg);
