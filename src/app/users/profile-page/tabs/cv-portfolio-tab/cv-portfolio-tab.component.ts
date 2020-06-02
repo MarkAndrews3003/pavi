@@ -25,7 +25,6 @@ export class CvPortfolioTabComponent implements OnInit {
   ) {
 
     this.authUser = this.getAuthUser.transform();
-    console.log(this.authUser)
 
     this.positionForm = this.fb.group({
       position: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],

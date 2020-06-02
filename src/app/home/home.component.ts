@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.jwtHelper.isTokenExpired())
         this.authUser = this.getAuthUser.transform();
     }
 
