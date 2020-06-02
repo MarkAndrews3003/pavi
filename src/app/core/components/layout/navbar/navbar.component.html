@@ -20,13 +20,19 @@
     </div>
     <div class="header-small-block">
       <div class="dropdown user-dropdown-part">
-        <a class="dropdown-toggle header-img-block" type="button" id="dropdownUserInfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="goToLoginPage()">
+        <a class="dropdown-toggle header-img-block" type="button" id="dropdownUserInfo" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false" (click)="goToLoginPage()">
           <img class="header-img" src="assets/images/user.png">
           <i class="fas fa-chevron-down"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownUserInfo" *ngIf="auth.loggedIn()">
-          <a class="dropdown-item"  (click)="router.navigate(['users/profile-page'])"> <img class="header-img" src="assets/images/social-media-profile.png">My Profile</a>
-          <a class="dropdown-item" *ngIf="auth.loggedIn()" (click)="auth.logOut()"><img class="header-img" src="assets/images/logout-profile.png">Logout</a>
+          <a class="dropdown-item" *ngIf="routerUrl && !routerUrl.includes('profile-page')"
+             (click)="router.navigate(['users/profile-page'])">
+            <img class="header-img" src="assets/images/social-media-profile.png">My Profile
+          </a>
+          <a class="dropdown-item" *ngIf="auth.loggedIn()" (click)="auth.logOut()">
+            <img class="header-img" src="assets/images/logout-profile.png">Logout
+          </a>
         </div>
       </div>
 
@@ -63,13 +69,15 @@
       <img src="assets/images/camera.png">
     </div>
     <div class="dropdown dashboard-text-6">
-      <a class="dropdown-toggle" type="button" id="dropdownUserInfo2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle" type="button" id="dropdownUserInfo2" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
         Jessica Blume
         <img class="header-img" src="assets/images/img-dash.png">
         <i class="fas fa-chevron-down"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownUserInfo">
-        <a class="dropdown-item"><img class="header-img" src="assets/images/social-media-profile.png">My Profile</a>
+        <a class="dropdown-item">
+          <img class="header-img" src="assets/images/social-media-profile.png">My Profile</a>
         <a class="dropdown-item"><img class="header-img" src="assets/images/logout-profile.png">Logout</a>
       </div>
     </div>

@@ -15,8 +15,8 @@ export const NAVBAR_LINKS = [
   {name: 'Home', route: '/'},
   {name: 'About us', route: '/users/about'},
   {name: 'Contact us', route: '/users/contact-us'},
-  {name: 'Find job', route: '/users/find-job'},
-  {name: 'Find employee', route: '/companies/find-employees'},
+  {name: 'Find job', route: '/jobs/find-job'},
+  {name: 'Find employee', route: '/users/find-employees'},
 ];
 
 export const OWL_CAROUSEL_OPTIONS: OwlOptions = {
