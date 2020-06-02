@@ -4,11 +4,13 @@ import {CommonModule} from '@angular/common';
 import {CompaniesRoutingModule} from './companies-routing.module';
 import {CoreModule} from '../core/core.module';
 import {DashboardJobsComponent} from './dashboard/dashboard-jobs/dashboard-jobs.component';
+import { DasboardArchiveJobsComponent } from './dashboard/dasboard-archive-jobs/dasboard-archive-jobs.component';
 
 
 @NgModule({
   declarations: [
-    DashboardJobsComponent
+    DashboardJobsComponent,
+    DasboardArchiveJobsComponent
   ],
   imports: [
     CommonModule,
