@@ -45,14 +45,11 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.workExperienceForm.controls)
   }
 
   saveExperience() {
     const formValue = this.workExperienceForm.value;
     this.isSubmitted = true;
-    console.log(formValue)
-    console.log(this.workExperienceForm.valid)
     if (this.workExperienceForm.valid) {
       if (!this.edit) {
 

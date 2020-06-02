@@ -36,6 +36,10 @@ export class UsersService {
     return this.httpClient.put(`${API_URL}users/change_description`, params);
   }
 
+  changePositionInfo(params) {
+    return this.httpClient.put(`${API_URL}users/change-position-info`, params);
+  }
+
   getAboutText(params) {
     return this.httpClient.get(`${API_URL}users/get_description`, params);
   }
