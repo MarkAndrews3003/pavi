@@ -3,7 +3,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ProfileService} from '../../../services/profile.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {patternValidator} from '../../../helpers/pattern-validator';
-import {TEXT_ONLY_PATTERN, YEAR_ONLY_PATTERN} from '../../../constants/general';
+import {NUMBER_AFTER_TEXT_PATTERN, TEXT_ONLY_PATTERN, YEAR_ONLY_PATTERN} from '../../../constants/general';
 import * as moment from 'moment';
 import {isYearValid} from '../../../helpers/is-year-valid';
 import {compareDates} from '../../../helpers/compare-dates';
@@ -28,13 +28,13 @@ export class SaveWorkExperienceDialogComponent implements OnInit {
   ) {
     this.workExperienceForm = this.fb.array([
       this.fb.group({
-        company_name: ['', Validators.required],
-        speciality: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
-        start_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]],
-        end_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]]
-      },
+          company_name: ['', [Validators.required, patternValidator(NUMBER_AFTER_TEXT_PATTERN)]],
+          speciality: ['', [Validators.required, patternValidator(TEXT_ONLY_PATTERN)]],
+          start_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]],
+          end_year: ['', [Validators.required, patternValidator(YEAR_ONLY_PATTERN), isYearValid()]]
+        },
         {validator: compareDates('start_year', 'end_year')}
-        )]);
+      )]);
 
     this.edit = !!data;
 
