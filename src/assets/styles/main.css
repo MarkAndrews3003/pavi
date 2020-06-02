@@ -2618,6 +2618,7 @@ footer {
 }
 .accordion .card {
   border: 0;
+  background: transpar
 }
 .accordion .container {
   display: block;
@@ -3446,6 +3447,9 @@ footer {
 }
 .reference-block .dropdown.show i {
   transform: rotate(180deg);
+}
+.jobs-form-content .mat-horizontal-content-container {
+  padding: 0 !important;
 }
 
 

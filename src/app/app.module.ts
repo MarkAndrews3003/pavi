@@ -16,7 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RequestInterceptor} from './core/helpers/http.interceptor';
-import { FindJobComponent } from './users/find-job/find-job.component';
+import { FindJobComponent } from './jobs/find-job/find-job.component';
 import {GetAuthUserPipe} from './shared/pipes/get-auth-user.pipe';
 import {GetNavbarLinksBasedOnUserRolePipe} from './shared/pipes/get-navbar-links-based-on-user-role.pipe';
 import {CarouselModule} from 'ngx-owl-carousel-o';

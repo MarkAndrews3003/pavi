@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {ShowConfirmDialogComponent} from "../../../core/components/dialogs/show-confirm-dialog/show-confirm-dialog.component";
+import {ShowConfirmDialogComponent} from '../../../core/components/dialogs/show-confirm-dialog/show-confirm-dialog.component';
 
 @Component({
   selector: 'app-dashboard-jobs',
@@ -8,7 +8,7 @@ import {ShowConfirmDialogComponent} from "../../../core/components/dialogs/show-
   styleUrls: ['./dashboard-jobs.component.css']
 })
 export class DashboardJobsComponent implements OnInit {
-
+  currentStep = 1;
   constructor(
     private matDialog: MatDialog
   ) {
@@ -20,6 +20,10 @@ export class DashboardJobsComponent implements OnInit {
   showConfirmDialog() {
     this.matDialog.open(ShowConfirmDialogComponent).afterClosed().subscribe(dt => {
     });
+  }
+
+  stepChanged(e){
+
   }
 
 }
