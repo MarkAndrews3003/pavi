@@ -14,10 +14,10 @@
             <label>University / College</label>
             <input placeholder="University / College" formControlName="institution">
           </div>
-          <mat-error *ngIf="isSubmitted && c.get('degree').hasError('required')">Institution is
+          <mat-error *ngIf="isSubmitted && c.get('institution').hasError('required')">Institution is
             <strong>required</strong>
           </mat-error>
-          <mat-error *ngIf="c.get('degree').hasError('patternInvalid')">Institution format is
+          <mat-error *ngIf="c.get('institution').hasError('patternInvalid')">Institution format is
             <strong>invalid</strong>
           </mat-error>
           <div class="work-experience-input">
