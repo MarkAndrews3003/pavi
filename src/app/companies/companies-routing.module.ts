@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {FindEmployeesComponent} from '../users/find-employees/find-employees.component';
 import {DashboardJobsComponent} from './dashboard/dashboard-jobs/dashboard-jobs.component';
 import {DasboardArchiveJobsComponent} from './dashboard/dasboard-archive-jobs/dasboard-archive-jobs.component';
+import {DashboardMoreArchiveJobsComponent} from './dashboard/dashboard-more-archive-jobs/dashboard-more-archive-jobs.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'dashboard-archive',
     component: DasboardArchiveJobsComponent
+  },
+  {
+    path: 'dashboard-more-archive',
+    component: DashboardMoreArchiveJobsComponent
   }
 ];
 
