@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-cv-portfolio-tab',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvPortfolioTabComponent implements OnInit {
 
-  constructor() { }
+  editPosition = false;
+  tempVal = 'Interior Designer';
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  changePosition() {
+    this.editPosition = !this.editPosition;
   }
 
 }

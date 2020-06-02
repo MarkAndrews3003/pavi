@@ -19,6 +19,7 @@ import { WorkExperienceComponent } from './profile-page/tabs-bottom-sections/por
 import { CertificationComponent } from './profile-page/tabs-bottom-sections/portfolio-section/certification/certification.component';
 import { ProgrammingSkillsComponent } from './profile-page/tabs-bottom-sections/portfolio-section/programming-skills/programming-skills.component';
 import { EducationComponent } from './profile-page/tabs-bottom-sections/portfolio-section/education/education.component';
+import {FindEmployeesComponent} from './find-employees/find-employees.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EducationComponent } from './profile-page/tabs-bottom-sections/portfoli
     WorkExperienceComponent,
     CertificationComponent,
     ProgrammingSkillsComponent,
-    EducationComponent
+    EducationComponent,
+    FindEmployeesComponent
   ],
   imports: [
     CommonModule,

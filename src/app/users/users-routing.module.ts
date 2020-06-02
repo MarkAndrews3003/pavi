@@ -5,6 +5,7 @@ import {FindJobComponent} from './find-job/find-job.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {AboutComponent} from './about/about.component';
 import {AuthGuard} from '../core/guards/auth.guard';
+import {FindEmployeesComponent} from './find-employees/find-employees.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,11 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
-  }
+  },
+  {
+    path: 'find-employees',
+    component: FindEmployeesComponent
+  },
 ];
 
 @NgModule({
