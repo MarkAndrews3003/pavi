@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {InvitationDialogComponent} from './components/dialogs/invitation-dialog/invitation-dialog.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {SidebarComponent} from './components/layout/sidebar/sidebar.component';
+import { ShowConfirmDialogComponent } from './components/dialogs/show-confirm-dialog/show-confirm-dialog.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {SidebarComponent} from './components/layout/sidebar/sidebar.component';
     UploadPdfDialogComponent,
     AddSocialLinksDialogComponent,
     InvitationDialogComponent,
-    SidebarComponent
+    SidebarComponent,
+    ShowConfirmDialogComponent
   ],
   imports: [
     CommonModule,

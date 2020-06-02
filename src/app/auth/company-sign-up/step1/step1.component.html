@@ -21,7 +21,7 @@
       <mat-error *ngIf="isSubmitted && industryCtrl.hasError('required')">Industry is <strong>required</strong>
       </mat-error>
     </div>
-    <div>
+    <div class="jobs-form-inputs">
       <div class="login-item">
         <label for="country" class="logos-item-label">Country</label>
         <select id="country" class="logos-item-input" (change)="changeCountry($event)" formControlName="country">
@@ -29,6 +29,14 @@
           <option *ngFor="let country of countries" [value]="country">{{country}}</option>
         </select>
       </div>
+<!--      <div class="jobs-form-item dropdown">-->
+<!--        <label>Country</label>-->
+<!--        <input class="dropdown-toggle" id="dropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Country">-->
+<!--        <i class="fas fa-angle-down select-webkit"></i>-->
+<!--        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-4" (change)="changeCountry($event)">-->
+<!--          <a class="dropdown-item" *ngFor="let country of countries" [value]="country">{{country}}</a>-->
+<!--        </div>-->
+<!--      </div>-->
       <mat-error *ngIf="isSubmitted && countryCtrl.hasError('required')">Country is <strong>required</strong>
       </mat-error>
     </div>
