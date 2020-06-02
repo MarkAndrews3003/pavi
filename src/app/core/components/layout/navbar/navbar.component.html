@@ -44,28 +44,28 @@
   </div>
 </nav>
 <nav class="dashboard-header" *ngIf="checkIfDashboardPage()">
-  <img class="dashboard-logo" src="../../../../assets/images/logo.png" (click)="router.navigate(['/'])">
+  <img class="dashboard-logo" src="assets/images/logo.png" (click)="router.navigate(['/'])">
 
   <div class="toggle-menu" (click)="openAside()">
     <i class="fas fa-bars"></i>
   </div>
 
-  <a class="dashboard-text-1">
-    <img src="../../../../assets/images/directional.png">
+  <a class="dashboard-text-1" (click)="router.navigate(['/'])">
+    <img src="assets/images/directional.png">
     Back To Website
   </a>
   <div class="dashboard-text-2">
     <input placeholder="Search">
-    <span class="dashboard-text-3"><img src="../../../../assets/images/search-dash.png"></span>
+    <span class="dashboard-text-3"><img src="assets/images/search-dash.png"></span>
   </div>
   <div class="dashboard-text-4">
     <div class="dashboard-text-5">
-      <img src="../../../../assets/images/camera.png">
+      <img src="assets/images/camera.png">
     </div>
     <div class="dropdown dashboard-text-6">
-      <a class="dropdown-toggle" type="button" id="dropdownUserInfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="dropdown-toggle" type="button" id="dropdownUserInfo2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Jessica Blume
-        <img class="header-img" src="../../../../assets/images/img-dash.png">
+        <img class="header-img" src="assets/images/img-dash.png">
         <i class="fas fa-chevron-down"></i>
       </a>
       <div class="dropdown-menu" aria-labelledby="dropdownUserInfo">

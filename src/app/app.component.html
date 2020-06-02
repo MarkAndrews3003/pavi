@@ -7,6 +7,6 @@
   <mat-sidenav-content>
     <app-navbar (toggleSidebar)="sidenav.toggle()"></app-navbar>
     <router-outlet></router-outlet>
-    <app-footer></app-footer>
+    <app-footer *ngIf="!checkIfDashboardPage()"></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
