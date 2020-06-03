@@ -8,7 +8,6 @@ import {API_URL, OWL_CAROUSEL_OPTIONS} from '../../core/constants/general';
 import {ToastrService} from 'ngx-toastr';
 import {OwlOptions} from 'ngx-owl-carousel-o';
 import {MatDialog} from '@angular/material/dialog';
-import {SaveWorkExperienceDialogComponent} from '../../core/components/dialogs/save-work-experience-dialog/save-work-experience-dialog.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -29,7 +28,7 @@ export class ProfilePageComponent implements OnInit {
 
   authUser;
   isLinear = false;
-  currentStep = 2;
+  currentStep = 1;
 
 
 

@@ -2091,7 +2091,7 @@ footer {
   margin-right: 23px;
 }
 .profile-btns-close {
-  display: none;
+  /*display: none;*/
 }
 .profile-delete-btn {
   width: 234px;

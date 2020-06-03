@@ -68,8 +68,8 @@ export class AboutTabComponent implements OnInit {
     const now = moment(new Date());
     const end = moment(this.authUser.birthday, 'YYYY-MM-DD'); // another date
     const duration = moment.duration(now.diff(end));
-    const days = Math.floor(duration.asYears());
-    return days;
+    const years = Math.abs(Math.floor(duration.asYears()));
+    return years;
   }
 
   showChangePassForm() {
@@ -80,6 +80,9 @@ export class AboutTabComponent implements OnInit {
     this.showChangeEmail = !this.showChangeEmail;
   }
 
+  getUserBirthdayFormatted() {
+    return moment(this.authUser.birthday).format('DD/MM/YYYY');
+  }
 
   saveProfileDetails() {
     if (this.profileForm.valid) {
@@ -90,6 +93,8 @@ export class AboutTabComponent implements OnInit {
         this.toastr.success('The profile changes has been saved successfully');
         localStorage.setItem('token', dt.token);
         this.authUser = this.getAuthUser.transform();
+        this.countUsersAge();
+        this.showEditProfileForm = false;
       });
     }
   }

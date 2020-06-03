@@ -10,6 +10,7 @@ import { JobCreationStep2Component } from './dashboard/dashboard-jobs/job-creati
 import { JobCreationStep3Component } from './dashboard/dashboard-jobs/job-creation-stepper-form/job-creation-step3/job-creation-step3.component';
 import { DashboardMoreArchiveJobsComponent } from './dashboard/dashboard-more-archive-jobs/dashboard-more-archive-jobs.component';
 import { JobCreationStepperFormComponent } from './dashboard/dashboard-jobs/job-creation-stepper-form/job-creation-stepper-form.component';
+import {SharedModule} from '../shared/shared.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { JobCreationStepperFormComponent } from './dashboard/dashboard-jobs/job-
   imports: [
     CommonModule,
     CompaniesRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ]
 })
 export class CompaniesModule {
