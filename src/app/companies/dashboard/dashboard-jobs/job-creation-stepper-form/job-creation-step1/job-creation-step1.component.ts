@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-job-creation-step1',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobCreationStep1Component implements OnInit {
 
-  constructor() { }
+  @Input('group') step1Group: FormGroup;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  dateChanged(e, f) {
+
   }
 
 }
